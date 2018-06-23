@@ -1,0 +1,344 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+"http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta name="google-site-verification" content="4_RMTp03qKZnXNroL0gme91C1A0V24nC9np8xE_GRt4" />
+<title><$WikiPageName$> | FSHS Robotics</title>
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<!-- Links [Online] -->
+<link href="theme/stylesheets/robobase.css" rel="stylesheet" type="text/css" />
+<link href="theme/stylesheets/2018base.css" rel="stylesheet" type="text/css" />
+<link rel="icon" type="image/png" href="theme/stylesheets/favicon.png">
+<link href="https://fonts.googleapis.com/css?family=Open+Sans:300,400,700|Raleway:400,900|PT+Mono" rel="stylesheet" type="text/css">
+     <style type="text/css">.commentSubject{margin-right:0px !important;}#WikispacesBanner{display:none !important;}.navbar{display:none !important;}   
+</style>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/2.0.3/jquery.min.js"></script>
+    <script type="text/javascript" src="https://www.gstatic.com/firebasejs/4.8.0/firebase.js"></script>
+    <script type="text/javascript" src="theme/stylesheets/equipmentsystem.js"></script>
+<style>
+    #robosystem * {
+        box-sizing:border-box;
+    }
+    #robosystem {
+        font-family:'Open Sans';
+        margin:10px auto;
+        max-width:960px;
+        line-height:180%;
+    }
+    #robosystem .formblock {
+        background:#EEE;
+        padding:20px;
+        margin:5px 0;
+    }
+    #robosystem .label {
+        color:#333;
+        font-size:20px;
+        text-transform: uppercase;
+    }
+    #robosystem .es-sublabel {
+        font-size:13px;
+    }
+    #robosystem .formblock-end {
+        padding:20px;
+        margin:5px 0;
+    }
+    #robosystem #attendance-list {
+        column-count:3;
+    }
+
+    /* Form elements */
+    #robosystem input,
+    #robosystem select {
+        font-size:16px;
+        margin:10px 0;
+        padding:5px;
+        width:100%;
+        background:#FCFCFC;
+        border:solid 3px #EEE;
+        color:#39424d;
+        display:inline-block;
+        font-family:'Open Sans', sans-serif;
+        padding:7px;
+        transition:all 0.3s ease;
+    }
+    #robosystem button {
+        background:#4060fa;
+        border-radius:4px;
+        border:2px solid #4060fa;
+        color:#FFF;
+        cursor:pointer;
+        font-family:'Open Sans', sans-serif;
+        font-weight:bold;
+        display:inline-block;
+        padding:7px;
+        transition:0.3s ease all;
+    }
+
+    /* Spinner */
+    #robosystem #login-loading {
+        text-align:center;
+    }
+    #robosystem .rs-spinner {
+        animation: rotator .5s linear infinite;
+        display:inline-block;
+        margin-left:10px;
+        transform: translateZ(0);
+        vertical-align:middle;
+    }
+    #robosystem .rs-spinner__stroke {
+        animation: dash 1.25s linear infinite alternate-reverse;
+        stroke: #00b7e0;
+    }
+    @keyframes rotator {
+        from {
+            transform:rotate(0)
+        } to {
+            transform:rotate(360deg)
+        }
+    }
+    @keyframes dash {
+        100% {
+            stroke-dashoffset: 0;
+        }
+    }
+    .error-message {
+        color:#F00;
+    }
+</style>
+
+</head>
+<body class="non-home page-<$WikiPageName$>">
+<div class="header-2018">
+    <h2><a href="/">FSHS Robotics</a></h2>
+    <div id="nav">
+        <ul class="nav-transparent">
+            <li class="nav-transparent__link"><a href="/About">About</a></li>
+            <li class="nav-transparent__link"><a href="/Achievements">Awards</a></li>
+            <li class="nav-transparent__link"><a href="/Open+Soccer">Soccer</a></li>
+            <li class="nav-transparent__link"><a href="/C+Course">C Course</a></li>
+            <WikiIsNotLoggedIn><li class="nav-transparent__link"><a href="https://www.wikispaces.com/site/signin?goto=https%3A%2F%2Ffshsrobotics.wikispaces.com%2F" class="WikispacesXDomainDialogLink">Log in</a></li></WikiIsNotLoggedIn>
+            <WikiIsLoggedIn><li class="nav-transparent__link"><a href="https://session.wikispaces.com/1/auth/logout">Log out</a></li></WikiIsLoggedIn>
+        </ul>
+    </div>
+</div>
+<div id="wrapper">
+    
+    <h2>2.1 Extreme Programming (XP)</h2>
+<ul>
+<li>
+<p><strong>Extreme Programming</strong>: an agile methodology that:</p>
+<ul>
+<li>
+<p>Focuses on providing highest value for the customer fast</p>
+</li>
+<li>
+<p>Change of requirements is <strong>natural and inescapable</strong></p>
+</li>
+<li>
+<p><strong>Adaptability over predictability</strong>: requirements change,
+    rather than defined at the start)</p>
+</li>
+<li>
+<p>Lower the cost of change by introducing basic values, principles
+    and practices</p>
+</li>
+<li>
+<p>Useful for problem domains where requirements change,
+    <strong>mitigates risk and increases likelihood of success</strong></p>
+</li>
+<li>
+<p>Emphasis on <strong>testability</strong></p>
+</li>
+</ul>
+</li>
+<li>
+<p><strong>Boehm’s Cost Curve</strong>: as software proceeds through the life-cycle,
+    the cost of making a change becomes larger (error-free designs vs
+    being prepared for change)</p>
+</li>
+</ul>
+<h2>2.2 XP Values (CCSRF)</h2>
+<ul>
+<li>
+<p><strong><em>Communication</em></strong></p>
+<ul>
+<li>
+<p>Collaboration of customers and developers</p>
+</li>
+<li>
+<p>Customer is a <strong>member of the team</strong> who defines and prioritises
+    features</p>
+</li>
+<li>
+<p>Rapid dissemination of information</p>
+</li>
+</ul>
+</li>
+<li>
+<p><strong><em>Courage</em></strong></p>
+<ul>
+<li>
+<p>Design and code <strong>for today</strong>, not for tomorrow</p>
+</li>
+<li>
+<p>Be comfortable with refactoring code</p>
+</li>
+<li>
+<p>Tell truth, don’t fear anything, take on problems proactively,
+    integrate testing in development</p>
+</li>
+</ul>
+</li>
+<li>
+<p><strong><em>Simplicity</em></strong></p>
+<ul>
+<li>
+<p>Focus on design and coding for needs of today</p>
+</li>
+<li>
+<p>Future requirements are uncertain and carries risk of
+    unnecessary spending</p>
+</li>
+</ul>
+</li>
+<li>
+<p><strong><em>Respect</em></strong></p>
+<ul>
+<li>
+<p>Never commit changes that break compilation or fail unit-tests</p>
+</li>
+<li>
+<p>Strive for high quality design</p>
+</li>
+</ul>
+</li>
+<li>
+<p><strong><em>Feedback</em></strong></p>
+<ul>
+<li>
+<p>Feedback from <strong>system</strong>: unit tests, integration tests</p>
+</li>
+<li>
+<p>Feedback from <strong>customer</strong>: user acceptance testing, reviews,
+    feedback from team</p>
+</li>
+</ul>
+</li>
+</ul>
+<p><strong><em>\
+</em></strong></p>
+<h2>2.3 XP Principles</h2>
+<ol>
+<li>
+<p><strong><em>Whole team</em></strong>: Managers, developers work as a single team.
+    Customer or representative should be a member of the team with daily
+    connection</p>
+</li>
+<li>
+<p><strong><em>Continuous feedback</em></strong></p>
+<p>a.  Feedback from <strong>developers</strong> (constant <strong>testing</strong> and
+    continuous <strong>integration</strong>)</p>
+<p>b.  Feedback from <strong>XP team</strong> (daily <strong>stand-up meetings</strong>
+    on progress)</p>
+<p>c.  Feedback from <strong>customers</strong> (<strong>iteration demos</strong>)</p>
+</li>
+<li>
+<p><strong><em>User stories</em></strong>: mnemonic token of ongoing conversation about a
+    requirement</p>
+<p>a.  Conversation to get a sense of requirements recorded as a
+    description of a feature</p>
+</li>
+<li>
+<p><strong><em>Short cycles</em></strong></p>
+<p>a.  <strong><em>Project Release plan</em></strong>: <strong>major delivery with prioritised
+    user stories</strong> for next few iterations, business determines
+    which user stories to implement in the next release</p>
+<p>b.  <strong><em>Iteration plan</em></strong>: <strong>short cycles</strong> to deliver a collection
+    of user stories, business <strong>cannot change priority/definition of
+    user stories after iteration starts</strong></p>
+</li>
+<li>
+<p><strong><em>High quality</em></strong></p>
+<p>a.  <strong>Pair programming</strong>: code written in pairs, <strong>one coding, one</strong>
+    reviewing</p>
+<p>b.  <strong>Continuous integration</strong>: check in and integrate/merge code
+    several times a day</p>
+<p>c.  <strong>Sustainable pace</strong>: moderate, steady pace (marathon), no
+    overtime</p>
+<p>d.  <strong>Open workspace</strong></p>
+<p>e.  <strong>Refactoring</strong>: small transformations to improve structure,
+    prevent software rot</p>
+<p>f.  <strong>Test-driven Development</strong>: test coverage</p>
+<div class="highlight"><pre><span></span>i.  Unit testing: test independent modules, encourages
+    decoupling and facilitates refactoring
+
+ii. User acceptance testing: customers describe features with an
+    acceptance test. Tests are run every time system is
+    integrated (regression testing)
+</pre></div>
+
+
+</li>
+<li>
+<p><strong><em>Simple design</em></strong></p>
+<p>a.  Create the <strong>simplest possible design for the current batch</strong> of
+    user stories (flat file vs database)</p>
+<p>b.  <strong>Resist temptation</strong> of future infrastructure</p>
+<p>c.  <strong>Once and only once</strong>: do not duplicate code</p>
+</li>
+<li>
+<p><strong><em>System metaphor</em></strong>: communicating the project <strong>in terms that
+    developers and customers will understand</strong>, with <strong>no need for
+    familiarity</strong> with the problem domain</p>
+<p>a.  <strong>Common vision</strong>: easy to understand what it is and how a
+    system works</p>
+<p>b.  <strong>Shared vocab</strong>: common system of names</p>
+<p>c.  <strong>Architecture</strong>: Identify key objects and aspects of
+    interfaces, static and dynamic models of the system</p>
+<p>d.  <strong>Generativity</strong>: metaphor can suggest new ideas for the system</p>
+</li>
+</ol>
+<p><strong>\
+</strong></p>
+<h2>2.4 XP Life-cycle</h2>
+<ul>
+<li>The <strong>process is constant and applied to the user stories</strong> in
+    sequence (rather than traditionally, where <strong>requirements remain
+    constant</strong>)</li>
+</ul>
+<p><img alt="" height="186" src="media/image1.png" width="601"></p>
+<ul>
+<li>
+<p><strong><em>Project tracking</em></strong>: Record the results of each
+    iteration (release) to predict the next iteration</p>
+<ul>
+<li>
+<p>Ensure work done is <strong>sustainable and steady</strong></p>
+</li>
+<li>
+<p>Use <strong>velocity chart</strong> to track project velocity – <strong>number of
+    story points completed</strong></p>
+</li>
+<li>
+<p><strong>Burn-down chart</strong> to show week-by-week progress – slope is a
+    predictor of end date</p>
+</li>
+</ul>
+</li>
+</ul>
+    <br />
+
+<div class="clr"></div>
+<div id="mainFooter">
+<p>&copy; Fort Street High School Robotics 2017</p>
+<br />
+    <a href="/home">
+    <div><span id="logo-only"></span></div>
+</div>
+</div>
+</body>
+    <link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/highlight.js/9.9.0/styles/default.min.css">
+    <script src="//cdnjs.cloudflare.com/ajax/libs/highlight.js/9.9.0/highlight.min.js"></script>
+    <script>hljs.initHighlightingOnLoad();</script>
+<script src="/-/2017/C-Coursetheme/stylesheets/feedback.js"></script>
+</html>

@@ -1,0 +1,54 @@
+<html>
+  <head>
+    <title>fshsrobotics - Test Revision</title>
+    <link rel="stylesheet" href="static/style.css" type="text/css" />
+    <meta http-equiv="Content-Type" content="text/html;charset=utf-8" />
+  </head>
+  <body>
+    <div class="wiki" id="content_view" style="display: block;">
+<h1 id="toc0"><a name="Test Revision"></a>Test Revision</h1>
+<h2 id="toc1"><a name="Test Revision-Functions"></a>Functions</h2>
+<p>Functions are like asking your mum to bake a cake. There is an input, some processing (code) and an output. The input - flour, eggs, milk, chocolate. The processing - mixing, baking. The output - a cake.</p>
+<p>Sometimes you don't need any inputs or outputs. If we want a function to print "Hello!" every time it's called, we can do:</p>
+<pre>
+void printHello() {
+   printf("Hello!");
+}
+int main() {
+   printHello();
+   return 0;
+}
+</pre>
+<p>If we want to, say, print a number:</p>
+<pre>
+void printNumber(int x) {
+   printf("My number is x!");
+}
+int main() {
+   int number = 12;
+   printNumber(number);   // input is the number 12
+   return 0;
+}
+</pre>
+<p>If we want to square a number (multiply it by itself), we have an input and an output. Note that it's changed from <b>void to int</b> - we are now not returning nothing, we are returning an integer.</p>
+<pre>
+int squareNumber(int x) {
+   int square;
+   square = x * x; //multiply by itself
+   return square;
+}
+int main() {
+   int number = 12;
+   int newNumber, otherNumber;
+   newNumber = squareNumber(number);    // square 12
+   otherNumber = squareNumber(5);         // we can do this too
+
+   printf("12x12 is %i, 5x5 is %i, newNumber, otherNumber);
+   return 0;
+}
+</pre>
+<p>What would it print out above?</p>
+<p>Notice we don't have to write 12*12 and 5*5 separately - we just write it once and we can reuse code. It makes it easier to, say, print all squares from 1 to 20.</p>
+    </div>
+  </body>
+</html>

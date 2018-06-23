@@ -1,0 +1,39 @@
+<html>
+  <head>
+    <title>fshsrobotics - Week 6</title>
+    <link rel="stylesheet" href="static/style.css" type="text/css" />
+    <meta http-equiv="Content-Type" content="text/html;charset=utf-8" />
+  </head>
+  <body>
+    <div class="wiki" id="content_view" style="display: block;">
+<h1 id="toc0"><a name="Week 6: RobotC: Line Follow"></a>Week 6: RobotC: Line Follow</h1>
+<h2>RobotC download, drivers and fantom.dll</h2>
+<p>If you have not downloaded RobotC (Windows only), please follow the instructions in README.txt after you unzip the files there.</p>
+<div class="filebox"><a href="#" rel="nofollow">Download RobotC on request</a></div>
+<p>Drivers are needed for basic functions, like SensorValue, to work. Download this folder, unzip and save the whole folder into where all your RobotC code will be.</p>
+<div class="filebox"><a href="https://drive.google.com/uc?export=download&amp;id=0BwVnNvJGlGV1dzdMbmJMWjBQWWM" rel="nofollow">Download Drivers</a></div>
+<p>NXT need some special magic stuff to let you connect the NXT to RobotC. Download below, unzip, and run setup.exe.</p>
+<div class="filebox"><a href="http://downloads.robotc.net/drivers/NXT_USB_Driver_120.zip" rel="nofollow">Download fantom.dll</a></div>
+<h2>Line Following</h2>
+<p>Note - this will not work until you set up motors and sensors. The path to common.h may also be different.</p>
+<pre>
+task main() {
+    int sensorLeft, sensorRight;
+  while (1) {
+    // update sensor values
+    sensorLeft = (SensorValue [LEFTSENSOR]);
+    sensorRight = (SensorValue [RIGHTSENSOR]);
+
+    // what does this if statement do?
+    if (sensorLeft &gt; 55 &amp;&amp; sensorRight &gt; 55) {
+      motor[LEFTMOTOR] = 100;
+      motor[RIGHTMOTOR] = 100;
+    }
+  }
+}
+</pre>
+<h2>Today's Task:</h2>
+<p>In the while loop, make the robot follow a line. Consider what happens when the left sensor is on black, and consider what happens when the right sensor is on black.</p>
+    </div>
+  </body>
+</html>

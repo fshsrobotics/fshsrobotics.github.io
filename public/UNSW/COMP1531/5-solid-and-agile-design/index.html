@@ -1,0 +1,301 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+"http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta name="google-site-verification" content="4_RMTp03qKZnXNroL0gme91C1A0V24nC9np8xE_GRt4" />
+<title><$WikiPageName$> | FSHS Robotics</title>
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<!-- Links [Online] -->
+<link href="theme/stylesheets/robobase.css" rel="stylesheet" type="text/css" />
+<link href="theme/stylesheets/2018base.css" rel="stylesheet" type="text/css" />
+<link rel="icon" type="image/png" href="theme/stylesheets/favicon.png">
+<link href="https://fonts.googleapis.com/css?family=Open+Sans:300,400,700|Raleway:400,900|PT+Mono" rel="stylesheet" type="text/css">
+     <style type="text/css">.commentSubject{margin-right:0px !important;}#WikispacesBanner{display:none !important;}.navbar{display:none !important;}   
+</style>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/2.0.3/jquery.min.js"></script>
+    <script type="text/javascript" src="https://www.gstatic.com/firebasejs/4.8.0/firebase.js"></script>
+    <script type="text/javascript" src="theme/stylesheets/equipmentsystem.js"></script>
+<style>
+    #robosystem * {
+        box-sizing:border-box;
+    }
+    #robosystem {
+        font-family:'Open Sans';
+        margin:10px auto;
+        max-width:960px;
+        line-height:180%;
+    }
+    #robosystem .formblock {
+        background:#EEE;
+        padding:20px;
+        margin:5px 0;
+    }
+    #robosystem .label {
+        color:#333;
+        font-size:20px;
+        text-transform: uppercase;
+    }
+    #robosystem .es-sublabel {
+        font-size:13px;
+    }
+    #robosystem .formblock-end {
+        padding:20px;
+        margin:5px 0;
+    }
+    #robosystem #attendance-list {
+        column-count:3;
+    }
+
+    /* Form elements */
+    #robosystem input,
+    #robosystem select {
+        font-size:16px;
+        margin:10px 0;
+        padding:5px;
+        width:100%;
+        background:#FCFCFC;
+        border:solid 3px #EEE;
+        color:#39424d;
+        display:inline-block;
+        font-family:'Open Sans', sans-serif;
+        padding:7px;
+        transition:all 0.3s ease;
+    }
+    #robosystem button {
+        background:#4060fa;
+        border-radius:4px;
+        border:2px solid #4060fa;
+        color:#FFF;
+        cursor:pointer;
+        font-family:'Open Sans', sans-serif;
+        font-weight:bold;
+        display:inline-block;
+        padding:7px;
+        transition:0.3s ease all;
+    }
+
+    /* Spinner */
+    #robosystem #login-loading {
+        text-align:center;
+    }
+    #robosystem .rs-spinner {
+        animation: rotator .5s linear infinite;
+        display:inline-block;
+        margin-left:10px;
+        transform: translateZ(0);
+        vertical-align:middle;
+    }
+    #robosystem .rs-spinner__stroke {
+        animation: dash 1.25s linear infinite alternate-reverse;
+        stroke: #00b7e0;
+    }
+    @keyframes rotator {
+        from {
+            transform:rotate(0)
+        } to {
+            transform:rotate(360deg)
+        }
+    }
+    @keyframes dash {
+        100% {
+            stroke-dashoffset: 0;
+        }
+    }
+    .error-message {
+        color:#F00;
+    }
+</style>
+
+</head>
+<body class="non-home page-<$WikiPageName$>">
+<div class="header-2018">
+    <h2><a href="/">FSHS Robotics</a></h2>
+    <div id="nav">
+        <ul class="nav-transparent">
+            <li class="nav-transparent__link"><a href="/About">About</a></li>
+            <li class="nav-transparent__link"><a href="/Achievements">Awards</a></li>
+            <li class="nav-transparent__link"><a href="/Open+Soccer">Soccer</a></li>
+            <li class="nav-transparent__link"><a href="/C+Course">C Course</a></li>
+            <WikiIsNotLoggedIn><li class="nav-transparent__link"><a href="https://www.wikispaces.com/site/signin?goto=https%3A%2F%2Ffshsrobotics.wikispaces.com%2F" class="WikispacesXDomainDialogLink">Log in</a></li></WikiIsNotLoggedIn>
+            <WikiIsLoggedIn><li class="nav-transparent__link"><a href="https://session.wikispaces.com/1/auth/logout">Log out</a></li></WikiIsLoggedIn>
+        </ul>
+    </div>
+</div>
+<div id="wrapper">
+    
+    <h2>5.1 Coupling and Cohesion</h2>
+<p><img alt="" height="194" src="media/image1.png" width="601"></p>
+<ul>
+<li>
+<p>Good software aims for <strong>loose coupling and high cohesion</strong> among
+    its components</p>
+<ul>
+<li>Software that has tight coupling/low cohesion are often
+    <strong>fragile</strong></li>
+</ul>
+</li>
+<li>
+<p><strong><em>SOLID Goals</em></strong>: principles that support this so that components
+    are easy to understand, maintain, extend, reuse and test</p>
+<ul>
+<li>
+<p><strong>Single Responsibility Principle</strong></p>
+</li>
+<li>
+<p><strong>Open Closed Principle</strong></p>
+</li>
+<li>
+<p>Liskov Substitution Principle</p>
+</li>
+<li>
+<p>Interface Segregation Principle</p>
+</li>
+<li>
+<p><strong>Dependency Inversion Principle</strong></p>
+</li>
+</ul>
+</li>
+</ul>
+<h2>5.2 Single Responsibility Principle</h2>
+<p>A class should have <strong>one and only one</strong> reason to change</p>
+<ul>
+<li>
+<p>Every class should have <strong>only one responsibility</strong> (reason
+    for change)</p>
+</li>
+<li>
+<p>A class with <strong>more than one responsibility</strong> means responsibilities
+    become coupled</p>
+<ul>
+<li>
+<p>Changes to one responsibility impairs the class’s ability to
+    meet the others</p>
+</li>
+<li>
+<p>Design is fragile and may break</p>
+</li>
+</ul>
+</li>
+<li>
+<p>SRP does not imply “do only one thing” – class can <strong>call other
+    functions</strong> from other classes, but should <strong>not be responsible</strong></p>
+</li>
+<li>
+<p>Examples:</p>
+<ul>
+<li>
+<p>Mixing <strong>business logic</strong> with <strong>work orchestration</strong> (how a
+    particular job is done, e.g. generating a report)</p>
+</li>
+<li>
+<p>Grouping <strong>business logic</strong> with <strong>persistence control</strong>
+    (storing data, vs. calculations)</p>
+</li>
+</ul>
+</li>
+</ul>
+<p><img alt="" height="234" src="media/image2.png" width="532"></p>
+<ul>
+<li>
+<p>Benefits:</p>
+<ul>
+<li>
+<p><strong>Readability</strong>: easy to identify the single responsibility</p>
+</li>
+<li>
+<p><strong>Reusability</strong>: code can be reused in different contexts</p>
+</li>
+<li>
+<p><strong>Testability</strong>: responsibilities can be tested separately</p>
+</li>
+</ul>
+</li>
+</ul>
+<h2>5.3 Open Closed Principle</h2>
+<p>Software entities should be <strong>open for extension</strong> but <strong>closed for
+modification</strong></p>
+<ul>
+<li>
+<p>Modules have two attributes:</p>
+<ul>
+<li>
+<p><strong>Open for extension</strong>: when requirements change, class is
+    extended with new behaviours to adapt to these changes</p>
+</li>
+<li>
+<p><strong>Closed for modification</strong>: extending the behaviour does not
+    require changing the original source</p>
+</li>
+</ul>
+</li>
+<li>
+<p>ReportFormatter is <strong>not open for extension</strong> – the option on the
+    right is more appropriate and allows extension without modification
+    of existing classes</p>
+</li>
+</ul>
+<p><img alt="" height="169" src="media/image3.png" width="601"></p>
+<h2>5.4 Dependency Inversion Principle</h2>
+<p>High level modules should not depend on low level modules,\
+Both should <strong>depend upon abstractions</strong></p>
+<ul>
+<li>
+<p>E.g. soldering a lamp directly to electrical wiring in the wall, vs.
+    plugs and sockets</p>
+<ul>
+<li>
+<p>Classes that directly hard-wired to others are <strong>hard to
+    replace</strong></p>
+</li>
+<li>
+<p>Low level classes should be <strong>easily replaceable</strong> – high level
+    modules should therefore not rely on low-level classes</p>
+</li>
+</ul>
+</li>
+<li>
+<p>Object A (client) depends on object B (service) – object A must not
+    create or import object B directly</p>
+<ul>
+<li>
+<p>A should provide a way for <strong>injecting</strong> B</p>
+</li>
+<li>
+<p>This injection should be done independently in the <strong>dependency
+    injector</strong></p>
+</li>
+</ul>
+</li>
+</ul>
+<p><img alt="" height="163" src="media/image4.png" width="601"></p>
+<h2>5.5 OO and Agile Design</h2>
+<ul>
+<li>
+<p><strong>Domain-based organisation</strong>: when requirements change in a story
+    in Agile, they change on the <strong>domain level</strong></p>
+</li>
+<li>
+<p>OO also allows more focus on the <strong>problem domain –</strong> software
+    should model the customer’s requirements</p>
+</li>
+<li>
+<p>Allows <strong>faster modification</strong> of code associated with changes in
+    requirements</p>
+</li>
+</ul>
+    <br />
+
+<div class="clr"></div>
+<div id="mainFooter">
+<p>&copy; Fort Street High School Robotics 2017</p>
+<br />
+    <a href="/home">
+    <div><span id="logo-only"></span></div>
+</div>
+</div>
+</body>
+    <link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/highlight.js/9.9.0/styles/default.min.css">
+    <script src="//cdnjs.cloudflare.com/ajax/libs/highlight.js/9.9.0/highlight.min.js"></script>
+    <script>hljs.initHighlightingOnLoad();</script>
+<script src="/-/2017/C-Coursetheme/stylesheets/feedback.js"></script>
+</html>

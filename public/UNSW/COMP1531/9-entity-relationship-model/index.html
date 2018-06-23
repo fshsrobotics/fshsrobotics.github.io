@@ -1,0 +1,351 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+"http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta name="google-site-verification" content="4_RMTp03qKZnXNroL0gme91C1A0V24nC9np8xE_GRt4" />
+<title><$WikiPageName$> | FSHS Robotics</title>
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<!-- Links [Online] -->
+<link href="theme/stylesheets/robobase.css" rel="stylesheet" type="text/css" />
+<link href="theme/stylesheets/2018base.css" rel="stylesheet" type="text/css" />
+<link rel="icon" type="image/png" href="theme/stylesheets/favicon.png">
+<link href="https://fonts.googleapis.com/css?family=Open+Sans:300,400,700|Raleway:400,900|PT+Mono" rel="stylesheet" type="text/css">
+     <style type="text/css">.commentSubject{margin-right:0px !important;}#WikispacesBanner{display:none !important;}.navbar{display:none !important;}   
+</style>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/2.0.3/jquery.min.js"></script>
+    <script type="text/javascript" src="https://www.gstatic.com/firebasejs/4.8.0/firebase.js"></script>
+    <script type="text/javascript" src="theme/stylesheets/equipmentsystem.js"></script>
+<style>
+    #robosystem * {
+        box-sizing:border-box;
+    }
+    #robosystem {
+        font-family:'Open Sans';
+        margin:10px auto;
+        max-width:960px;
+        line-height:180%;
+    }
+    #robosystem .formblock {
+        background:#EEE;
+        padding:20px;
+        margin:5px 0;
+    }
+    #robosystem .label {
+        color:#333;
+        font-size:20px;
+        text-transform: uppercase;
+    }
+    #robosystem .es-sublabel {
+        font-size:13px;
+    }
+    #robosystem .formblock-end {
+        padding:20px;
+        margin:5px 0;
+    }
+    #robosystem #attendance-list {
+        column-count:3;
+    }
+
+    /* Form elements */
+    #robosystem input,
+    #robosystem select {
+        font-size:16px;
+        margin:10px 0;
+        padding:5px;
+        width:100%;
+        background:#FCFCFC;
+        border:solid 3px #EEE;
+        color:#39424d;
+        display:inline-block;
+        font-family:'Open Sans', sans-serif;
+        padding:7px;
+        transition:all 0.3s ease;
+    }
+    #robosystem button {
+        background:#4060fa;
+        border-radius:4px;
+        border:2px solid #4060fa;
+        color:#FFF;
+        cursor:pointer;
+        font-family:'Open Sans', sans-serif;
+        font-weight:bold;
+        display:inline-block;
+        padding:7px;
+        transition:0.3s ease all;
+    }
+
+    /* Spinner */
+    #robosystem #login-loading {
+        text-align:center;
+    }
+    #robosystem .rs-spinner {
+        animation: rotator .5s linear infinite;
+        display:inline-block;
+        margin-left:10px;
+        transform: translateZ(0);
+        vertical-align:middle;
+    }
+    #robosystem .rs-spinner__stroke {
+        animation: dash 1.25s linear infinite alternate-reverse;
+        stroke: #00b7e0;
+    }
+    @keyframes rotator {
+        from {
+            transform:rotate(0)
+        } to {
+            transform:rotate(360deg)
+        }
+    }
+    @keyframes dash {
+        100% {
+            stroke-dashoffset: 0;
+        }
+    }
+    .error-message {
+        color:#F00;
+    }
+</style>
+
+</head>
+<body class="non-home page-<$WikiPageName$>">
+<div class="header-2018">
+    <h2><a href="/">FSHS Robotics</a></h2>
+    <div id="nav">
+        <ul class="nav-transparent">
+            <li class="nav-transparent__link"><a href="/About">About</a></li>
+            <li class="nav-transparent__link"><a href="/Achievements">Awards</a></li>
+            <li class="nav-transparent__link"><a href="/Open+Soccer">Soccer</a></li>
+            <li class="nav-transparent__link"><a href="/C+Course">C Course</a></li>
+            <WikiIsNotLoggedIn><li class="nav-transparent__link"><a href="https://www.wikispaces.com/site/signin?goto=https%3A%2F%2Ffshsrobotics.wikispaces.com%2F" class="WikispacesXDomainDialogLink">Log in</a></li></WikiIsNotLoggedIn>
+            <WikiIsLoggedIn><li class="nav-transparent__link"><a href="https://session.wikispaces.com/1/auth/logout">Log out</a></li></WikiIsLoggedIn>
+        </ul>
+    </div>
+</div>
+<div id="wrapper">
+    
+    <h2>9.1 Designing a database</h2>
+<ul>
+<li>
+<p><strong><em>Data modelling</em></strong>: high level abstract stage of database
+    application development</p>
+</li>
+<li>
+<p>Two data models:</p>
+<ul>
+<li>
+<p><strong>Logical</strong>: an <strong>abstract</strong> model – <strong>conceptual</strong>-level, e.g.
+    ER Model, OO Model</p>
+</li>
+<li>
+<p><strong>Physical</strong>: <strong>record-based</strong> model –
+    <strong>implementation</strong>-level, e.g. relational model</p>
+</li>
+</ul>
+</li>
+<li>
+<p>Entity-relationship data modelling: view the world as a <strong>collection
+    of interrelated entities</strong></p>
+<ul>
+<li>
+<p><strong><em>Entity</em></strong>: an <strong>object of interest</strong> in the real world,
+    distinguishable from other objects</p>
+</li>
+<li>
+<p><strong><em>Attribute</em></strong>: data item or property of interest</p>
+</li>
+<li>
+<p><strong><em>Entity-set/entity-type</em></strong>: <strong>set of entities with the same
+    set of attributes</strong></p>
+</li>
+<li>
+<p><strong><em>Relationship</em></strong>: relates two or more entities</p>
+<ul>
+<li>E.g. Joe (entity) <strong>is enrolled in</strong> (relationship)
+    COMP1531 (entity)</li>
+</ul>
+</li>
+<li>
+<p><strong><em>Relationship set</em></strong>: set of similar relationships</p>
+<ul>
+<li>
+<p><strong>Degree</strong>: number of entities involved in relationship</p>
+</li>
+<li>
+<p><strong>Cardinality</strong>: number of associated entities on each side
+    of the relationship</p>
+</li>
+</ul>
+</li>
+</ul>
+</li>
+<li>
+<p>Entity is <strong>like an object instance</strong>, entity set is <strong>like a
+    class</strong>, methods not covered in ER</p>
+</li>
+</ul>
+<h2>9.2 Attributes</h2>
+<ul>
+<li>
+<p>Attributes in ER model can be:</p>
+<ul>
+<li>
+<p><strong>Simple</strong> – attributes cannot be broken into smaller subparts</p>
+</li>
+<li>
+<p><strong>Composite</strong> – can have a hierarchy of attributes</p>
+</li>
+<li>
+<p><strong>Single-valued</strong> – has one value for each entity</p>
+</li>
+<li>
+<p><strong>Multi</strong>-<strong>valued</strong> – has <strong>a set</strong> of values for each
+    entity, e.g. colour, degrees</p>
+</li>
+</ul>
+</li>
+</ul>
+<p><img alt="" height="157" src="media/image1.png" width="601"></p>
+<ul>
+<li>
+<p>If two entities <strong>have the same set of attribute values</strong>, they are
+    regarded as the same entity</p>
+<ul>
+<li>
+<p>Define a <strong>superkey</strong> to make each entity distinct</p>
+<ul>
+<li>E.g. SSN (primary key) or [name + address] (candidate key)</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+<h2>9.3 ER Diagrams</h2>
+<ul>
+<li><strong>Visual symbols</strong></li>
+</ul>
+<p><img alt="" height="202" src="media/image2.png" width="409"></p>
+<p><img alt="" height="253" src="media/image3.png" width="456"></p>
+<ul>
+<li><strong>Cardinality</strong></li>
+</ul>
+<p><img alt="" height="232" src="media/image4.png" width="450"></p>
+<p><strong>\
+</strong></p>
+<ul>
+<li>
+<p><strong>Level of participation constraint</strong></p>
+<ul>
+<li>
+<p><strong>Total</strong>: <strong>every entity in the entity set participates in</strong>
+    <span class="math inline"><strong>≥1</strong></span> <strong>relationship</strong> in R</p>
+<ul>
+<li>Every bank loan is associated with at least one customer</li>
+</ul>
+</li>
+<li>
+<p><strong>Partial</strong>: <strong>some entities</strong> in the entity set participate in
+    relationships in R</p>
+<ul>
+<li>Not every customer has a loan</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+<p><img alt="" height="76" src="media/image5.png" width="384"></p>
+<ul>
+<li>
+<p><strong>Relationship has associated attributes</strong>: price and quantity are
+    related to products in a particular shop</p>
+</li>
+<li>
+<p><strong>Primary key attributes</strong> are <strong>underlined</strong></p>
+</li>
+</ul>
+<p><img alt="" height="182" src="media/image6.png" width="375"></p>
+<ul>
+<li>
+<p><strong>Weak entity set</strong> has no key of its own, only exists due to
+    association with strong entities</p>
+</li>
+<li>
+<p><strong>Subclass</strong>: entity set that has <strong>all attributes</strong> <strong>of base set</strong>
+    and plus its <strong>own attributes</strong></p>
+<ul>
+<li>
+<p><strong>O</strong>verlapping: entity <strong>can be in</strong> <strong>multiple subclasses</strong>
+    (Doctor can be a Patient)</p>
+</li>
+<li>
+<p><strong>D</strong>isjoint: entity <strong>cannot be</strong> in multiple subclasses
+    (MCQuestion can’t be TextQuestion)</p>
+</li>
+<li>
+<p>Total: <strong>every entity has to be in a subclass</strong> (Question must
+    be MC/Text)</p>
+</li>
+<li>
+<p>Partial: <strong>not every entity</strong> has to be in a subclass (Vehicle
+    can be Vehicle or Car)</p>
+</li>
+</ul>
+</li>
+</ul>
+<p><img alt="" height="260" src="media/image7.png" width="463"></p>
+<h2>9.4 Mapping ER Designs to Relational Model</h2>
+<ul>
+<li>
+<p>There is a formal mapping from ER to relational model</p>
+<ul>
+<li>Need to also <strong>define concrete domains and constraints</strong> for
+    attributes</li>
+</ul>
+</li>
+</ul>
+<blockquote>
+<p>ER <strong>attribute</strong> relational <strong>attribute</strong></p>
+<p>ER <strong>entity</strong> relational <strong>tuple</strong></p>
+<p>ER <strong>entity</strong>-<strong>set</strong> relational <strong>table</strong> (relation)</p>
+<p>ER <strong>relationship</strong> relational <strong>table</strong> (relation)</p>
+<p>ER <strong>key</strong> relational <strong>primary key</strong></p>
+</blockquote>
+<ul>
+<li>
+<p>Differences between relational and ER:</p>
+<ul>
+<li>
+<p>Relational uses <strong>relations</strong> to model entities and
+    relationships</p>
+</li>
+<li>
+<p>Relational has <strong>no composite or multi-valued attributes</strong>
+    (atomic only)</p>
+</li>
+<li>
+<p><img alt="" src="media/image8.png">{width="372"
+    height="260"}<img alt="" src="media/image9.png">{width="304"
+    height="259"}Relational has <strong>no object-oriented notions</strong> (no
+    subclasses and inheritance)</p>
+</li>
+</ul>
+</li>
+<li>
+<p>In SQL Schema: player varchar(50) REFERENCES Player(name)</p>
+</li>
+</ul>
+    <br />
+
+<div class="clr"></div>
+<div id="mainFooter">
+<p>&copy; Fort Street High School Robotics 2017</p>
+<br />
+    <a href="/home">
+    <div><span id="logo-only"></span></div>
+</div>
+</div>
+</body>
+    <link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/highlight.js/9.9.0/styles/default.min.css">
+    <script src="//cdnjs.cloudflare.com/ajax/libs/highlight.js/9.9.0/highlight.min.js"></script>
+    <script>hljs.initHighlightingOnLoad();</script>
+<script src="/-/2017/C-Coursetheme/stylesheets/feedback.js"></script>
+</html>

@@ -1,0 +1,198 @@
+<html>
+  <head>
+    <title>fshsrobotics - Week 2</title>
+    <link rel="stylesheet" href="static/style.css" type="text/css" />
+    <meta http-equiv="Content-Type" content="text/html;charset=utf-8" />
+  </head>
+  <body>
+    <div class="wiki" id="content_view" style="display: block;">
+<h1 id="toc0"><a name="Week 2: Inputs, If statements and Arithmetic"></a>Week 2: Inputs, If statements and Arithmetic</h1>
+<!--<a href="/Week+3" style="float:right" rel="nofollow">Week 3 &gt;</a>--><br />
+<div class="card-section">
+<h2>Review</h2>
+<pre>
+#include &lt;stdio.h&gt;
+
+int main() {
+    printf("Hello!\n");
+
+    int x;
+    x = 13;
+    int y = 5;
+    
+    int z = x + y;
+
+    printf("%i plus %i is %i\n", x, y, z);
+
+    return 0;
+}
+</pre>
+<p>What does each line do?</p>
+<p>To run:</p>
+<ol>
+<li>Save the text file as a .c file.</li>
+<li>Open 'compile and run.bat'.</li>
+<li>Type the folder the .c file is in. If it is where compile and run is in, just press enter.</li>
+<li>Type the .c file, e.g. hello.c</li>
+</ol>
+</div>
+<div class="card-section">
+<h2>scanf</h2>
+<p>Scanf is a function like printf, but instead of <i>outputting</i> to the screen, it lets people <i>input</i> numbers, strings, etc.</p>
+<pre>
+#include &lt;stdio.h&gt;
+
+int main() {
+
+    int date, month, year;
+
+    printf("What is today's date?\n");
+    
+    printf("Enter the date: ");
+    scanf("%i", &amp;date);
+    printf("\nEnter the month: ");
+    scanf("%i", &amp;month);
+    printf("\nEnter the year: ");
+    scanf("%i", &amp;year);
+
+    printf("Today is %i/%i/%i! :D", date, month, year);
+
+    return 0;
+}
+</pre></div>
+<div class="card-section">
+<h2>If Statements</h2>
+<p>In programming, we want to filter and make choices with the input we get from users or the environment. In Rescue, robots will take the input (e.g. a light value from 0 to 100), <b>decide whether it is a black line or not</b> and then send some output to the motor.</p>
+<p>We make choices using the if statement.</p>
+</div>
+<div class="card-section">
+<h3>Ages</h3>
+<pre>
+if (age &gt;= 18) {
+    printf("Person can purchase alcohol");
+}
+else {
+    printf("Person cannot purchase alcohol");
+}
+</pre>
+<ul>
+<li>If the parameters inside the () are met, it will do the first squiggly brackets.</li>
+<li>Otherwise, it will do the second squiggly brackets.</li>
+<li>&gt;= means "greater than or equal to".</li>
+<li>If age &gt;= 18, it will become 'TRUE = 1', otherwise it will become 'FALSE = 0'.</li>
+<li>For example:
+<ul>
+<li>(1 + 1 &gt; 0) is TRUE, = 1 (and goes through)</li>
+<li>(2 * 5 &lt; 4) is FALSE, = 0 (and does not go through)</li>
+</ul>
+</li>
+</ul>
+</div>
+<div class="card-section">
+<h3>Relational Operators</h3>
+<p>These operators <b>compare one value to another</b>.</p>
+<div class="content">
+<table>
+<tr>
+<td>Equal to</td>
+<td>A != B</td>
+<td>If A equals B, true, otherwise false</td>
+</tr>
+<tr>
+<td>Not equal to</td>
+<td>A == B</td>
+<td>If A is not equal to B, true, otherwise false</td>
+</tr>
+<tr>
+<td>Greater than</td>
+<td>A &gt; B</td>
+<td></td>
+</tr>
+<tr>
+<td>Less than</td>
+<td>A &lt; B</td>
+<td></td>
+</tr>
+<tr>
+<td>Greater than or equal to</td>
+<td>A &gt;= B</td>
+<td></td>
+</tr>
+<tr>
+<td>Less than or equal to</td>
+<td>A &lt;= B</td>
+<td></td>
+</tr>
+</table>
+</div>
+<div class="card-section">
+<h3>Logical Operators</h3>
+These are operators you can put between or in front of relations.
+<div class="content">
+<table>
+<tr>
+<td>OR</td>
+<td>||</td>
+<td>Output is true if any one of the inputs are true</td>
+</tr>
+<tr>
+<td>AND</td>
+<td>&amp;&amp;</td>
+<td>Both inputs must be true for output to be true</td>
+</tr>
+<tr>
+<td>NOT</td>
+<td>!</td>
+<td>If input is true, output is false, and vice versa</td>
+</tr>
+</table>
+</div>
+</div>
+<!--<div class="card-section">
+<h3>Teens</h3>
+<pre>
+if (age == 12) {
+    printf("You are nearly a teen!");
+}
+else if (age &gt;= 13 &amp;&amp; age &lt;= 19) {
+    printf("You are a teen!");
+}
+else {
+    printf("You're not a teen.");
+}
+</pre></div>
+<div class="card-section">
+<h2>Exercises</h2>
+<h3>1. Ask for an age</h3>
+<ul>
+<li>User inputs an age, from 0 to 100.</li>
+<li>If person is less than 5, print out "You are a baby!"</li>
+<li>If person is above 20, print out "You are __ years old.", where it will print the age.</li>
+<li>Otherwise, print "You're between 5 and 20."</li>
+</ul>
+<p>Sample 1</p>
+<pre>
+Enter an age: 64
+You are 64 years old.
+</pre>
+<p>Sample 2</p>
+<pre>
+Enter an age: 5
+You're between 5 and 20.
+</pre>
+<h3>2. Name of Month</h3>
+Ask for a month number and return the name of the month.
+<p>Sample 1</p>
+<pre>
+Enter a month: 5
+May
+</pre>
+<p>Sample 2</p>
+<pre>
+Enter a month: 12
+December
+</pre></div>
+</div>--></div>
+    </div>
+  </body>
+</html>

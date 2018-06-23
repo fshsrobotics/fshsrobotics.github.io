@@ -1,0 +1,246 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+"http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta name="google-site-verification" content="4_RMTp03qKZnXNroL0gme91C1A0V24nC9np8xE_GRt4" />
+<title><$WikiPageName$> | FSHS Robotics</title>
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<!-- Links [Online] -->
+<link href="/theme/stylesheets/robobase.css" rel="stylesheet" type="text/css" />
+<link href="/theme/stylesheets/2018base.css" rel="stylesheet" type="text/css" />
+<link rel="icon" type="image/png" href="/theme/stylesheets/favicon.png">
+<link href="https://fonts.googleapis.com/css?family=Open+Sans:300,400,700|Raleway:400,900|PT+Mono" rel="stylesheet" type="text/css">
+     <style type="text/css">.commentSubject{margin-right:0px !important;}#WikispacesBanner{display:none !important;}.navbar{display:none !important;}   
+</style>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/2.0.3/jquery.min.js"></script>
+    <script type="text/javascript" src="https://www.gstatic.com/firebasejs/4.8.0/firebase.js"></script>
+    <script type="text/javascript" src="/theme/stylesheets/equipmentsystem.js"></script>
+<style>
+    #robosystem * {
+        box-sizing:border-box;
+    }
+    #robosystem {
+        font-family:'Open Sans';
+        margin:10px auto;
+        max-width:960px;
+        line-height:180%;
+    }
+    #robosystem .formblock {
+        background:#EEE;
+        padding:20px;
+        margin:5px 0;
+    }
+    #robosystem .label {
+        color:#333;
+        font-size:20px;
+        text-transform: uppercase;
+    }
+    #robosystem .es-sublabel {
+        font-size:13px;
+    }
+    #robosystem .formblock-end {
+        padding:20px;
+        margin:5px 0;
+    }
+    #robosystem #attendance-list {
+        column-count:3;
+    }
+
+    /* Form elements */
+    #robosystem input,
+    #robosystem select {
+        font-size:16px;
+        margin:10px 0;
+        padding:5px;
+        width:100%;
+        background:#FCFCFC;
+        border:solid 3px #EEE;
+        color:#39424d;
+        display:inline-block;
+        font-family:'Open Sans', sans-serif;
+        padding:7px;
+        transition:all 0.3s ease;
+    }
+    #robosystem button {
+        background:#4060fa;
+        border-radius:4px;
+        border:2px solid #4060fa;
+        color:#FFF;
+        cursor:pointer;
+        font-family:'Open Sans', sans-serif;
+        font-weight:bold;
+        display:inline-block;
+        padding:7px;
+        transition:0.3s ease all;
+    }
+
+    /* Spinner */
+    #robosystem #login-loading {
+        text-align:center;
+    }
+    #robosystem .rs-spinner {
+        animation: rotator .5s linear infinite;
+        display:inline-block;
+        margin-left:10px;
+        transform: translateZ(0);
+        vertical-align:middle;
+    }
+    #robosystem .rs-spinner__stroke {
+        animation: dash 1.25s linear infinite alternate-reverse;
+        stroke: #00b7e0;
+    }
+    @keyframes rotator {
+        from {
+            transform:rotate(0)
+        } to {
+            transform:rotate(360deg)
+        }
+    }
+    @keyframes dash {
+        100% {
+            stroke-dashoffset: 0;
+        }
+    }
+    .error-message {
+        color:#F00;
+    }
+</style>
+
+</head>
+<body class="non-home page-<$WikiPageName$>">
+<div class="header-2018">
+    <h2><a href="/">FSHS Robotics</a></h2>
+    <div id="nav">
+        <ul class="nav-transparent">
+            <li class="nav-transparent__link"><a href="/About">About</a></li>
+            <li class="nav-transparent__link"><a href="/Achievements">Awards</a></li>
+            <li class="nav-transparent__link"><a href="/Open+Soccer">Soccer</a></li>
+            <li class="nav-transparent__link"><a href="/C+Course">C Course</a></li>
+        </ul>
+    </div>
+</div>
+<div id="wrapper">
+    
+    
+    <div class="wiki" id="content_view" style="display: block;">
+<div class="learn-wrapper">
+<div class="hero full-width"><a class="hero-back" href="/-/Resources/C/Outline" rel="nofollow">Back to Outline</a>
+<h3>FSHS Robotics C Course</h3>
+<h1>1. Simple Programming</h1>
+</div>
+<div class="learn-contents-text">
+<h2 id="hello-world">1.1 Hello World</h2>
+<p>The C programming language is a widely used language that was created by Dennis Ritchie in the early 70s. It is the successor to the B language, and it’s now used for system and application programming – and a very common language to learn programming.</p>
+<p>“Hello World” is a standard way of starting any programming language. It’s a good way of <strong>figuring out the syntax and style</strong> of how to code in that language.</p>
+<p>// A simple C program!</p>
+<p>#include &lt;stdio.h&gt;</p>
+<p>int main () {</p>
+<p>printf("Hello, World!\n");</p>
+<p>return 0;</p>
+<p>}</p>
+<p>This program is complete – you probably can guess what it does! It has a few things:</p>
+<table>
+<thead>
+<tr class="header">
+<th align="left">//</th>
+<th align="left"><strong>A single line comment</strong>. Anything after it on the same line will not be part of your code.</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td align="left">#include &lt;stdio.h&gt;</td>
+<td align="left">Import the <strong>‘standard input/output’ library</strong>.<br />
+It makes your program work.</td>
+</tr>
+<tr class="even">
+<td align="left">int main () { … }</td>
+<td align="left">The <strong>main function</strong> must appear in every C program. It is the first thing the computer looks for when you run the code.</td>
+</tr>
+<tr class="odd">
+<td align="left">printf ( … )</td>
+<td align="left">A <strong>string</strong> that we want to print out. Anything within double quotes is considered a string.</td>
+</tr>
+<tr class="even">
+<td align="left">"Hello, World!\n"</td>
+<td align="left">A function that lets you <strong>print something out</strong> to the screen. The ‘f’ stands for ‘formatted’.</td>
+</tr>
+<tr class="odd">
+<td align="left">\n</td>
+<td align="left"><strong>Inserts a new line</strong> – makes it pretty.</td>
+</tr>
+<tr class="even">
+<td align="left">return 0</td>
+<td align="left">0 tells the computer that the program <strong>finished without an error</strong>.</td>
+</tr>
+</tbody>
+</table>
+<h2 id="compile-the-program">1.2 Compile the program</h2>
+<p>Copy and save the program above into a text editor (we suggest Notepad++ or Sublime Text) and <strong>save it as hello.c</strong>. All your code should have the .c file extension.</p>
+<p>To run your program, you first need to <strong>compile it using a <em>compiler</em></strong>. A compiler converts your .c code into an executable program – a file that is full of machine code, which can be read by the computer.</p>
+<p><img src="media/image1.png" width="423" height="112" /></p>
+<p>In our course, we use GCC for Windows and Mac.</p>
+<p><strong><em>For Mac:</em></strong></p>
+<p>Search for and open “Terminal” using Spotlight. Type in the following command and click Install:</p>
+<p>xcode-select --install</p>
+<p>Navigate to your .c file by using <strong>ls</strong> to list the contents of the folder, and <strong>cd</strong> to change folder. To go down one level, use <strong>cd ../</strong></p>
+<p>ls<br />
+cd folder</p>
+<p>cd ../</p>
+<p>Once you are in the same directory, type in:</p>
+<p>gcc hello.c –Wall –o hello</p>
+<p>(<strong>-Wall</strong> means “with all errors and warnings”, <strong>-o hello</strong> means “call the program ‘hello’”)</p>
+<p><strong><em>For Windows:</em></strong></p>
+<p>Download GCC here: <a href="https://drive.google.com/open?id=0BwVnNvJGlGV1N2FlNTcwOFZ0ZTg" class="uri" rel="nofollow">https://drive.google.com/open?id=0BwVnNvJGlGV1N2FlNTcwOFZ0ZTg</a></p>
+<p>Extract the whole zip folder somewhere, such as in C:/.</p>
+<p>Go to your computer’s <strong>environment variables</strong>. This can be done by searching for ‘environment variables’ in Control Panel or in the Start menu.</p>
+<p><img src="media/image2.png" width="273" height="84" /></p>
+<p><img src="media/image3.png" width="343" height="165" /><img src="media/image4.png" width="309" height="142" />Click on <strong>Environment Variables</strong> and, under System Variables, find and double-click on <strong>Path</strong>.</p>
+<p>Click <strong>New</strong> and enter the directory path to the location you extracted your GCC in (e.g. C:\GCC). Hit OK in all the open dialog boxes.</p>
+<p>Now, go back to your folder with your saved .c file and open cmd.exe (or type in cmd in the Explorer address bar) to open Command Prompt.</p>
+<p>Type in:</p>
+<p>gcc hello.c –Wall –o hello</p>
+<p>(<strong>-Wall</strong> means “with all errors and warnings”, <strong>-o hello</strong> means “call the program ‘hello’”)</p>
+<h2 id="run-the-program">1.3 Run the program</h2>
+<p>Make sure you have:</p>
+<ol style="list-style-type: decimal">
+<li>
+<p>Copied and saved the code into a file called hello.c</p>
+</li>
+<li>
+<p>Installed GCC using the instructions above</p>
+</li>
+<li>
+<p>Navigated in your terminal/command prompt to the correct folder</p>
+</li>
+</ol>
+<p>To run the program <strong>on Mac</strong>:</p>
+<p>./hello</p>
+<p>To run the program <strong>on Windows</strong>:</p>
+<p>hello</p>
+<p>It should come up with:</p>
+<p>Hello, World!</p>
+<p>Congratulations, you’ve written and run your first program!</p>
+</div>
+<div class="learn-contents-nav"><a href="0+welcome+to+robotics" class="completed" rel="nofollow">0. Welcome to Robotics!</a> <a href="1+simple+programming" class="selected" rel="nofollow">1. Simple Programming</a> <a href="2+variables" rel="nofollow">2. Variables</a> <a href="3+input" rel="nofollow">3. Input</a> <a href="5+loops" rel="nofollow">4. Loops</a> <a href="6+arrays" rel="nofollow">5. Arrays</a> <a href="6+functions" rel="nofollow">6. Functions</a></div>
+<div class="learn-contents-navigate full-width"><a class="previous" href="0+welcome+to+robotics" rel="nofollow">0. Welcome to Robotics!</a> <a class="next" href="2+variables" rel="nofollow">2. Variables</a>
+<div class="separator"></div>
+</div>
+</div>
+    </div>
+  
+    <br />
+
+<div class="clr"></div>
+<div id="mainFooter">
+<p>&copy; Fort Street High School Robotics 2017</p>
+<br />
+    <a href="/home">
+    <div><span id="logo-only"></span></div>
+</div>
+</div>
+</body>
+    <link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/highlight.js/9.9.0/styles/default.min.css">
+    <script src="//cdnjs.cloudflare.com/ajax/libs/highlight.js/9.9.0/highlight.min.js"></script>
+    <script>hljs.initHighlightingOnLoad();</script>
+<script src="/-/2017/C-Course/theme/stylesheets/feedback.js"></script>
+</html>

@@ -1,0 +1,401 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+"http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta name="google-site-verification" content="4_RMTp03qKZnXNroL0gme91C1A0V24nC9np8xE_GRt4" />
+<title><$WikiPageName$> | FSHS Robotics</title>
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<!-- Links [Online] -->
+<link href="theme/stylesheets/robobase.css" rel="stylesheet" type="text/css" />
+<link href="theme/stylesheets/2018base.css" rel="stylesheet" type="text/css" />
+<link rel="icon" type="image/png" href="theme/stylesheets/favicon.png">
+<link href="https://fonts.googleapis.com/css?family=Open+Sans:300,400,700|Raleway:400,900|PT+Mono" rel="stylesheet" type="text/css">
+     <style type="text/css">.commentSubject{margin-right:0px !important;}#WikispacesBanner{display:none !important;}.navbar{display:none !important;}   
+</style>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/2.0.3/jquery.min.js"></script>
+    <script type="text/javascript" src="https://www.gstatic.com/firebasejs/4.8.0/firebase.js"></script>
+    <script type="text/javascript" src="theme/stylesheets/equipmentsystem.js"></script>
+<style>
+    #robosystem * {
+        box-sizing:border-box;
+    }
+    #robosystem {
+        font-family:'Open Sans';
+        margin:10px auto;
+        max-width:960px;
+        line-height:180%;
+    }
+    #robosystem .formblock {
+        background:#EEE;
+        padding:20px;
+        margin:5px 0;
+    }
+    #robosystem .label {
+        color:#333;
+        font-size:20px;
+        text-transform: uppercase;
+    }
+    #robosystem .es-sublabel {
+        font-size:13px;
+    }
+    #robosystem .formblock-end {
+        padding:20px;
+        margin:5px 0;
+    }
+    #robosystem #attendance-list {
+        column-count:3;
+    }
+
+    /* Form elements */
+    #robosystem input,
+    #robosystem select {
+        font-size:16px;
+        margin:10px 0;
+        padding:5px;
+        width:100%;
+        background:#FCFCFC;
+        border:solid 3px #EEE;
+        color:#39424d;
+        display:inline-block;
+        font-family:'Open Sans', sans-serif;
+        padding:7px;
+        transition:all 0.3s ease;
+    }
+    #robosystem button {
+        background:#4060fa;
+        border-radius:4px;
+        border:2px solid #4060fa;
+        color:#FFF;
+        cursor:pointer;
+        font-family:'Open Sans', sans-serif;
+        font-weight:bold;
+        display:inline-block;
+        padding:7px;
+        transition:0.3s ease all;
+    }
+
+    /* Spinner */
+    #robosystem #login-loading {
+        text-align:center;
+    }
+    #robosystem .rs-spinner {
+        animation: rotator .5s linear infinite;
+        display:inline-block;
+        margin-left:10px;
+        transform: translateZ(0);
+        vertical-align:middle;
+    }
+    #robosystem .rs-spinner__stroke {
+        animation: dash 1.25s linear infinite alternate-reverse;
+        stroke: #00b7e0;
+    }
+    @keyframes rotator {
+        from {
+            transform:rotate(0)
+        } to {
+            transform:rotate(360deg)
+        }
+    }
+    @keyframes dash {
+        100% {
+            stroke-dashoffset: 0;
+        }
+    }
+    .error-message {
+        color:#F00;
+    }
+</style>
+
+</head>
+<body class="non-home page-<$WikiPageName$>">
+<div class="header-2018">
+    <h2><a href="/">FSHS Robotics</a></h2>
+    <div id="nav">
+        <ul class="nav-transparent">
+            <li class="nav-transparent__link"><a href="/About">About</a></li>
+            <li class="nav-transparent__link"><a href="/Achievements">Awards</a></li>
+            <li class="nav-transparent__link"><a href="/Open+Soccer">Soccer</a></li>
+            <li class="nav-transparent__link"><a href="/C+Course">C Course</a></li>
+            <WikiIsNotLoggedIn><li class="nav-transparent__link"><a href="https://www.wikispaces.com/site/signin?goto=https%3A%2F%2Ffshsrobotics.wikispaces.com%2F" class="WikispacesXDomainDialogLink">Log in</a></li></WikiIsNotLoggedIn>
+            <WikiIsLoggedIn><li class="nav-transparent__link"><a href="https://session.wikispaces.com/1/auth/logout">Log out</a></li></WikiIsLoggedIn>
+        </ul>
+    </div>
+</div>
+<div id="wrapper">
+    
+    <h2>8.1 Databases</h2>
+<ul>
+<li>
+<p><strong><em>Database</em></strong>: logically coherent collection of related data</p>
+</li>
+<li>
+<p><strong><em>Database Management System (DBMS)</em></strong>: application to:</p>
+<ul>
+<li>
+<p>Create and maintain a database (DDL)</p>
+</li>
+<li>
+<p>Define <strong>queries</strong> that retrieves data</p>
+</li>
+<li>
+<p>Perform <strong>transactions</strong> that modifies or deletes data (DML)</p>
+</li>
+</ul>
+</li>
+<li>
+<p><strong><em>Data model</em></strong>: how the data is structured in the database</p>
+<ul>
+<li>
+<p><strong>Relational model</strong>: data is stored as <strong>a set of records known
+    as tables</strong></p>
+</li>
+<li>
+<p><strong>Document model</strong>: stored in a hierarchical fashion, e.g. XML</p>
+</li>
+<li>
+<p><strong>Object-oriented model</strong>: stored as a collection of objects</p>
+</li>
+<li>
+<p><strong>Object-relational model</strong>: hybrid model that combines
+    relational and OO model</p>
+</li>
+</ul>
+</li>
+<li>
+<p><strong>Relational Database Management System</strong></p>
+<ul>
+<li>
+<p>Stores data as <strong>tuples/records in tables</strong></p>
+</li>
+<li>
+<p>Allows user to <strong>create relationships between tables</strong></p>
+</li>
+</ul>
+</li>
+<li>
+<p><strong><em>Database schema</em></strong>: adheres to a data model, <strong>provides a logical
+    view of the database</strong>, defines how the data is organised and the
+    relationships between them</p>
+</li>
+<li>
+<p><strong><em>Database schema instance</em></strong>: state of database at a particular
+    time</p>
+</li>
+</ul>
+<h2>8.2 Relational Data Model</h2>
+<ul>
+<li>
+<p>Data is a <strong>collection of interconnected relations (tables)</strong></p>
+<ul>
+<li>Tables have <strong>rows</strong> of information, each row has <strong>fields</strong>
+    known as <strong>columns</strong></li>
+</ul>
+</li>
+</ul>
+<p>Mathematical       relation           tuple              attribute</p>
+<hr>
+<p>Data-oriented      table              record (row)       field (column)</p>
+<ul>
+<li>
+<p><strong><em>Relation</em></strong> (table) (denoted R, S, T): a table, has a <strong>name</strong>
+    and a <strong>set of attributes</strong></p>
+<ul>
+<li>
+<p>Is a set of <strong>tuples</strong> with no ordering</p>
+</li>
+<li>
+<p>Each relation has a <strong>primary key</strong> that is <strong>unique over
+    relation</strong></p>
+</li>
+<li>
+<p><strong>STUDENT</strong> table with attributes <strong>name, zID, major</strong></p>
+</li>
+</ul>
+</li>
+<li>
+<p><strong><em>Attribute</em></strong> (denoted A, B or a~1~, a~2~): has a <strong>name</strong> and
+    associated <strong>domain</strong> (set of allowed values)</p>
+<ul>
+<li><strong>zID</strong> attribute must be an <strong>integer</strong></li>
+</ul>
+</li>
+<li>
+<p><strong><em>Tuple</em></strong> (row): set of <strong>values</strong> which are:</p>
+<ul>
+<li>
+<p><strong>Atomic:</strong> no multi-valued or composite attributes</p>
+</li>
+<li>
+<p><strong>Belong to a domain</strong> with a <strong>name, data-type, format</strong> with a
+    common value NULL</p>
+</li>
+</ul>
+</li>
+</ul>
+<p><strong>STUDENT</strong></p>
+<hr>
+<p><strong>name</strong>
+  Bob
+  Peter</p>
+<ul>
+<li><strong><em>Database</em></strong>: a set of <strong>relations</strong></li>
+</ul>
+<h2>8.3 Relation Model Mathematical Representation</h2>
+<p>Mathematically:</p>
+<p>Given a <strong>relation R~1~</strong> with <span class="math inline"><strong>n</strong></span>
+<strong>attributes</strong> <span
+class="math inline"><strong>a</strong>~<strong>1</strong>~<strong>,</strong> <strong>a</strong>~<strong>2</strong>~<strong>,</strong> <strong>…</strong> <strong>a</strong>~<strong>n</strong>~</span>
+and corresponding <strong>domains</strong> <span
+class="math inline"><strong>D</strong>~<strong>1</strong>~<strong>,</strong> <strong>D</strong>~<strong>2</strong>~ <strong>…</strong> <strong>D</strong>~<strong>n</strong>~</span>:</p>
+<p>1. <strong>Relation schema of R</strong> <span
+class="math inline"><em>R</em>~1~(<em>a</em>~1~ : <em>D</em>~1~,  <em>a</em>~2~ : <em>D</em>~2~,  …<em>a</em>~<em>n</em>~ : <em>D</em>~<em>n</em>~)</span>\
+e.g. <span
+class="math inline"><em>Student</em>(<em>name</em> : <em>string</em>,  <em>zID</em> : <em>integer</em>, <em>major</em> : <em>string</em>)</span></p>
+<p>2. <strong>Tuple of R</strong> an element of <span
+class="math inline"><em>D</em>~1~ × <em>D</em>~2~ × … × <em>D</em>~<em>n</em>~</span> (i.e. a list
+of values)\
+e.g. <span class="math inline">\$("\mathrm{Bob"},\ 5049392,\
+"\mathrm{Computer\ Science"})\$</span></p>
+<p>3. <strong>Instance of R</strong> a subset of <span
+class="math inline"><em>D</em>~1~ × <em>D</em>~2~ × … × <em>D</em>~<em>n</em>~</span> (i.e. a set of
+tuples)\
+e.g. <span class="math inline">\$\{\ (``\mathrm{Bob"},\ 5049392,\
+"\mathrm{Computer\ Science"}),\ \$</span>\
+<span class="math inline">\$("Peter",\ 5050291,\ "Mechatronics")\
+\}\$</span></p>
+<p>4. <strong>Degree/Arity</strong> number of attributes <strong>n</strong> of its relation schema\
+e.g. Student is a relationship of degree 7</p>
+<hr>
+<p>5. <strong>Database schema</strong> a collection of relation <em>schemas</em>\
+e.g. <span class="math inline">{ <em>R</em>~1~,  <em>R</em>~2~,  …<em>R</em>~<em>n</em>~ }</span></p>
+<p>6. <strong>Database (instance)</strong> a collection of relation <em>instances</em>\
+e.g. <span
+class="math inline">{ <em>r</em>~1~(<em>R</em>~1~), <em>r</em>~2~(<em>R</em>~2~), …<em>r</em>~<em>n</em>~(<em>R</em>~<em>n</em>~) }</span></p>
+<h2>8.4 Constraints</h2>
+<ul>
+<li>
+<p><strong>Domain constraints</strong>: type or format constraints, NULL satisfies
+    all domain constraints (except NOT NULL)</p>
+</li>
+<li>
+<p><strong>Key constraints</strong>: whether a key needs to be unique (e.g. zID)</p>
+</li>
+<li>
+<p><strong>Entity integrity constraint</strong>: whether an entity is well-defined
+    or not (e.g. class must have a day, cannot be NULL)</p>
+</li>
+<li>
+<p><strong>Referential integrity constraints</strong>: a set of attributes F in
+    relation R~1~ is a foreign key if</p>
+<ul>
+<li>
+<p>Attributes F <strong>correspond to attributes in the primary key</strong> of
+    another relation R~2~</p>
+</li>
+<li>
+<p>The value of F in each tuple of R~1~ <strong>occurs as a primary key
+    in R~2~</strong> or is entirely NULL</p>
+</li>
+</ul>
+</li>
+</ul>
+<p><img alt="" height="178" src="media/image1.png" width="471"></p>
+<h2>8.5 Making and changing a database</h2>
+<ul>
+<li>
+<p>To make a database:</p>
+<ol>
+<li>
+<p>Choose a <strong>data model</strong></p>
+</li>
+<li>
+<p>Set up structure by <strong>defining a database schema</strong> (e.g. for
+    relational, define <strong>tables, rows, columns, and types of fields,
+    constraints, relationships</strong>)</p>
+</li>
+<li>
+<p>Create initial state of the data</p>
+</li>
+</ol>
+</li>
+</ul>
+<!-- -->
+
+<ul>
+<li>
+<p>When making <strong>changes to relations</strong>:</p>
+<ul>
+<li>
+<p><strong>Relation insert</strong>: adding a new tuple (row) – easy</p>
+</li>
+<li>
+<p><strong>Relation update</strong>: changing attribute values – easy, you
+    insert a new tuple into a set</p>
+</li>
+<li>
+<p><strong>Schema update</strong>: adding new attributes – difficult, you have
+    to rewrite the whole file to modify each record</p>
+</li>
+</ul>
+</li>
+</ul>
+<h2>8.6 Relational Database Management Systems</h2>
+<ul>
+<li>Relational model is a <strong>mathematical theory</strong>, relational DBMS
+    <strong>provides an</strong> <strong><em>implementation</em></strong> of the model</li>
+</ul>
+<!-- -->
+
+<ul>
+<li>
+<p>Features of RDBMS:</p>
+<ul>
+<li>
+<p>Supports <strong>Large-scale data-intensive</strong> applications</p>
+</li>
+<li>
+<p>Provides efficient storage and retrieval (<strong>disk/memory
+    management</strong>)</p>
+</li>
+<li>
+<p>Supports multiple simultaneous <strong>users</strong> (<strong>privilege,
+    protection</strong>) and multiple simultaneous <strong>interactions</strong>
+    (<strong>transactions, concurrency</strong>)</p>
+</li>
+<li>
+<p>Maintains reliable <strong>access to stored data</strong> (<strong>backup,
+    recovery</strong>)</p>
+</li>
+</ul>
+</li>
+<li>
+<p><strong>Structured Query Language</strong> (SQL) – formalism to <strong>express
+    relational schemas</strong></p>
+<ul>
+<li>Provides a <strong>Data Definition Language (DDL)</strong> for relations</li>
+</ul>
+</li>
+</ul>
+<blockquote>
+<p>CREATE TABLE company.employee (</p>
+<p>employee_id INT PRIMARY KEY,</p>
+<p>salary REAL NOT NULL CHECK (salary &gt; 10000),</p>
+<p>department INT NOT NULL</p>
+<p>);</p>
+</blockquote>
+    <br />
+
+<div class="clr"></div>
+<div id="mainFooter">
+<p>&copy; Fort Street High School Robotics 2017</p>
+<br />
+    <a href="/home">
+    <div><span id="logo-only"></span></div>
+</div>
+</div>
+</body>
+    <link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/highlight.js/9.9.0/styles/default.min.css">
+    <script src="//cdnjs.cloudflare.com/ajax/libs/highlight.js/9.9.0/highlight.min.js"></script>
+    <script>hljs.initHighlightingOnLoad();</script>
+<script src="/-/2017/C-Coursetheme/stylesheets/feedback.js"></script>
+</html>

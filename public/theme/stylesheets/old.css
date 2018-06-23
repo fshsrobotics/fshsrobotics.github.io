@@ -1,0 +1,481 @@
+/* mainStuff */
+
+#mainBox {
+	margin:0 auto 0 auto;
+	padding:0 5px 5px 5px;
+	max-width:950px;
+}
+
+#mainSide {
+	display:block;
+	padding:5px 2px 0 0;
+	float:left;
+	width:30%;
+}
+	
+#mainContent {
+	display:block;
+	width:100%;
+	z-index:1 !important;
+}
+
+#mainFooter {
+	width:100%;
+	position:absolute;
+	left:0;
+	text-align: center; 
+	color: #666; 
+	font-size:80%;
+}
+#mainFooter a { 
+	color: #666; 
+	text-decoration: none; 
+}
+#mainFooter a:hover { 
+	text-decoration: underline; 
+}
+
+/* Default Wikispaces Stuff */
+
+#content_view {
+	min-height: 10px !important;
+}
+
+  
+/* Heading Formats */
+.sideH {
+	display:block;
+	padding:25px 0 0 0;
+	font-size:18pt;
+	font-weight:bold;
+	color:#005979;
+	border-bottom:3px #005979 solid;
+}
+.file {
+	background: url(https://kcnotes.wikispaces.com/file/view/notedd.png/479986558/notedd.png) no-repeat left 10px top 10px;
+	background-color:#EEE;
+	display:block;
+	position:relative;
+	border-bottom:10px #FFF solid;
+}
+.file:hover {
+	background-color:#E3E3E3;
+}
+.file .file-popup {
+  height:0;
+  padding:0 20px;
+  overflow:hidden;
+  transition:0.3s ease all;
+}
+.file:hover .file-popup {
+  height:auto;
+  padding:10px 20px;
+}
+
+.fileS {
+	background:url(https://kcnotes.wikispaces.com/file/view/notesd.png/479986572/notesd.png) no-repeat left 10px center;
+	background-color:#EEE;
+	display:block;
+	position:relative;
+	border-bottom:10px #FFF solid;
+}
+.falign {
+	position:absolute;
+	left:120px;
+	font-weight:normal;
+}
+
+
+.file a, .fileS a {
+	color: #333;
+	text-decoration:none;
+	display:block;
+	padding:10px 10px 10px 40px;
+}
+
+.highlight {
+	background-color: #007eac; 
+	color:#FFF;
+	border-radius:5px; 
+	font-color: #FFF font-size 12; 
+	padding: 0 4px;
+}
+
+/*@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@*/
+
+/* Side Navigation */
+#mainSideList, #mainSideListCol2, #mainSideListResource {
+	list-style:none;
+	margin:0;
+	padding:0;
+}
+
+#mainSideListBreak {
+	display:block;
+	height:32px;
+}
+
+#mainSideList li a, #mainSideListCol2 li a, #mainSideListResource li a {
+	display:block;
+	padding:5px;
+	color:#007eac;
+	text-decoration:none;
+}
+
+/* Navigation */
+#navigation {
+	width:100%;
+	float:left;
+	top:0;
+	margin:0;
+	padding:0;
+	list-style:none;
+	background:#00B0F0;
+	position:fixed;
+	z-index:99;
+	height:60px;
+	min-width:360px;
+}
+
+#navigation li, #navigation li ul li {
+	float:left;
+	display:block;
+	background:#00B0F0;
+	text-align:center;
+}
+
+#navigation li a, #navigation li ul li a, #navigationHome li a, #navigationHome li ul li a {
+	display:block;
+	padding:15px 20px;
+	color:#FFF;
+	font-size:20px;
+	text-decoration:none;
+	height:30px;
+}
+
+#logoBox {
+	float:left;
+	display:block;
+	background:#007eac;
+	text-align:center;
+}
+
+#logoBox a, #logoBoxHome a {
+	display:block;
+	padding:5px 12px;
+	color:#FFF;
+	font-size:28px;
+	text-decoration:none;
+}
+
+#navigation li ul {
+	display:none;
+}
+
+#navigation li:hover ul, #navigation li.hover ul  {
+	/* When hovering over an li, the ul: */
+	position:absolute;
+	display:inline;
+	left:0;
+	width:100%;
+	margin:0;
+	background:#0097ce;
+	padding:0; 
+}
+
+#navigation li:hover li, #navigation li.hover li {
+	/* When hovering over an li, the li: */
+	float:left;
+	background:#0097ce;
+	width:20%;
+}
+
+#logo {
+	height:50px;
+}
+
+#navigationCol { 
+	width:100%;
+	background:#0097ce;
+} 
+
+@media screen{
+	body>div#navigation{
+		position:fixed;
+	}
+}
+
+/* Navigation for Home */
+#navigationHome {
+	width:100%;
+	float:left;
+	top:0;
+	margin:0;
+	padding:0;
+	list-style:none;
+	position:fixed;
+	z-index:99;
+	height:60px;
+	min-width:360px;
+	background-color:rgba(0,0,0,0.3);
+	background:url(https://kcnotes.wikispaces.com/file/view/back4.jpg/479986580/back4.jpg) center center no-repeat fixed;
+}
+#navigationHome li, #navigation li ul li {
+	float:left;
+	display:block;
+	text-align:center;
+}
+#logoBoxHome {
+	float:left;
+	display:block;
+	text-align:center;
+}
+
+/* Home Elements */
+#homeBackground {
+	position:relative;
+	display:block;
+	left:0;
+	top:0;
+	font-size:200%;
+	font-weight:100;
+	color:#FFF;
+	overflow:hidden;
+	padding:200px 0 0 0;
+	text-align:center;
+	height:200px;
+	background:url(https://kcnotes.wikispaces.com/file/view/back4.jpg/479986580/back4.jpg) center center no-repeat fixed;
+}
+.kcNotes {
+	display:block;
+	height:290px;
+	position:relative;
+	color:#FFF;
+	overflow:hidden;
+}
+#navigationSearchHome {
+	float:right;
+	display:block;
+	text-align:center;
+	padding:9px 9px;
+}
+
+#homeMainContent {
+	display:block;
+	width:100%;
+	z-index:1 !important;
+}
+
+#homeLeftColumn {
+	width:50%;
+	position:relative;
+	float:left;
+}
+#homeRightColumn {
+	width:50%;
+	position:relative;
+	float:left;
+}
+
+.infoboxhome {
+	display:relative;
+	background:#EEE;
+	padding:10px;
+	border:solid #FFF 10px;
+}
+.infoheader {
+	font-size:130%;
+	font-weight:bold;
+	padding-bottom:6px;
+}
+.byYear {
+	margin-bottom:3px;
+	background:#DDD;
+}
+.byYear a {
+	display:block;
+	padding:10px 0 10px 10px;
+	text-decoration:none;
+	color:#333;
+}
+
+/*@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@*/
+
+#navigationSearch {
+	float:right;
+	display:block;
+	background:#00B0F0;
+	text-align:center;
+	padding:9px 9px;
+}
+
+input.searchBox {
+	font-size:18px;
+	font-family:"Open Sans","Helvetica","Arial",sans-serif;
+	padding:5px 5px;
+	height:30px;
+	width:70%;
+	border:0;
+	border-bottom:1px solid #00729b;
+}
+.searchButton {
+	color:#FFF;
+	font-size:14px;
+	font-family:"Open Sans","Helvetica","Arial",sans-serif;
+	float:right;
+	background-color:#0097ce;	/*-2*/
+	border:1px solid #00729b;	/*-5*/
+	width:17%;
+	padding:7px 5px;
+}
+.searchButton:hover, .searchButton.hover {
+	border:1px solid #005979;	/*-7*/
+}
+
+.searchButton:active, .searchButton.active {
+	background-color:#00729b;
+}
+
+.searchOpen {
+	display:none;
+	float:right;
+}
+
+@media screen and (min-width:1004px) {
+	
+  /* Target landscape smartphones, portrait tablets, narrow desktops */	
+	.searchOpen {
+		display:none;
+	}
+}
+@media screen and (min-width:780px) and (max-width:1003px) {
+	
+  /* Target landscape smartphones, portrait tablets, narrow desktops */	
+	.searchOpen {
+		display:block;
+	}
+	#navigationSearch {
+		display:none;
+	}
+}
+@media screen and (min-width:601px) and (max-width:779px) {
+	.searchOpen {
+		display:block;
+	}
+	#navigation, #navigationHome {
+		height:40px;
+	}
+	#navigation li, #navigationHome li {
+		height:40px;
+		padding:0px;
+	}
+	#navigation li a, #navigationHome li a {
+		padding:7px 20px;
+		font-size:18px;
+	}
+	#logo {
+		height:30px;
+	}
+	#navigationSearch, #navigationSearchHome {
+		display:none;
+	}
+	#homeLeftColumn {
+		width:100%;
+	}
+	#homeRightColumn {
+		width:100%;
+	}
+}
+
+.comp6441 {
+	text-align:left;
+}
+.comp6441 img {
+	float:right;
+}
+
+@media screen and (min-width:0px) and (max-width:600px) {
+	.comp6441 {
+		text-align:center;
+	}
+	.comp6441 img {
+		float:none;
+	}
+	#logo {
+		height:30px;
+	}
+	#logoBox, #logoBoxHome {
+		width:100%;
+	}
+	.searchOpen {
+		display:block;
+	}
+	#navigation, #navigationHome {
+		height:80px;
+	}
+	#navigation li, #navigationHome li {
+		height:40px;
+		padding:0px;
+	}
+	#navigation li a, #navigationHome li a {
+		padding:7px 20px;
+		font-size:18px;
+	}
+	#navigationSearch, #navigationSearchHome {
+		display:none;
+	}
+	#homeLeftColumn {
+		width:100%;
+	}
+	#homeRightColumn {
+		width:100%;
+	}
+}
+
+/* NEW STUFF */
+/* logo */
+.above-header {
+   background:#00b0f0;
+   width:100%;
+   z-index:10;
+   display:block;
+   clear:both;
+}
+.home {
+   background:#00b0f0;
+}
+.home .above-header {
+   background:#00b0f0;
+   text-align:center;
+}
+.home .logo {
+   padding:100px 0;
+}
+.home .logo span {
+   font-size:48px;
+}
+.home .logo .logo-triangle {
+   border-bottom: 62px solid #FFF;
+   border-left: 62px solid transparent;
+   margin-right:20px;
+}
+.logo {
+   padding:50px 0 50px 50px;
+   height:48px;
+   display:inline-block;
+}
+.logo span {
+   display:inline-block;
+   font-size:160%;
+   font-weight:100;
+   color:#FFF;
+}
+.logo .logo-triangle {
+   width: 0;
+   height: 0;
+   display:inline-block;
+   vertical-align: -45%;
+   margin-right:10px;
+   border-bottom: 40px solid #FFF;
+   border-left: 40px solid transparent;
+}

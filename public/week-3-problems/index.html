@@ -1,0 +1,338 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+"http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta name="google-site-verification" content="4_RMTp03qKZnXNroL0gme91C1A0V24nC9np8xE_GRt4" />
+<title><$WikiPageName$> | FSHS Robotics</title>
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<!-- Links [Online] -->
+<link href="/theme/stylesheets/robobase.css" rel="stylesheet" type="text/css" />
+<link href="/theme/stylesheets/2018base.css" rel="stylesheet" type="text/css" />
+<link rel="icon" type="image/png" href="/theme/stylesheets/favicon.png">
+<link href="https://fonts.googleapis.com/css?family=Open+Sans:300,400,700|Raleway:400,900|PT+Mono" rel="stylesheet" type="text/css">
+     <style type="text/css">.commentSubject{margin-right:0px !important;}#WikispacesBanner{display:none !important;}.navbar{display:none !important;}   
+</style>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/2.0.3/jquery.min.js"></script>
+    <script type="text/javascript" src="https://www.gstatic.com/firebasejs/4.8.0/firebase.js"></script>
+    <script type="text/javascript" src="/theme/stylesheets/equipmentsystem.js"></script>
+<style>
+    #robosystem * {
+        box-sizing:border-box;
+    }
+    #robosystem {
+        font-family:'Open Sans';
+        margin:10px auto;
+        max-width:960px;
+        line-height:180%;
+    }
+    #robosystem .formblock {
+        background:#EEE;
+        padding:20px;
+        margin:5px 0;
+    }
+    #robosystem .label {
+        color:#333;
+        font-size:20px;
+        text-transform: uppercase;
+    }
+    #robosystem .es-sublabel {
+        font-size:13px;
+    }
+    #robosystem .formblock-end {
+        padding:20px;
+        margin:5px 0;
+    }
+    #robosystem #attendance-list {
+        column-count:3;
+    }
+
+    /* Form elements */
+    #robosystem input,
+    #robosystem select {
+        font-size:16px;
+        margin:10px 0;
+        padding:5px;
+        width:100%;
+        background:#FCFCFC;
+        border:solid 3px #EEE;
+        color:#39424d;
+        display:inline-block;
+        font-family:'Open Sans', sans-serif;
+        padding:7px;
+        transition:all 0.3s ease;
+    }
+    #robosystem button {
+        background:#4060fa;
+        border-radius:4px;
+        border:2px solid #4060fa;
+        color:#FFF;
+        cursor:pointer;
+        font-family:'Open Sans', sans-serif;
+        font-weight:bold;
+        display:inline-block;
+        padding:7px;
+        transition:0.3s ease all;
+    }
+
+    /* Spinner */
+    #robosystem #login-loading {
+        text-align:center;
+    }
+    #robosystem .rs-spinner {
+        animation: rotator .5s linear infinite;
+        display:inline-block;
+        margin-left:10px;
+        transform: translateZ(0);
+        vertical-align:middle;
+    }
+    #robosystem .rs-spinner__stroke {
+        animation: dash 1.25s linear infinite alternate-reverse;
+        stroke: #00b7e0;
+    }
+    @keyframes rotator {
+        from {
+            transform:rotate(0)
+        } to {
+            transform:rotate(360deg)
+        }
+    }
+    @keyframes dash {
+        100% {
+            stroke-dashoffset: 0;
+        }
+    }
+    .error-message {
+        color:#F00;
+    }
+</style>
+
+</head>
+<body class="non-home page-<$WikiPageName$>">
+<div class="header-2018">
+    <h2><a href="/">FSHS Robotics</a></h2>
+    <div id="nav">
+        <ul class="nav-transparent">
+            <li class="nav-transparent__link"><a href="/About">About</a></li>
+            <li class="nav-transparent__link"><a href="/Achievements">Awards</a></li>
+            <li class="nav-transparent__link"><a href="/Open+Soccer">Soccer</a></li>
+            <li class="nav-transparent__link"><a href="/C+Course">C Course</a></li>
+        </ul>
+    </div>
+</div>
+<div id="wrapper">
+    
+    
+    <div class="wiki" id="content_view" style="display: block;">
+<h1>Week 3 Questions</h1>
+<a href="/Week+3" rel="nofollow">&lt; Week 3</a>
+<div class="card-section">
+<p>You MUST complete <b>Question 1 to 4</b>. If you want to challenge yourself, continue with the last three questions. These three questions will require while loops learnt today.</p>
+<br />
+<div style="text-align:center;width:100%">
+<div class="filebox" style="width:50%;display:inline-block"><a href="/file/upload" class="WikispacesTooltip WikispacesDialogLink" title="Upload" rel="nofollow">Click to upload your files. <b>UPLOAD AS A ZIP</b></a></div>
+</div>
+<h3>Marking Scheme</h3>
+For each question, the marking scheme will be:
+<pre>
+100% All inputs handled correctly, C code is well structured.
+80%  Most inputs handled correctly, code is readable.
+40%  Some work is complete.
+20%  The code can compile successfully.
+0    Submitting someone else's work, with or without consent. You'll probably be kicked out of Robotics.
+</pre>
+<h2>Question 1: Bird (/5)</h2>
+<p>Create a file <code>bird.c</code> that prints a bird on the screen when run. You should be able to write this program using some printf statements and using new lines <code>\n</code>.</p>
+<p>Sample:</p>
+<pre>
+<b>Source code: bird.c</b>
+  ___
+ ('v')
+((___))
+ ^   ^
+</pre>
+<h2>Question 2: Number to word (/5)</h2>
+<p>Create a file <code>count5.c</code> that converts a small number to a word. It should prompt the user to enter an integer, reads it from the input and prints out the number in words if it is between 1 and 5, or the messages below otherwise. You should be able to write this program using some if statements and simple comparisons.</p>
+<p>Sample:</p>
+<pre>
+<b>Source code: count5.c</b>
+Please enter an integer: <b><u>5</u></b>
+five
+<br /><b>Source code: count5.c</b>
+Please enter an integer: <b><u>3</u></b>
+three
+<br /><b>Source code: count5.c</b>
+Please enter an integer: <b><u>0</u></b>
+You entered a number less than one
+<br /><b>Source code: count5.c</b>
+Please enter an integer: <b><u>1000</u></b>
+You entered a number greater than five
+</pre>
+<h2>Question 3: Volume of Prism (/5)</h2>
+<p>Write a C program <code>prism.c</code> that computes the volume of a rectangular prism. It should prompt the user to enter the three side lengths of a rectangular prism.</p>
+<p>The program should print out the three numbers entered as well as the volume, surface area and total edge length of the rectangular prism. You can assume that all three lengths will be positive.</p>
+<p>Sample:</p>
+<pre>
+<b>Source code: prism.c</b>
+Please enter prism length: <b><u>3</u></b>
+Please enter prism width: <b><u>4</u></b>
+Please enter prism height: <b><u>5</u></b>
+A prism with sides 3 4 5 has:
+Volume      = 60
+Area        = 94
+Edge length = 48
+</pre>
+<h2>Question 4: Sort 3 integers (/5)</h2>
+<p>Write a C program <code>sort3.c</code> that reads 3 integers and prints them in from largest to smallest.</p>
+<pre>
+<b>Source code: sort3.c</b>
+Enter three integers:
+<b><u>23 5 27</u></b>
+Your integers after sorting:
+27 23 5
+<br /><b>Source code: sort3.c</b>
+Enter three integers:
+<b><u>3 9 27</u></b>
+Your integers after sorting:
+27 9 3
+<br /><b>Source code: sort3.c</b>
+Enter three integers:
+<b><u>9 8 7</u></b>
+Your integers after sorting:
+9 8 7
+</pre>
+<br />
+<br />
+<h1>Advanced Questions</h1>
+These questions are <b>optional</b>. Feel free to do them if you want to :)<br />
+Questions 0.3 and 0.5 are designed to help you do question 1
+<h2>Advanced Question 0.3: Print numbers between (/2)</h2>
+<p>Write a C program <code>print_numbers_between.c</code> that reads in two numbers and prints every number between them, inclusive.</p>
+Hint: you need to a while loop.
+<pre>
+<b>Source code: print_numbers_between.c</b>
+Enter start number: <b><u>0</u></b>
+Enter finish number: <b><u>8</u></b>
+0
+1
+2
+3
+4
+5
+6
+7
+8
+
+<br /><b>Source code: leap_year.c</b>
+Enter start number: <b><u>1990</u></b>
+Enter finish number: <b><u>2010</u></b>
+1990
+1991
+1992
+1993
+1994
+...
+2009
+2010
+
+<br /><b>Source code: leap_year.c</b>
+Enter start number: <b><u>6</u></b>
+Enter finish number: <b><u>4</u></b>
+I only print forwards!
+</pre>
+<h2>Advanced Question 0.5: Is Leap Year (/2)</h2>
+<p>Write a C program <code>is_leap_year.c</code> that reads a year and then prints if the year is a leap year or not.</p>
+Hint: you need to use modulus.
+<pre>
+<b>Source code: is_leap_year.c</b>
+Enter a year: <b><u>2000</u></b>
+2000 is a leap year!
+<br /><b>Source code: leap_year.c</b>
+Enter a year: <b><u>2001</u></b>
+2001 not is a leap year!
+</pre>
+<h2>Advanced Question 1: Leap Years (/5)</h2>
+<p>Write a C program <code>leap_year.c</code> that reads a start year and finish year and then prints all the leap years that lie in that range.</p>
+Hint: you need to use modulus (%) and a while loop.
+<pre>
+<b>Source code: leap_year.c</b>
+Enter start year: <b><u>1990</u></b>
+Enter finish year: <b><u>2010</u></b>
+1992
+1996
+2000
+2004
+2008
+<br /><b>Source code: leap_year.c</b>
+Enter start year: <b><u>1788</u></b>
+Enter finish year: <b><u>1812</u></b>
+1788
+1792
+1796
+1804
+1808
+1812
+</pre>
+<h2>Advanced Question 2: Sum Integers (/5)</h2>
+<p>Write a C program <code>sum_integers.c</code> that prints the sum of integers from 1 to k, for k values from 1 to 15.</p>
+Hint: the printf format "%4d", instead of "%i", will print an int right-justified in a field of width 4.
+<pre>
+<b>Source code: sum_integers.c</b>
+ k  sum
+
+ 1    1
+ 2    3
+ 3    6
+ 4   10
+ 5   15
+ 6   21
+ 7   28
+ 8   36
+ 9   45
+10   55
+11   66
+12   78
+13   91
+14  105
+15  120
+</pre>
+<h2>Advanced Question 3: Triangles (/10)</h2>
+<p>Write a C program <code>triangles.c</code> that prints out triangles of a size inputted by the user. If a user puts in a number less than 1, you need to print out an error message.</p>
+<pre>
+<b>Source code: triangles.c</b>
+Enter size: <b><u>5</u></b>
+    *
+   **
+  ***
+ ****
+*****
+<br /><b>Source code: triangles.c</b>
+Enter size: <b><u>-3</u></b>
+No such triangle.
+<br /><b>Source code: triangles.c</b>
+Enter size: <b><u>2</u></b>
+ *
+**
+</pre></div>
+<br />
+<div style="text-align:center;font-family:'Consolas',monospace">___<br />
+('v')<br />
+((___))<br />
+^ ^</div>
+    </div>
+  
+    <br />
+
+<div class="clr"></div>
+<div id="mainFooter">
+<p>&copy; Fort Street High School Robotics 2017</p>
+<br />
+    <a href="/home">
+    <div><span id="logo-only"></span></div>
+</div>
+</div>
+</body>
+    <link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/highlight.js/9.9.0/styles/default.min.css">
+    <script src="//cdnjs.cloudflare.com/ajax/libs/highlight.js/9.9.0/highlight.min.js"></script>
+    <script>hljs.initHighlightingOnLoad();</script>
+<script src="/-/2017/C-Course/theme/stylesheets/feedback.js"></script>
+</html>

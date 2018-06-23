@@ -1,0 +1,409 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+"http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta name="google-site-verification" content="4_RMTp03qKZnXNroL0gme91C1A0V24nC9np8xE_GRt4" />
+<title><$WikiPageName$> | FSHS Robotics</title>
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<!-- Links [Online] -->
+<link href="theme/stylesheets/robobase.css" rel="stylesheet" type="text/css" />
+<link href="theme/stylesheets/2018base.css" rel="stylesheet" type="text/css" />
+<link rel="icon" type="image/png" href="theme/stylesheets/favicon.png">
+<link href="https://fonts.googleapis.com/css?family=Open+Sans:300,400,700|Raleway:400,900|PT+Mono" rel="stylesheet" type="text/css">
+     <style type="text/css">.commentSubject{margin-right:0px !important;}#WikispacesBanner{display:none !important;}.navbar{display:none !important;}   
+</style>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/2.0.3/jquery.min.js"></script>
+    <script type="text/javascript" src="https://www.gstatic.com/firebasejs/4.8.0/firebase.js"></script>
+    <script type="text/javascript" src="theme/stylesheets/equipmentsystem.js"></script>
+<style>
+    #robosystem * {
+        box-sizing:border-box;
+    }
+    #robosystem {
+        font-family:'Open Sans';
+        margin:10px auto;
+        max-width:960px;
+        line-height:180%;
+    }
+    #robosystem .formblock {
+        background:#EEE;
+        padding:20px;
+        margin:5px 0;
+    }
+    #robosystem .label {
+        color:#333;
+        font-size:20px;
+        text-transform: uppercase;
+    }
+    #robosystem .es-sublabel {
+        font-size:13px;
+    }
+    #robosystem .formblock-end {
+        padding:20px;
+        margin:5px 0;
+    }
+    #robosystem #attendance-list {
+        column-count:3;
+    }
+
+    /* Form elements */
+    #robosystem input,
+    #robosystem select {
+        font-size:16px;
+        margin:10px 0;
+        padding:5px;
+        width:100%;
+        background:#FCFCFC;
+        border:solid 3px #EEE;
+        color:#39424d;
+        display:inline-block;
+        font-family:'Open Sans', sans-serif;
+        padding:7px;
+        transition:all 0.3s ease;
+    }
+    #robosystem button {
+        background:#4060fa;
+        border-radius:4px;
+        border:2px solid #4060fa;
+        color:#FFF;
+        cursor:pointer;
+        font-family:'Open Sans', sans-serif;
+        font-weight:bold;
+        display:inline-block;
+        padding:7px;
+        transition:0.3s ease all;
+    }
+
+    /* Spinner */
+    #robosystem #login-loading {
+        text-align:center;
+    }
+    #robosystem .rs-spinner {
+        animation: rotator .5s linear infinite;
+        display:inline-block;
+        margin-left:10px;
+        transform: translateZ(0);
+        vertical-align:middle;
+    }
+    #robosystem .rs-spinner__stroke {
+        animation: dash 1.25s linear infinite alternate-reverse;
+        stroke: #00b7e0;
+    }
+    @keyframes rotator {
+        from {
+            transform:rotate(0)
+        } to {
+            transform:rotate(360deg)
+        }
+    }
+    @keyframes dash {
+        100% {
+            stroke-dashoffset: 0;
+        }
+    }
+    .error-message {
+        color:#F00;
+    }
+</style>
+
+</head>
+<body class="non-home page-<$WikiPageName$>">
+<div class="header-2018">
+    <h2><a href="/">FSHS Robotics</a></h2>
+    <div id="nav">
+        <ul class="nav-transparent">
+            <li class="nav-transparent__link"><a href="/About">About</a></li>
+            <li class="nav-transparent__link"><a href="/Achievements">Awards</a></li>
+            <li class="nav-transparent__link"><a href="/Open+Soccer">Soccer</a></li>
+            <li class="nav-transparent__link"><a href="/C+Course">C Course</a></li>
+            <WikiIsNotLoggedIn><li class="nav-transparent__link"><a href="https://www.wikispaces.com/site/signin?goto=https%3A%2F%2Ffshsrobotics.wikispaces.com%2F" class="WikispacesXDomainDialogLink">Log in</a></li></WikiIsNotLoggedIn>
+            <WikiIsLoggedIn><li class="nav-transparent__link"><a href="https://session.wikispaces.com/1/auth/logout">Log out</a></li></WikiIsLoggedIn>
+        </ul>
+    </div>
+</div>
+<div id="wrapper">
+    
+    <h2>1.1 Software</h2>
+<ul>
+<li>
+<p><strong><em>Software</em></strong>: a program that tell a computer how and what tasks it
+    needs to perform</p>
+<ul>
+<li>
+<p><strong><em>Application software</em></strong>: database, spreadsheet, browser, game</p>
+</li>
+<li>
+<p><strong><em>System software</em></strong>: deals with computer or computer
+    devices, e.g. Windows, anti-virus</p>
+</li>
+</ul>
+</li>
+<li>
+<p><strong><em>Software Engineering</em></strong>: The application of a systematic,
+    disciplined, quantifiable approach to the development, operation,
+    and maintenance of software, and the study of these approaches</p>
+<ul>
+<li>
+<p>Learn and understand the problem domain (what you build a
+    solution for)</p>
+</li>
+<li>
+<p>Deliver value to the customer</p>
+</li>
+</ul>
+</li>
+</ul>
+<h2>1.2 Software Engineering Life-Cycle</h2>
+<p><img alt="" height="64" src="media/image1.png" width="601"></p>
+<ol>
+<li>
+<p><strong><em>Analysis and Specification</em></strong>: discovery of the ‘system-to-be’: a
+    list of features</p>
+<ul>
+<li>
+<p>Understand the <strong>problem definition</strong>, including <strong>scope,
+    system’s services</strong> (behavioural characteristics)</p>
+</li>
+<li>
+<p><strong>Abstract</strong> the problem to define a <strong>domain model</strong>
+    (structural characteristics)</p>
+</li>
+<li>
+<p>Identify <strong>functional</strong> (inputs and outputs) <strong>and
+    non-functional</strong> (performance, security, maintainability)
+    <strong>requirements</strong></p>
+</li>
+<li>
+<p>Done using use-case modelling, user stories</p>
+</li>
+</ul>
+</li>
+<li>
+<p><strong><em>Design</em></strong>: finding <strong>how to implement all customer requirements</strong></p>
+<ul>
+<li>
+<p>Chunking into symbols and patterns</p>
+</li>
+<li>
+<p>Done using UML symbols (class, component, deployment diagrams)</p>
+</li>
+</ul>
+</li>
+<li>
+<p><strong><em>Implementation</em></strong>: encoding the design into a programming
+    language to deliver the product</p>
+</li>
+<li>
+<p><strong><em>Testing</em></strong>: Verification that our <strong>system is correct and
+    realises the goals</strong></p>
+<ul>
+<li>
+<p><strong>Unit tests</strong>, testing individual components</p>
+</li>
+<li>
+<p><strong>Integration tests</strong>, testing the whole system</p>
+</li>
+<li>
+<p><strong>User acceptance tests</strong>, verifying the system achieves
+    customer requirements</p>
+</li>
+</ul>
+</li>
+<li>
+<p><strong><em>Operation and Maintenance</em></strong></p>
+<ul>
+<li>Run the system, fixing defects, adding new functionality</li>
+</ul>
+</li>
+</ol>
+<h2>1.3 Incremental and Iterative Methods</h2>
+<ul>
+<li>
+<p>Software development is intangible, flexible and complex</p>
+<ul>
+<li>Can be modified radically during the development process, hard
+    to visualise, composed of many components</li>
+</ul>
+</li>
+<li>
+<p>Software Development Method: a prescriptive process that mandates a
+    sequence of tasks</p>
+</li>
+<li>
+<p><strong>Elaborate processes</strong>: rigid, plan-driven, documentation heavy
+    methodologies</p>
+</li>
+<li>
+<p><strong>Iterative processes</strong>: develops increments of functionality and
+    repeated with a feedback loop</p>
+</li>
+</ul>
+<h2>1.4 Waterfall Model</h2>
+<ul>
+<li>
+<p>Traditional, sequential life cycle model, plan-driven development</p>
+</li>
+<li>
+<p><strong>Detailed planning</strong>, problem is identified, documented and
+    designed</p>
+</li>
+<li>
+<p>Simpler to manage due to <strong>project visibility</strong> – there is a better
+    control over the processes because each phase is completed one at a
+    time</p>
+</li>
+<li>
+<p><strong>Stable requirements and product statement</strong> (e.g. NASA shuttle)</p>
+<ul>
+<li>‘Mission critical’ – strong focus on details</li>
+</ul>
+</li>
+<li>
+<p>Can also include <strong>quality gates/completion criteria checks</strong> ensure
+    that the project meets a high and specified standard</p>
+</li>
+<li>
+<p>Drawbacks:</p>
+<ul>
+<li>
+<p>No working software until late in the lifecycle</p>
+</li>
+<li>
+<p>Not flexible, does not support refinement of customer
+    requirements</p>
+</li>
+<li>
+<p>Incurs a larger management overhead</p>
+</li>
+</ul>
+</li>
+</ul>
+<h2>1.5 Rational Unified Process (RUP)</h2>
+<ul>
+<li>
+<p>Iterative model with four phases, a formal cycle but has concurrent
+    disciplines:</p>
+<ol>
+<li>
+<p><strong>Inception</strong>: scope the project, identify major players,
+    resources, architecture, risks and costs</p>
+</li>
+<li>
+<p><strong>Elaboration</strong>: understand problem domain, analysis, evaluate
+    required architecture and resources</p>
+</li>
+<li>
+<p><strong>Construction</strong>: design, build and test software</p>
+</li>
+<li>
+<p><strong>Transition</strong>: release software to production</p>
+</li>
+</ol>
+</li>
+<li>
+<p><strong>Serial in the large and iterative in the small</strong></p>
+<ul>
+<li>Phases occur in a serial (in series) manner but is done
+    iteratively (day-to-day)</li>
+</ul>
+</li>
+</ul>
+<!-- -->
+
+<ul>
+<li>
+<p>RUP is organised in <strong>disciplines</strong></p>
+<ul>
+<li>
+<p><strong>Development disciplines</strong> – developing models, requirements,
+    engineering the blueprint, testing and releasing</p>
+</li>
+<li>
+<p><strong>Support disciplines</strong> – configuration and change, project
+    management, environment</p>
+</li>
+<li>
+<p><strong>Enterprise disciplines</strong> – portfolio management, people,
+    enterprise administration</p>
+</li>
+</ul>
+</li>
+</ul>
+<h2>1.6 Agile</h2>
+<ul>
+<li>
+<p><strong>Individuals and interactions</strong> &gt; processes and tools</p>
+<ul>
+<li>
+<p>Sustainable development, maintain a constant pace indefinitely</p>
+</li>
+<li>
+<p>Team reflects on how to be more effective and adjust behaviour
+    accordingly</p>
+</li>
+</ul>
+</li>
+<li>
+<p><strong>Working software</strong> &gt; comprehensive documentation</p>
+<ul>
+<li>
+<p>Satisfy customer through early, continuous delivery of valuable
+    software</p>
+</li>
+<li>
+<p>Simplicity – maximise the amount of work not done</p>
+</li>
+</ul>
+</li>
+<li>
+<p><strong>Customer collaboration</strong> &gt; contract negotiation</p>
+<ul>
+<li>Conveying information done by face-to-face conversation,
+    business people and developers work together throughout the
+    project</li>
+</ul>
+</li>
+<li>
+<p><strong>Responding to change</strong> &gt; following a plan</p>
+<ul>
+<li>Welcome changing requirements, software delivered frequently</li>
+</ul>
+</li>
+<li>
+<p>Drawbacks:</p>
+<ul>
+<li>
+<p>Daily stand-up meetings and close collaboration makes
+    outsourcing difficult, difficult and costly for geographically
+    separated clients and developers</p>
+</li>
+<li>
+<p>Does not suit clients who want contracts with firm estimates and
+    timetables</p>
+</li>
+<li>
+<p>Relies on small self-organised teams</p>
+</li>
+<li>
+<p>Lack of documentation means it is difficult to maintain after
+    team changes</p>
+</li>
+</ul>
+</li>
+</ul>
+    <br />
+
+<div class="clr"></div>
+<div id="mainFooter">
+<p>&copy; Fort Street High School Robotics 2017</p>
+<br />
+    <a href="/home">
+    <div><span id="logo-only"></span></div>
+</div>
+</div>
+</body>
+    <link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/highlight.js/9.9.0/styles/default.min.css">
+    <script src="//cdnjs.cloudflare.com/ajax/libs/highlight.js/9.9.0/highlight.min.js"></script>
+    <script>hljs.initHighlightingOnLoad();</script>
+<script src="/-/2017/C-Coursetheme/stylesheets/feedback.js"></script>
+</html>

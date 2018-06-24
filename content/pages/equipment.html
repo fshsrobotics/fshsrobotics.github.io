@@ -6,38 +6,53 @@
   </head>
   <body>
     <div class="wiki" id="content_view" style="display: block;">
+<div id="robosystem">
+<div id="login-loading">Loading...</div>
+<div id="loginsystem">
+<form action="" method="get" class="formblock">
+<div class="label">Student login</div>
+<div class="es-sublabel">What room is Robotics in? Put it in the format <code>wilkins5</code>.</div>
+<input type="password" id="ls-student" /> <button type="submit" id="ls-student-login">Login</button>
+<div id="ls-student-login-status" class="error-message"></div>
+</form>
+<form action="" method="get" class="formblock">
+<div class="label">Staff login</div>
+<input type="password" id="ls-admin" /> <button type="submit" id="ls-admin-login">Login</button>
+<div id="ls-admin-login-status" class="error-message"></div>
+</form>
+</div>
+<div id="adminsystem">Admins only! <button class="ls-logout">Log out</button>
+<h2>Mark attendance</h2>
+<form action="" method="get" class="formblock">
+<div class="label">Term/Week</div>
+<input id="attendance-week" />
+<div class="label">Student ID</div>
+<input id="attendance-student" /> <button type="submit" id="attendance-check">I'm here</button>
+<div id="attendance-submit-status" class="error-message"></div>
+<h2 id="attendance-header"></h2>
+<div id="attendance-list"></div>
+</form>
+</div>
 <div id="equipmentsystem">
-<h1 class="es-heading">FSHS Robotics Equipment System</h1>
+<h2 class="es-heading">FSHS Robotics Equipment System</h2>
+<button class="ls-logout">Log out</button>
 <div class="es-subheading">
-<p>Made it this week, so might be dodgy!</p>
 <div>
 <h3>Groups</h3>
-<b>OR01</b>: Amelie Skelton, Cristina Koprinski<br />
-<b>OR02</b>: Manit Anand, Xavier Cooney, Gabriel Thien<br />
-<b>OR03</b>: Calvin Xu, James Nguyen, Kelvin Xu, Waeylin Pan<br />
-<b>OR04</b>: Jacob Joseph, Pranav Rao, Yash Agarwal<br />
-<b>OR05</b>: Mervin Hao, Alan He, Jamie Tennent, Marshall Fan, Vicky Chenqi Zhang<br />
-<b>OR06</b>: Franklin Ruan, Gordon Zi Jun Huang, Joaquin Benavides, Mark Pham<br />
-<b>OR07</b>: Alexander Howdin, Huaien Harry Wu, Mahathir Ahmed, You Wei Chung<br />
-<b>OR08</b>: Abi Wong, Angelica Wilson<br />
-<b>OR09</b>: Kelvin Trinh, Sunny Wang, Kelvin Trinh<br />
-<b>OR10</b>: Daniel Chen, Micky Billson, Sascha Bakker<br />
-<b>OS01</b>: Georgio Hawi, Sunil Jassal, Yu Wern Choo, Rena Gao<br />
-<b>OS02</b>: Aaron Rahardja, Steven Pang, Gabriel Cho<br />
-If you're not here, tell Georgio or Kris.<br />
+<div id="es-allgroups"></div>
 <br /></div>
 </div>
 <div class="es-form">
-<div class="es-formblock">
-<div class="es-label">Group ID</div>
+<div class="formblock">
+<div class="label">Group ID</div>
 <input type="text" id="es-groupid" placeholder="OS00" /></div>
-<div class="es-formblock">
-<div class="es-label">Group information</div>
+<div class="formblock">
+<div class="label">Group information</div>
 <br />
 <div id="es-group-info"></div>
 </div>
-<div class="es-formblock">
-<div class="es-label">Equipment</div>
+<div class="formblock">
+<div class="label">Equipment</div>
 <select class="form-control" id="es-equipment">
 <option disabled="disabled">Motors</option>
 <option data-eid="nm">NXT Motor</option>
@@ -62,11 +77,14 @@ If you're not here, tell Georgio or Kris.<br />
 <option data-eid="ncam">NXTCam</option>
 <option data-eid="pixy">Pixy Camera</option>
 </select></div>
-<div class="es-formblock">
-<div class="es-label">Sticker ID</div>
+<div class="formblock">
+<div class="label">Sticker ID</div>
 <div class="es-sublabel">Some don't have stickers</div>
 <input id="es-stickerid" /></div>
-<div class="es-formblock-end"><button id="es-submit">Submit</button> <span id="es-submit-status"></span></div>
+<div class="formblock-end"><button id="es-submit">Submit</button>
+<div id="es-submit-status" class="error-message"></div>
+</div>
+</div>
 </div>
 </div>
     </div>

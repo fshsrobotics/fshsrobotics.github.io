@@ -1,0 +1,33 @@
+<html>
+  <head>
+    <title>fshsrobotics - Equipment</title>
+    <link rel="stylesheet" href="static/style.css" type="text/css" />
+    <meta http-equiv="Content-Type" content="text/html;charset=utf-8" />
+  </head>
+  <body>
+    <div class="wiki" id="content_view" style="display: block;">
+<h1>Attendance</h1>
+<div id="robosystem">
+<div id="login-loading">Loading...</div>
+<div id="loginsystem">
+<form action="" method="get" class="formblock">
+<div class="label">Staff login</div>
+<input type="password" id="ls-admin" /> <button type="submit" id="ls-admin-login">Login</button>
+<div id="ls-admin-login-status" class="error-message"></div>
+</form>
+</div>
+<div id="adminattendance">Admins only! <button class="ls-logout">Log out</button>
+<h2>Show attendance</h2>
+<form action="" method="get" class="formblock">
+<div class="label">Term/Week</div>
+<select id="adminattendance-week">
+<option>Select one</option>
+</select>
+<h2 id="attendance-header"></h2>
+<div id="attendance-list"></div>
+</form>
+</div>
+</div>
+    </div>
+  </body>
+</html>

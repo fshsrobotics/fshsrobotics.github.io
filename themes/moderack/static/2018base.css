@@ -124,7 +124,7 @@ h2 {
     width:45%;
 }
 .home-section-passion {
-    background: url('/file/robot-small.png') no-repeat;
+    background: url('/theme/robot-small.png') no-repeat;
     background-size:auto 130%;
     background-position:100px center;
     transition:all 0.7s ease-in-out;

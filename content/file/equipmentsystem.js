@@ -252,7 +252,7 @@ function init() {
     $('#adminattendance').hide();
     $('#equipmentsystem').hide();
     var pages = ['Equipment', 'equipment', 'Attendance', 'attendance'];
-    if (pages.indexOf(window.location.pathname) < 0) return;
+    if (!(window.location.pathname).match(/(equipment|attendance)/gi)) return;
     firebase.auth().onAuthStateChanged(function(user) {
         $('#login-loading').hide();
         if (user) {

@@ -506,7 +506,7 @@ body {
 	grid-gap:0;
 	grid-template-columns: 1fr 40px 1fr;
 	background:#3346b3;
-	margin-bottom:-74px;
+	margin-bottom:-41px;
 }
 .wiki .learn-wrapper .learn-contents-navigate a {
 	display:block;
@@ -581,6 +581,7 @@ body {
 	font-size:80%;
 	font-weight:100;
 	padding:20px 0;
+	bottom:0;
 }
 #mainFooter a { 
 	color: #DDD; 

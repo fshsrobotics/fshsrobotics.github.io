@@ -1,0 +1,89 @@
+
+#robosystem * {
+    box-sizing:border-box;
+}
+#robosystem {
+    font-family:'Open Sans';
+    margin:10px auto;
+    max-width:960px;
+    line-height:180%;
+}
+#robosystem .formblock {
+    background:#EEE;
+    padding:20px;
+    margin:5px 0;
+}
+#robosystem .label {
+    color:#333;
+    font-size:20px;
+    text-transform: uppercase;
+}
+#robosystem .es-sublabel {
+    font-size:13px;
+}
+#robosystem .formblock-end {
+    padding:20px;
+    margin:5px 0;
+}
+#robosystem #attendance-list {
+    column-count:3;
+}
+
+/* Form elements */
+#robosystem input,
+#robosystem select {
+    font-size:16px;
+    margin:10px 0;
+    padding:5px;
+    width:100%;
+    background:#FCFCFC;
+    border:solid 3px #EEE;
+    color:#39424d;
+    display:inline-block;
+    font-family:'Open Sans', sans-serif;
+    padding:7px;
+    transition:all 0.3s ease;
+}
+#robosystem button {
+    background:#4060fa;
+    border-radius:4px;
+    border:2px solid #4060fa;
+    color:#FFF;
+    cursor:pointer;
+    font-family:'Open Sans', sans-serif;
+    font-weight:bold;
+    display:inline-block;
+    padding:7px;
+    transition:0.3s ease all;
+}
+
+/* Spinner */
+#robosystem #login-loading {
+    text-align:center;
+}
+#robosystem .rs-spinner {
+    animation: rotator .5s linear infinite;
+    display:inline-block;
+    margin-left:10px;
+    transform: translateZ(0);
+    vertical-align:middle;
+}
+#robosystem .rs-spinner__stroke {
+    animation: dash 1.25s linear infinite alternate-reverse;
+    stroke: #00b7e0;
+}
+@keyframes rotator {
+    from {
+        transform:rotate(0)
+    } to {
+        transform:rotate(360deg)
+    }
+    
+@keyframes dash {
+    100% {
+        stroke-dashoffset: 0;
+    }
+}
+.error-message {
+    color:#F00;
+}

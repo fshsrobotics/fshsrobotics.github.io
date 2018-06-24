@@ -12,6 +12,7 @@ DISPLAY_CATEGORIES_ON_MENU = True
 USE_FOLDER_AS_CATEGORY = True 
 ARTICLE_PATHS = ['articles','']
 PAGE_PATHS = ['pages',]
+STATIC_PATHS = ['file']
 MENUITEMS = ()
 OUTPUT_PATH = 'public/'
 

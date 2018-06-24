@@ -1,0 +1,104 @@
+<html>
+  <head>
+    <title>fshsrobotics - Functions</title>
+    <link rel="stylesheet" href="static/style.css" type="text/css" />
+    <meta http-equiv="Content-Type" content="text/html;charset=utf-8" />
+  </head>
+  <body>
+    <div class="wiki" id="content_view" style="display: block;">
+<div class="rds-mini-wrapper">
+<h1 class="rds-heading" id="functions">6. Functions</h1>
+<h2 class="rds-heading" id="baking-a-cake">6.1 Baking a Cake</h2>
+<p>A <strong><em>function</em></strong> is a group of statements that perform a task. We already have met the <strong>main()</strong> function – this is the function that the computer calls first whenever that program starts. printf() and scanf() are other functions that do things – the first prints lines into output, and the latter asks for input and puts it into a variable.</p>
+<p>Functions <strong>are just like asking your mum to bake a cake</strong>. There are <strong><em>inputs</em></strong> – flour, eggs, milk, there is a <strong><em>task</em></strong> – the cake mixing and baking, and <strong><em>an output</em></strong> – a cake. What matters is the inputs and the output, your mum knows the recipe and you shouldn’t need to know it.</p>
+<p>The key attributes of a function are:</p>
+<ol style="list-style-type: decimal">
+<li>
+<p>Functions can <strong>have input(s)</strong></p>
+</li>
+<li>
+<p>Functions <strong>can output 0 or 1 value</strong></p>
+</li>
+<li>
+<p>Functions can look at the values, and should <strong>do a task</strong>, like finding the maximum number, or moving a robot at a certain speed.</p>
+</li>
+</ol>
+<h2 class="rds-heading" id="defining-a-function">6.2 Defining a Function</h2>
+<p><strong>Let’s make a max function: a function that finds the maximum of two integers.</strong></p>
+<ol style="list-style-type: decimal">
+<li>
+<p>It has <strong>two inputs – x and y</strong>, which are two numbers we want to look at.</p>
+</li>
+<li>
+<p>It <strong>outputs one integer</strong> – the maximum, either x or y.</p>
+</li>
+</ol>
+<pre class="rds-code">
+<code class="cpp">
+// Definition of the max function
+int max (int x, int y) {
+        int result;
+
+        if (x &gt; y) {
+                result = x;
+        }
+        else {
+                result = y;
+        }
+        return result;
+}
+</code>
+</pre>
+<p>We know a lot from the first line. <strong>int max (int x, int y)</strong> tells us that we <strong>input two numbers in the brackets</strong>, and it <strong>should return an integer</strong>, the type on the most left.</p>
+<h2 class="rds-heading" id="declaring-a-function">6.3 Declaring a Function</h2>
+<p>We always declare our function near the start of our program, in order for the computer to know the structure of the variable. It is much like how we declare integers and floats before we use them.</p>
+<pre class="rds-code">
+<code class="cpp">
+// Declaration of the max function
+int max (int x, int y);
+</code>
+</pre>
+<h2 class="rds-heading" id="calling-a-function">6.4 Calling a Function</h2>
+<p>We now take a look at a full code that uses a function like max().</p>
+<pre class="rds-code">
+<code class="cpp">
+#include &lt;stdio.h&gt;
+
+// Declaration of the max function
+int max (int x, int y);
+
+// Main function
+int main () {
+        int num1 = 3;
+        int num2 = 5;
+
+        // Call the function, with inputs num1 and num2
+        // and put the result in 'maximum'
+        int maximum = max(num1, num2);
+
+        printf("The maximum of %d and %d is %d!\n", num1, num2, maximum);
+
+        return 0;
+}
+
+// Definition of the max function
+int max (int x, int y) {
+        int result;
+
+        if (x &gt; y) {
+                result = x;
+        }
+        else {
+                result = y;
+        }
+
+        return result;
+}
+</code>
+</pre>
+<p>Try it out! You can now call the max() function wherever you want in the code, and you’ll be certain that it will return the maximum of two numbers. You <strong>won’t need to copy paste that if statement, you only need to copy paste the one max() line</strong>.</p>
+<p>Functions will come in very handy for making your robots move, as well as for comparing numbers.</p>
+</div>
+    </div>
+  </body>
+</html>

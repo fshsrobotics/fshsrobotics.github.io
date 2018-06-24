@@ -1,0 +1,144 @@
+<html>
+  <head>
+    <title>fshsrobotics - Week 5</title>
+    <link rel="stylesheet" href="static/style.css" type="text/css" />
+    <meta http-equiv="Content-Type" content="text/html;charset=utf-8" />
+  </head>
+  <body>
+    <div class="wiki" id="content_view" style="display: block;">
+<div class="includeBody-Header includeBody-Header includeBody">  <div class="includeHeader">
+    
+      </div>
+<div class="c-course-header"><a style="border-color:var(--main-blue);background:var(--main-blue);color:#FFF" href="/C+Course" rel="nofollow">C Course</a> <a href="Week+2" rel="nofollow">Week 2</a> <a href="Week+3" rel="nofollow">Week 3</a> <a href="Week+4" rel="nofollow">Week 4</a> <a href="Week+5" rel="nofollow">Week 5</a> <a href="Week+6" rel="nofollow">Week 6</a> <a href="Week+7" rel="nofollow">Week 7/8</a></div></div><br />
+<div class="rds-small-wrapper" style="padding:20px">
+<h1>Week 5: Lab: printf, scanf, if</h1>
+<div style="border:4px solid #4060fa; padding:20px;line-height:180%">
+<p>Hey all! I'm sitting an exam right now, so do these problems.</p>
+<div style="background:#f6f8ff;margin:10px -20px;padding:10px 20px;">
+<p>You should learn the The <b>Feynman Problem-Solving Algorithm</b>:</p>
+<ol>
+<li>Write down the problem</li>
+<li>think very hard, and</li>
+<li>write down the answer.</li>
+</ol>
+</div>
+<p>More importantly, there should be seniors around that can help you out - <b>ask them for help, introduce yourselves</b>! I promise they don't bite. If you're super stuck, there's two places to look:</p>
+<ul>
+<li><a href="Week+4#chickens" rel="nofollow">Week 4 code</a> - all the chicken stuff with printf, scanf and if</li>
+<li><a href="file/view/2%20Variables.pdf" rel="nofollow">2. Variables</a> - part of a booklet I'm writing that has some of the content on <b>printf and variables</b>.</li>
+<li><a href="/Week+2" rel="nofollow">Week 2 from the 2016 Course</a> - this page has other snippets of code and some more detailed explanation of <b>scanf and if</b>.</li>
+</ul>
+<p>Good luck with the problems!</p>
+</div>
+</div><br />
+<div class="rds-small-wrapper" style="padding:0 20px 20px 20px">
+<h2>1. Print out a chicken: <a href="file/view/w6q1.c" rel="nofollow">Solutions</a></h2>
+<p>Create a file <code>bird.c</code> that prints a bird on the screen when run. You should be able to write this program using some printf statements and using new lines (<code>\n</code>).</p>
+<p>Sample:</p>
+<pre class="rds-code">
+  ___
+ ('v')
+((___))
+ ^   ^
+</pre>
+<h2>2.1 Ask for an age</h2>
+<ul>
+<li>Create a file <code>age.c</code></li>
+<li>User is asked to enter an age.</li>
+<li>Once the user hits enter, it should print out "You are __ years old!"</li>
+<li>Make sure it is exactly the same that is printed.</li>
+</ul>
+<p>Sample 1</p>
+<pre class="rds-code">
+Enter an age: 64
+You are 64 years old!
+</pre>
+<h2>2.2 Teen-age: <a href="file/view/w6q2.c" rel="nofollow">Solutions</a></h2>
+<ul>
+<li>Create a file <code>teenage.c</code>, or continue using <code>age.c</code>.</li>
+<li>User is asked to enter an age.</li>
+<li>Once the user hits enter, it should print out "You are __ years old!"</li>
+<li>If the age is between 13 and 19 inclusive, it should also print out "You're also a teen."</li>
+</ul>
+<p>Sample 1</p>
+<pre class="rds-code">
+Enter an age: 64
+You are 64 years old!
+</pre>
+<p>Sample 2</p>
+<pre class="rds-code">
+Enter an age: 15
+You are 15 years old!
+You're also a teen.
+</pre>
+<h2>3. Name of Month: <a href="file/view/w6q3.c" rel="nofollow">Solutions</a></h2>
+<ul>
+<li>Create a file <code>months.c</code></li>
+</ul>
+Ask for a month number and return the name of the month.
+<p>Sample 1</p>
+<pre class="rds-code">
+Enter a month: 5
+May
+</pre>
+<p>Sample 2</p>
+<pre class="rds-code">
+Enter a month: 12
+December
+</pre>
+<p>Sample 3</p>
+<pre class="rds-code">
+Enter a month: 16
+Not a valid month
+</pre>
+<h2>4. Bad Code: <a href="file/view/w6q4.c" rel="nofollow">Solutions</a></h2>
+<p>Uh oh! We gave Mr Semaan the task to write some C code. Unfortunately, it's a bit wrong. It's meant to ask you to put in his favourite number, and print out if it is right or not.</p>
+<p>Your task is to fix up his program so that it is <b>indented properly</b>, <b>compiles with no errors</b> and it <b>returns the correct results</b>.</p>
+<pre class="rds-code">
+<code class="cpp">
+#include stdio.h&gt;
+int main() {
+    printf("Guess my favourite number: ");
+        scanf("%d", n);
+            int faveNumber;
+if (faveNumber = 17) {
+printf("You're right!\n");
+} 
+else {
+printf("You're wrong.\n");
+}
+    return 0;
+}</code>
+</pre>
+<h2 id="challenge">5. Challenge: Tic Tac Toe: <a href="file/view/w6q5.c" rel="nofollow">Solutions</a></h2>
+<p>Write a program <code>tictactoe.c</code> that takes in a tic tac toe board and determines who wins in that game. Player 1 is represented by '1', Player 2 is represented by '2', and empty cells are represented by '0's.</p>
+<ul>
+<li>Your program should take in nine integers, three per line separated by spaces (so, three rows, each row has three integers separated by spaces)</li>
+<li><b>Tip</b>: to get three integers instead of one, you can scanf 3 integers: <code>scanf("%d %d %d", &amp;cell1, &amp;cell2, &amp;cell3);</code></li>
+<li>Your program should print out who wins, or if no one has won</li>
+</ul>
+<p>Sample 1</p>
+<pre class="rds-code">
+1 2 1
+1 1 2
+2 2 1
+Player 1 has won!
+</pre>
+<p>Sample 2</p>
+<pre class="rds-code">
+0 0 1
+1 1 0
+2 2 2
+Player 2 has won!
+</pre>
+<p>Sample 3</p>
+<pre class="rds-code">
+0 0 0
+0 0 0
+0 0 2
+No players have won.
+</pre></div><br />
+<div id="feedback-week5"></div>
+    </div>
+  </body>
+</html>

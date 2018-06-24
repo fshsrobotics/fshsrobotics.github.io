@@ -1,0 +1,160 @@
+<html>
+  <head>
+    <title>fshsrobotics - SimpleBarCode</title>
+    <link rel="stylesheet" href="static/style.css" type="text/css" />
+    <meta http-equiv="Content-Type" content="text/html;charset=utf-8" />
+  </head>
+  <body>
+    <div class="wiki" id="content_view" style="display: block;">
+<div class="rds-small-wrapper" style="padding:0 20px 20px 20px">
+<h1 id="barcode-project">SimpleBarCode Project Specification</h1>
+<h2 style="padding-bottom:8px;border-bottom:2px solid #CCC;margin-bottom:8px;" id="project-details">Spec Changes/Clarifications</h2>
+<ul>
+<li><span style="background-color: #d5f4e6;">Update 1</span>: Groups must construct their own robots. Clarified barcode length and indications when passing each number</li>
+</ul>
+<br />
+<h2 style="padding-bottom:8px;border-bottom:2px solid #CCC;margin-bottom:8px;" id="project-details">Project Details</h2>
+<ul>
+<li>
+<p>Work in <b>groups of 3 or 4</b>. These will be your groups for the year (unless there are mystical or mysterious circumstances that occur).</p>
+</li>
+<li>
+<p>This project has a demonstration <b>on Thursday, Week 10, Term 4, 2017</b>.</p>
+</li>
+<li>
+<p>You <b>MUST</b> have some code on the demonstration day. Failure to do so could mean you don't continue with RoboCupJunior (pls guys)</p>
+</li>
+<li>
+<p>On the demonstration day, you will be scored out of 100, with a maximum possible score of 130.</p>
+</li>
+</ul>
+<h2 style="padding-bottom:8px;border-bottom:2px solid #CCC;margin-bottom:8px;" id="overview">Background</h2>
+<p>Sensors are used to grab environment input and <strong>process them into meaningful output</strong>. Barcodes are a common representation of data in the real world, and barcode readers are a very effective and efficient way to transfer physical information into digital data.</p>
+<p>There are two types of barcode sensors - pen-type scanners and laser scanners. Both operate in a similar way - they use <strong>reflected light values</strong> and <strong>scan across the barcode</strong> at the same speed, to determine the widths of the bars and gaps.</p>
+<h2 style="padding-bottom:8px;border-bottom:2px solid #CCC;margin-bottom:8px;" id="project-aim">Project Aim</h2>
+<p>Develop <strong>code to implement a simple barcode reader</strong>. The code should reliably read simple and relatively large bars in a straight line - and should be able to do so with different barcodes.</p>
+<h2 style="padding-bottom:8px;border-bottom:2px solid #CCC;margin-bottom:8px;" id="project-spec">Project Specification</h2>
+<h3>1. Robot</h3>
+<ul>
+<li>
+<p style="background:#d5f4e6">You must build your own robot. You should aim to finish your robot construction by the end of Week 8. <b><a href="file/view/Lego%20Demo%20Robot%20Construction.pdf" rel="nofollow">This sample demo bot construction can be used.</a></b></p>
+</li>
+<li>
+<p>The robot should move along the barcode and use a light sensor to obtain reflected light levels.</p>
+</li>
+<li>
+<p>The robot has two wheels, left connected to port A and right connected to port B.</p>
+</li>
+<li>
+<p>The robot has two light sensors, left connected to port 1 and right connected to port 2.</p>
+</li>
+</ul>
+<h3>2. Barcode</h3>
+<ul>
+<li>
+<p>Barcodes have three types of codes: <strong>a start code, an end code and number codes.</strong></p>
+</li>
+<li>
+<p>The start and end codes are 30mm of black squares.</p>
+</li>
+<li>
+<p>There are three types of number codes, 1, 2 and 3. These are represented by different configurations of 30mm black and white strips.</p>
+</li>
+<li>
+<p>All number codes end with a 10mm white strip.</p>
+</li>
+<li>
+<p>A special number code, 4, is represented by a harder configuration.</p>
+</li>
+</ul>
+<p style="text-align:center"><img src="file/view/codes.png" /></p>
+<p>An example barcode:</p>
+<p style="text-align:center"><img src="file/view/barcode_example.png" /></p>
+<h3>3. Output</h3>
+<p>Your robot should ignore the start code, travel along the barcode recording codes, and stopping after the end code is detected. <span style="background-color: #d5f4e6;">Barcodes can be of any length.</span></p>
+<p>When you pass each code (group of 4 cells), <b>you must beep or indicate a number has been recorded</b>. <span style="background-color: #d5f4e6;">You can also indicate by changing the printed number, or printing something temporarily on the screen.</span> You do not need to make sounds or print anything for the start code (unless you wish to).</p>
+<p>When you reach the end code, you must stop the robot and optionally print the result on the screen. If you do not print out values onto the screen, <b>the beeps must be different.</b></p>
+<p style="text-align:center"><img src="file/view/barcode_nxt_screen.png" /></p>
+<ul>
+<li><a href="file/view/Barcode%20Examples.pdf" rel="nofollow">More barcode examples</a></li>
+</ul>
+<h2 style="padding-bottom:8px;border-bottom:2px solid #CCC;margin-bottom:8px;" id="scoring">Scoring</h2>
+<p>There will be <strong>four random barcodes on the scoring day</strong>, for a total of 130 points out of 100.</p>
+<table class="barcodetable">
+<thead>
+<tr class="header">
+<th align="left"><strong>Criteria</strong></th>
+<th align="left"><strong>Points</strong></th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td align="left">Code quality (indentation and comments)</td>
+<td align="left">10</td>
+</tr>
+<tr class="even">
+<td align="left">Code is complete</td>
+<td align="left">5</td>
+</tr>
+<tr class="even" style="background:#d5f4e6">
+<td align="left">Robot is complete</td>
+<td align="left">5</td>
+</tr>
+<tr class="odd">
+<td align="left">Robot travels straight</td>
+<td align="left">5</td>
+</tr>
+<tr class="even">
+<td align="left">Light sensors detect changes in colour</td>
+<td align="left">5</td>
+</tr>
+<tr class="odd">
+<td align="left">For each barcode:</td>
+<td align="left"></td>
+</tr>
+<tr class="even">
+<td align="left">Correct barcode read, beeps correct</td>
+<td align="left">20</td>
+</tr>
+<tr class="odd">
+<td align="left">Robot stops at end</td>
+<td align="left">5</td>
+</tr>
+</tbody>
+</table>
+<h2 style="padding-bottom:8px;border-bottom:2px solid #CCC;margin-bottom:8px;" id="objectives">Objectives</h2>
+<ol style="list-style-type: decimal">
+<li>
+<p><strong>Project management and teamwork</strong>: learn how projects are time consuming and coding takes a lot more time than you expect to debug and calibrate</p>
+</li>
+<li>
+<p><strong>RobotC programming</strong></p>
+<ul>
+<li>
+<p><a href="/-/Resources/RobotC/NXT+Displaying+Reflected+Light+Values" rel="nofollow">Gathering sensor data</a></p>
+</li>
+<li>
+<p><a href="/-/Resources/RobotC/NXT+Simple+Motor+Movement" rel="nofollow">Simple motor movement</a></p>
+</li>
+<li>
+<p><a href="/-/Resources/RobotC/NXT+Making+Sounds" rel="nofollow">Making Sounds</a></p>
+</li>
+<li>
+<p><a href="/-/Resources/RobotC/NXT+Printing+to+the+screen" rel="nofollow">Optional: Printing to the screen</a></p>
+</li>
+<li>
+<p><a href="/-/Resources/RobotC/NXT+Motor+Encoder" rel="nofollow">Optional: Motor encoder</a></p>
+</li>
+<li>
+<p>Optional: interfacing with NXT buttons</p>
+</li>
+</ul>
+</li>
+<li>
+<p>Hardware limitations</p>
+</li>
+</ol>
+</div>
+    </div>
+  </body>
+</html>

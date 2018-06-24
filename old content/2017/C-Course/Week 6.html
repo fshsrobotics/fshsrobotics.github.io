@@ -1,0 +1,178 @@
+<html>
+  <head>
+    <title>fshsrobotics - Week 6</title>
+    <link rel="stylesheet" href="static/style.css" type="text/css" />
+    <meta http-equiv="Content-Type" content="text/html;charset=utf-8" />
+  </head>
+  <body>
+    <div class="wiki" id="content_view" style="display: block;">
+<div class="includeBody-Header includeBody-Header includeBody">  <div class="includeHeader">
+    
+      </div>
+<div class="c-course-header"><a style="border-color:var(--main-blue);background:var(--main-blue);color:#FFF" href="/C+Course" rel="nofollow">C Course</a> <a href="Week+2" rel="nofollow">Week 2</a> <a href="Week+3" rel="nofollow">Week 3</a> <a href="Week+4" rel="nofollow">Week 4</a> <a href="Week+5" rel="nofollow">Week 5</a> <a href="Week+6" rel="nofollow">Week 6</a> <a href="Week+7" rel="nofollow">Week 7/8</a></div></div><br />
+<div class="rds-small-wrapper" style="padding:20px">
+<h1>Week 6: Loops</h1>
+</div><br />
+<div class="rds-small-wrapper" style="padding:0 20px 20px 20px">
+<h2 id="countdown">1.1 Countdown: <a href="file/view/w6q1.c" rel="nofollow">Solutions</a></h2>
+<p>Use a loop to print a countdown from an inputted number to 0. Save it as <code>countdown.c</code>.</p>
+<p>To get you started, here is some code that will count from 0 to 12:</p>
+<pre>
+<code class="cpp hljs">
+#include &lt;stdio.h&gt;
+
+int main() {
+    int counter = 0;             // Start at 0
+    while (counter &gt; 12) {       // while the counter is not greater than 12
+        printf("%d\n", counter); // print out the number
+        counter = counter + 1;   // add 1 to the counter
+    }
+
+    return 0;
+}
+</code>
+</pre>
+<h3 id="sample-1">Sample 1</h3>
+<pre class="rds-code">
+Enter a positive number: 5
+5
+4
+3
+2
+1
+0
+</pre>
+<h2 id="countdown-and-up">1.2 Countdown and up</h2>
+<p>Now, modify your <code>countdown.c</code> so that it can count up if a negative number is entered. Also, make sure it is able to accept '0' as an input.</p>
+<h3 id="sample-1-1">Sample 1</h3>
+<pre class="rds-code">
+Enter a number: -3
+-3
+-2
+-1
+0
+</pre>
+<h3 id="sample-2">Sample 2</h3>
+<pre class="rds-code">
+Enter a number: 0
+0
+</pre>
+<h2 id="guess-number">2. Guess Number: <a href="file/view/w6q2.c" rel="nofollow">Solutions</a></h2>
+<p>In Week 5, we had to fix up some code where the <b>user would input a guess to Mr Semaan's favourite number</b>. Make a file <code>guess2.c</code>.</p>
+<p>Now, <b>modify that code so that it loops if it is wrong</b>, and stops the code if it is right.</p>
+<h3 id="sample-1-2">Sample 1</h3>
+<pre class="rds-code">
+Guess my favourite number: 13
+You're wrong! Try again: 0
+You're wrong! Try again: 17
+You're right!
+</pre>
+<h3 id="sample-2-1">Sample 2</h3>
+<pre class="rds-code">
+Guess my favourite number: 17
+You're right!
+</pre>
+<h2 id="sum-to-n">3. Sum to N: <a href="file/view/w6q3.c" rel="nofollow">Solutions</a></h2>
+<p>Have a user input N, an integer, and <b>loop through to find the sum of all numbers from 1 to N</b>. Save your code in <code>sum2n.c</code>. Print out each sum from 1 to i while you are going to N.</p>
+<h3>Sample 1</h3>
+<pre class="rds-code">
+n: 5
+1
+3
+6
+10
+15
+</pre>
+<h3>Sample 2</h3>
+<pre class="rds-code">
+n: 7
+1
+3
+6
+10
+15
+21
+28
+</pre>
+<h2 id="line">4. Line: <a href="file/view/w6q4.c" rel="nofollow">Solutions</a></h2>
+<p>Given a size, print out <b>a line of <code>#</code> characters</b> based on that size. Save your code in <code>line.c</code>.</p>
+<h3>Sample 1</h3>
+<pre class="rds-code">
+Enter a size: 3
+###
+</pre>
+<h3>Sample 2</h3>
+<pre class="rds-code">
+Enter a size: 6
+######
+</pre>
+<h2 id="square">5. Square: <a href="file/view/w6q5.c" rel="nofollow">Solutions</a></h2>
+<p>Given a size, print out <b>a square of <code>#</code> characters</b> based on that size. You'll need to have <b>two loops - one that loops through each row, and one that loops through each cell/column.</b></p>
+<p>Save your code in <code>square.c</code>! Make sure your indentation is good! It will make the code a lot easier to get right.</p>
+<p>To give you a head start, what would the result of this code be?</p>
+<pre class="rds-code">
+<code class="cpp hljs">#include &lt;stdio.h&gt;
+
+int main() {
+    int i = 0; // outer loop
+    int j = 0; // inner loop
+    int count = 0; // result
+    while(i &lt; 3) {
+        j = 0;
+        while (j &lt; 2) {
+            count = count + 1;
+            j = j + 1; // How many times does this code get executed? two times every outer loop
+        }
+        i = i + 1;
+    }
+}</code>
+
+</pre>
+<h3 id="sample-1-3">Sample 1</h3>
+<pre class="rds-code">
+Enter a size: 3
+###
+###
+###
+</pre>
+<h3 id="sample-2-2">Sample 2</h3>
+<pre class="rds-code">
+Enter a size: 6
+######
+######
+######
+######
+######
+######
+</pre>
+<h2 id="challenge-boxes">6. Challenge: Boxes</h2>
+<p>Instead of squares, <b>make them into boxes</b>, with boxes in boxes. Save it in <code>boxes.c</code>.</p>
+<h3 id="sample-1-4">Sample 1</h3>
+<pre class="rds-code">
+Enter box size: 2
+#######
+#     #
+# ### #
+# # # #
+# ### #
+#     #
+#######
+</pre>
+<h3 id="sample-2-3">Sample 2</h3>
+<pre class="rds-code">
+Enter box size: 3
+###########
+#         #
+# ####### #
+# #     # #
+# # ### # # 
+# # # # # #
+# # ### # #
+# #     # #
+# ####### #
+#         #
+###########
+</pre></div>
+    </div>
+  </body>
+</html>

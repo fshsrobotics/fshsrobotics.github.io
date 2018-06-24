@@ -5,7 +5,7 @@ from __future__ import unicode_literals
 AUTHOR = 'Kris'
 SITENAME = 'FSHS Robotics'
 SITEURL = ''
-THEME = 'themes/moderack'
+THEME = 'themes/fshsrobotics'
 
 DISPLAY_PAGES_ON_MENU = False
 DISPLAY_CATEGORIES_ON_MENU = True
@@ -15,6 +15,7 @@ PAGE_PATHS = ['pages']
 STATIC_PATHS = ['file', 'extra', 'pages']
 MENUITEMS = ()
 OUTPUT_PATH = 'public/'
+DELETE_OUTPUT_DIRECTORY = True
 EXTRA_PATH_METADATA = {
     'extra/404.html': {'path': '404.html'}
 }

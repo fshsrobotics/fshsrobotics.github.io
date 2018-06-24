@@ -10,11 +10,17 @@ THEME = 'themes/moderack'
 DISPLAY_PAGES_ON_MENU = False
 DISPLAY_CATEGORIES_ON_MENU = True
 USE_FOLDER_AS_CATEGORY = True 
-ARTICLE_PATHS = ['articles','']
-PAGE_PATHS = ['pages',]
-STATIC_PATHS = ['file']
+ARTICLE_PATHS = ['articles']
+PAGE_PATHS = ['pages']
+STATIC_PATHS = ['file', 'extra', 'pages']
 MENUITEMS = ()
 OUTPUT_PATH = 'public/'
+EXTRA_PATH_METADATA = {
+    'extra/404.html': {'path': '404.html'}
+}
+ARTICLE_EXCLUDES = [
+    'extra'
+]
 
 PATH = 'content'
 

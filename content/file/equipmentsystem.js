@@ -252,7 +252,7 @@ function init() {
     $('#adminattendance').hide();
     $('#equipmentsystem').hide();
     var pages = ['Equipment', 'equipment', 'Attendance', 'attendance'];
-    if (pages.indexOf(wikispaces_page) < 0) return;
+    if (pages.indexOf(window.location.pathname) < 0) return;
     firebase.auth().onAuthStateChanged(function(user) {
         $('#login-loading').hide();
         if (user) {

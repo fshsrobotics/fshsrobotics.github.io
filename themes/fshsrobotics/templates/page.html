@@ -23,6 +23,16 @@
     {% endif %}
     {{ page.content }}
     {% if 'tutorial' in page.type %}
-    </div></div></div>
+    </div>
+    {% if page.previous %}
+        {% set previous = page.previous.split(':') %}
+        {% set next = page.next.split(':') %}
+        <div class="learn-contents-navigate full-width">
+            <a class="previous" href="{{ previous[0] }}">{{ previous[1] }}</a>
+            <a class="next" href="{{next[0]}}">{{next[1]}}</a>
+            <div class="separator"></div>
+        </div>
+    {% endif %}
+    </div>
     {% endif %}
 {% endblock %}

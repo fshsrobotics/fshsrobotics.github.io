@@ -1,5 +1,7 @@
 title: 0. Welcome to Robotics!
 type: tutorial
+previous: /c-course/:Back to C Course
+next: #:Coming soon
 <div style="text-align:center">
 <img src="{attach}robointroheader.png" style="width:100%"/>
 </div>

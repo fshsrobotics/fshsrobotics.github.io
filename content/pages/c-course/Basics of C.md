@@ -42,7 +42,7 @@ Copy and save the program above into a text editor (we suggest Notepad++ or Subl
 To run your program, you first need to **compile it using a compiler**. A compiler converts your `.c` code into an executable program - a file that is machine code, which can be read by the computer. This is the same in RobotC.
 
 <p style="text-align:center">
-<img alt="Compiler becomes C code" src="https://fshsrobotics.gitlab.io/c-course/basics-of-c/compiler.png" style="max-width:400px;">
+<img alt="Compiler becomes C code" src="{attach}compiler.png" style="max-width:400px;">
 </p>
 
 In our course, we use TCC ('tiny C compiler') for Windows and GCC for Mac and Linux to compile our programs. To do so, follow the guide [here](/c-course/tcc-guide). 

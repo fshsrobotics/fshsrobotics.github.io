@@ -1,7 +1,7 @@
 title: 0. Welcome to Robotics!
 type: tutorial
 previous: /c-course/:Back to C Course
-next: #:Coming soon
+next: /c-course/basics-of-c:Basics of C
 <div style="text-align:center">
 <img src="{attach}robointroheader.png" style="width:100%"/>
 </div>
@@ -22,9 +22,10 @@ You'll also find a lot more problem solving questions that require you to think.
 Robotics is all about **thinking and solving problems**, and programming is one magical and interactive way of learning how to design, develop and produce great solutions. 
 
 Things you'll master:
- - How to code in C
- - How to build a robot
- - Work in a group
+
+- How to code in C
+- How to build a robot
+- Work in a group
 
 Robotics is also a really new field - you'll hear in the news all sorts of new robots, artificial intelligence and search and rescue automation. You'll feel you are actually making something and at the end of the year, you'll feel accomplished and it'll further your knowledge in whatever field you'll be interested in in the future.
 

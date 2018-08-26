@@ -40,8 +40,10 @@ MARKDOWN = {
     'extensions' : ['markdown.extensions.codehilite', 'markdown.extensions.extra', 'markdown.extensions.meta'],
     'extension_configs': {
         'markdown.extensions.codehilite': {'css_class': 'highlight'},
+        'markdown.extensions.tables':{},
+        'markdown.extensions.extra': {},
         # if you have nothing to configure there is no need to add a empty config
-        #'markdown.extensions.meta': {}, 
+        'markdown.extensions.meta': {}, 
     }
     # By default Pelican already sets the output_format to html5 so it is only needed if you want something else
     #'output_format': 'html5',

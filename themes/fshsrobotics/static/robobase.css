@@ -569,6 +569,23 @@ body {
 	}
 }
 
+/* Learn tables */
+.learn-wrapper table thead>tr>th {
+	border-bottom: 1px solid;
+	border-color: var(--main-blue);
+	text-align: left;
+}
+
+.learn-wrapper table td,
+.learn-wrapper table th {
+	padding: 10px 4px;
+}
+
+.learn-wrapper table tr>td {
+	border-bottom: 1px solid;
+	border-color: var(--main-light-blue);
+}
+
 /* Footer */
 
 #mainFooter {

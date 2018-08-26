@@ -1,7 +1,7 @@
 title: 1. Basics of C
 type: tutorial
 previous: /c-course/welcome-to-robotics:Welcome to Robotics!
-next: #:Coming soon
+next: /c-course/basics-of-robotc:Basics of RobotC
 
 ## 1.1 A brief introduction to C and RobotC
 C is a programming language. We learn it because:
@@ -30,8 +30,8 @@ This program is complete - you probably can guess what it does! The key thing is
 |------|---------|
 | `//` | A single line comment. Anything after it on the same line will not be part of your code. |
 | `#include <stdio.h>` | Import the 'standard input/output' library. It supports functions (commands) like 'printf'. |
-| `int main () { ... }` | The main function must appear in every C program. It is the first thing the computer looks for when you run the code. |
-| `printf ( ... )` | A string that we want to print out. Anything within double quotes is considered a string. |
+| `int main() { ... }` | The main function must appear in every C program. It is the first thing the computer looks for when you run the code. |
+| `printf( ... )` | A string that we want to print out. Anything within double quotes is considered a string. |
 | `Hello, World!\n` | A function that lets you print something out to the screen. The 'f' stands for 'formatted'. |
 | `\n` | Inserts a new line - makes it pretty. |
 | `return 0` | 0 tells the computer that the program finished without an error. |
@@ -39,9 +39,11 @@ This program is complete - you probably can guess what it does! The key thing is
 ## 1.3 Compiling your program
 Copy and save the program above into a text editor (we suggest Notepad++ or Sublime Text) and **save it as `hello.c`**. All your code should have the `.c` file extension.
 
-To run your program, you first need to **compile it using a *compiler***. A compiler converts your `.c` code into an executable program - a file that is machine code, which can be read by the computer. This is the same in RobotC.
+To run your program, you first need to **compile it using a compiler**. A compiler converts your `.c` code into an executable program - a file that is machine code, which can be read by the computer. This is the same in RobotC.
 
-![Compiler]({attach}compiler.png)
+<p style="text-align:center">
+<img alt="Compiler becomes C code" src="https://fshsrobotics.gitlab.io/c-course/basics-of-c/compiler.png" style="max-width:400px;">
+</p>
 
 In our course, we use TCC ('tiny C compiler') for Windows and GCC for Mac and Linux to compile our programs. To do so, follow the guide [here](/c-course/tcc-guide). 
 

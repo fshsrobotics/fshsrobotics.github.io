@@ -44,6 +44,7 @@ MARKDOWN = {
         'markdown.extensions.extra': {},
         # if you have nothing to configure there is no need to add a empty config
         'markdown.extensions.meta': {}, 
+        'markdown.extensions.toc': {},
     }
     # By default Pelican already sets the output_format to html5 so it is only needed if you want something else
     #'output_format': 'html5',

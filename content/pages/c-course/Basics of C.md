@@ -12,7 +12,9 @@ C is a programming language. We learn it because:
 
 RobotC is a C-based editor and compiler. You'll be able to use most of what you learn in C in RobotC, and there are only some small differences.
 
-## 1.2 Hello World
+**Note**: We're going to be going to and from C and RobotC. This is mainly so that you learn all the sorts of things standard to coding, that isn't possible with just RobotC. (Also, because we don't have enough licenses for RobotC, as it's not free).
+
+## 1.2 Hello World in C
 'Hello, World' is the standard way of starting any programming language. Let's see what it is:
 ```cpp
 // A simple C program!
@@ -36,7 +38,7 @@ This program is complete - you probably can guess what it does! The key thing is
 | `\n` | Inserts a new line - makes it pretty. |
 | `return 0` | 0 tells the computer that the program finished without an error. |
 
-## 1.3 Compiling your program
+## 1.3 Compiling your C program
 Copy and save the program above into a text editor (we suggest Notepad++ or Sublime Text) and **save it as `hello.c`**. All your code should have the `.c` file extension.
 
 To run your program, you first need to **compile it using a compiler**. A compiler converts your `.c` code into an executable program - a file that is machine code, which can be read by the computer. This is the same in RobotC.
@@ -47,7 +49,7 @@ To run your program, you first need to **compile it using a compiler**. A compil
 
 In our course, we use TCC ('tiny C compiler') for Windows and GCC for Mac and Linux to compile our programs. To do so, follow the guide [here](/c-course/tcc-guide). 
 
-## 1.4 Run your program
+## 1.4 Run your C program
 Make sure you have:
 
 1. Copied and saved the code into a file called `hello.c`

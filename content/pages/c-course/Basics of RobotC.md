@@ -12,7 +12,7 @@ Now that we've learnt a tiny bit of C, let's quickly look at RobotC. Everything 
 | `int main() { ... }` | `task main() { ... }` | Instead of returning an int, we call them 'tasks'. |
 | `return 0` | - | Tasks do not require return values. |
 
-## 2.2 Moving motors
+## 2.2 Moving motors in RobotC
 Let's look at a program that runs Motor A for one second, then stops. 
 
 ```c
@@ -26,10 +26,15 @@ task main() {
 }
 ```
 
-One key thing to note is that the **motor speed is set**. It isn't '**pinged**' - from the point you call `motor[motorL] = 100`, it will run at 100 speed until it is stopped or the program terminates.
+Key things to note:
+
+* C reads top to bottom. So, the motor is set to 100, nothing happens for 1 second, then it stops.
+* The `=` **makes a change** to a particular variable. Here, it's changing the motor speed variable.
+* The `1000` in `wait1Msec(1000)` is an **argument** to the wait function. We can change this number if we want it to be longer or shorter.
+* The **motor speed is set**. It isn't '**pinged**' - from the point you call `motor[motorL] = 100`, it will run at 100 speed until it is stopped or the program terminates.
 
 ## 2.3 Exercises
-Given the following starting code, copy the code into `simplemotor.c` and save it in your Robotics folder.
+Given the following starting code, copy the code into a new file, call it  `simplemotor.c` and save it in your Robotics folder.
 
 ```c
 #pragma config(Motor, motorA, motorL, tmotorNXT, PIDControl, encoder)
@@ -45,8 +50,17 @@ task main() {
 }
 ```
 
-1. What do you think the code does?
-2. Change the code so that the robot goes forward for 1 second, spin clockwise for 3 seconds and then stops.
-3. Change the code so that the robot moves backwards for 1 second, moves forward for 1 second, and does that 3 more times.
+1. What do you think the code does? If it was hooked to a robot with two wheels, what would the robot do?
+2. Change the code so that the robot goes forward for 1 second, spin clockwise for 3 seconds, moves backwards for 1 second and then stops.
 
 Ask for the code to be uploaded to the demo robot and see if it works!
+
+## Submission
+
+- Submit the file as `simplemotor.c` in the form below. 
+- The code should make a robot go forward, spin clockwise, and go backwards as explained above. 
+- You will need to log in to a Google or DEC account.
+
+<p style="text-align:center">
+<a class="button" href="https://goo.gl/forms/Uu3p1sukJrtag1v42" target="_blank">Open submission form</a>
+</p>

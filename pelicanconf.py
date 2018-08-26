@@ -36,6 +36,17 @@ PAGE_URL = '{slug}/'
 PAGE_SAVE_AS = '{slug}/index.html'
 SLUGIFY_SOURCE = 'basename'
 
+MARKDOWN = {
+    'extensions' : ['markdown.extensions.codehilite', 'markdown.extensions.extra', 'markdown.extensions.meta'],
+    'extension_configs': {
+        'markdown.extensions.codehilite': {'css_class': 'highlight'},
+        # if you have nothing to configure there is no need to add a empty config
+        #'markdown.extensions.meta': {}, 
+    }
+    # By default Pelican already sets the output_format to html5 so it is only needed if you want something else
+    #'output_format': 'html5',
+}
+
 # Feed generation is usually not desired when developing
 # FEED_ALL_ATOM = None
 # CATEGORY_FEED_ATOM = None

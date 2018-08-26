@@ -305,9 +305,9 @@ body {
    display:block;
 }
 .wiki pre { 
-	background-color: #EEE; 
-	border: 1px solid #CCC; 
-	padding: 10px; 
+	background-color: #EEE;
+	display: block;
+	padding: 10px 15px; 
 	font-size: 15px; 
 	overflow-x: auto;
 }

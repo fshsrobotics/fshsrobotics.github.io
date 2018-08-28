@@ -13,13 +13,28 @@
     {% import 'translations.html' as translations with context %}
     {{ translations.translations_for(page) }}
     {% if 'tutorial' in page.type %}
+
     <div class="wiki" id="content_view" style="display: block;">
     <div class="learn-wrapper">
     <div class="hero full-width">
+    {% if page.back %}
+    {% set back = page.back.split(':') %}
+    <a class="hero-back" href="{{back[0]}}">{{back[1]}}</a>
+    {% endif %}
     <h3>FSHS Robotics C Course</h3>
     <h1>{{page.title}}</h1>
     </div>
-    <div class="learn-contents-text" style="grid-column:1 / 4;grid-row:2/3">
+    {% if page.tutorialtype %}
+        {% set type = page.tutorialtype %}
+        <div class="learn-contents-nav">
+        {% for pg in pages %}
+            {% if pg.tutorialtype == type %}
+                <a href="{{SITEURL}}/{{pg.url}}">{{pg.title}}</a>
+            {% endif %}
+        {% endfor %}
+        </div>
+    {% endif %}
+    <div class="learn-contents-text">
     {% endif %}
     {{ page.content }}
     {% if 'tutorial' in page.type %}

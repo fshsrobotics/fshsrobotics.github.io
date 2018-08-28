@@ -1,7 +1,11 @@
 title: 0. Welcome to Robotics!
 type: tutorial
+tutorialtype: c-course
+sortorder: 000
 previous: /c-course/:Back to C Course
 next: /c-course/basics-of-c:Basics of C
+back: /c-course/:Back to C Course
+
 <div style="text-align:center">
 <img src="{attach}robointroheader.png" style="width:100%"/>
 </div>

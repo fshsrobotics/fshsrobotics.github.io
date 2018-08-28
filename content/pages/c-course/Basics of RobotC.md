@@ -1,7 +1,10 @@
 title: 2. Basics of RobotC
 type: tutorial
+tutorialtype: c-course
+sortorder: 002
 previous: /c-course/basics-of-c:Basics of C
 next: #:Coming soon
+back: /c-course/:Back to C Course
 
 ## 2.1 RobotC Introduction
 Now that we've learnt a tiny bit of C, let's quickly look at RobotC. Everything in [the table](/c-course/basics-of-c/#12-hello-world) from 1.2 is the same, except:

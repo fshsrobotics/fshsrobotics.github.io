@@ -1,7 +1,10 @@
 title: 1. Basics of C
 type: tutorial
+tutorialtype: c-course
+sortorder: 001
 previous: /c-course/welcome-to-robotics:Welcome to Robotics!
 next: /c-course/basics-of-robotc:Basics of RobotC
+back: /c-course/:Back to C Course
 
 ## 1.1 A brief introduction to C and RobotC
 C is a programming language. We learn it because:

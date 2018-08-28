@@ -34,6 +34,7 @@ PLUGINS = ["pelican-page-hierarchy"]
 
 PAGE_URL = '{slug}/'
 PAGE_SAVE_AS = '{slug}/index.html'
+PAGE_ORDER_BY = 'sortorder'
 SLUGIFY_SOURCE = 'basename'
 
 MARKDOWN = {

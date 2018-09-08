@@ -7,7 +7,7 @@ back: /c-course/:Back to C Course
 This is a video of the winning team in the 2017 National Competition in Brisbane.
 
 <video width="100%" height="auto" controls>
-    <source src="/file/Maze1.mp4" type="video/mp4">
+    <source src="/file/maze1.mp4" type="video/mp4">
     Your browser does not support the video tag.
 </video>
 

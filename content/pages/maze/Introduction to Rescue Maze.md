@@ -1,7 +1,7 @@
 title: Introduction to Rescue Maze
 type: tutorial
 tutorialtype:maze
-back: /c-course/:Back to C Course
+back: /maze/:Back to Maze
 
 ## Overview
 This is a video of the winning team in the 2017 National Competition in Brisbane.

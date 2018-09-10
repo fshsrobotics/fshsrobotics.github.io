@@ -618,7 +618,8 @@ body {
 	position:relative;
 	margin-bottom:10px;
 	text-decoration:none;
-	color:#555;
+	color:#222;
+	transition: 0.3s ease all;
 }
 .filebox a.hover, .filebox a:hover {
 	background:#CCC;

@@ -125,6 +125,5 @@ while (currentAction >= 0) {
 
 ## It's not working
 - Make sure you're resetting the motorEncoder count every time you store values.
-- Try out the code separately! Make a new file and 
 - If you want to store two paths separately and interchange between them, you'll need two allActions structs.
     - Remember that you only need to store the data when you need it!

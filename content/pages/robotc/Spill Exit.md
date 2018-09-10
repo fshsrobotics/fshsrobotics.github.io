@@ -115,8 +115,16 @@ while (currentAction >= 0) {
 }
 ```
 
+## Exercises
+1. Try and use this framework in a new file and make the robot simply move forwards, then backtrack. 
+    - Record the robot moving forward at 20 speed for 5 seconds.
+    - Replay the robot reversing for the same amount.
+    - See how accurate it is - it should be decent but not perfect.
+2. Try and make the robot do a few recorded movements, and backtrack those actions.
+3. Incorporate the code into your spill exit code.
+
 ## It's not working
 - Make sure you're resetting the motorEncoder count every time you store values.
-- Try out the code separately - make a new file, make the robot go forward and watch it go backwards.
+- Try out the code separately! Make a new file and 
 - If you want to store two paths separately and interchange between them, you'll need two allActions structs.
     - Remember that you only need to store the data when you need it!

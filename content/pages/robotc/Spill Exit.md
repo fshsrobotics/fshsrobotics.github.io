@@ -1,7 +1,7 @@
 title: Spill Exit
 type: tutorial
 fullwidth: true
-back: /c-course/:Back to C Course
+back: /robotc/:Back to RobotC
 
 ## Pseudocode
 - To exit the spill, you need to:
@@ -47,8 +47,8 @@ struct ActionData {
     - [How to make an array of struct in C?](https://stackoverflow.com/a/32185804)
 
 ```cpp
-// Place this above the main function
-struct ActionData allActions[3000]; // Create an array of ActionData
+// Place this at the top within the main function
+struct ActionData allActions[10]; // Create an array of ActionData
 int currentAction = 0;       // Keep track of where we are
 
 ...
@@ -104,7 +104,7 @@ while (currentAction >= 0) {
 
     // Do the action
     move(leftSpeed, rightSpeed);
-    while (leftCount < abs(nMotorEncoder[leftMotor]) || rightCount < abs(nMotorEncoder[rightMotor]))) {
+    while (leftCount > abs(nMotorEncoder[leftMotor]) || rightCount > abs(nMotorEncoder[rightMotor]))) {
         // moving...
     }
 

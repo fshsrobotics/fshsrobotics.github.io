@@ -3,7 +3,7 @@ type: tutorial
 tutorialtype: c-course
 sortorder: 002
 previous: /c-course/basics-of-c:Basics of C
-next: #:Coming soon
+next: /c-course/variables:Variables
 back: /c-course/:Back to C Course
 
 ## 2.1 RobotC Introduction
@@ -56,12 +56,12 @@ task main() {
 1. What do you think the code does? If it was hooked to a robot with two wheels, what would the robot do?
 2. Change the code so that the robot goes forward for 1 second, spin clockwise for 3 seconds, moves backwards for 1 second and then stops.
 
-Ask for the code to be uploaded to the demo robot and see if it works!
+Ask for the code to be uploaded to a demo robot and see if it works!
 
 ## Submission
 
 - Submit the file as `simplemotor.c` in the form below. 
-- The code should make a robot go forward, spin clockwise, and go backwards as explained above. 
+- The code should make a robot go forward for 1 second, spin clockwise for 3 seconds, moves backward for 1 second and then stop.
 - You will need to log in to a Google or DEC account.
 
 <p style="text-align:center">

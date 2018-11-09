@@ -39,3 +39,18 @@ You can also string both together - but be careful, as you can only do that once
 float pi = 3.14; // Set it to this at the start
 pi = 3.14159; // Change it later
 ```
+
+## 3.3 Printing variables
+To print out variables, we need to append it into the printf statement. Let's modify our Hello World code to print out more than just text.
+
+```cpp
+// A simple C program!
+#include <stdio.h>
+
+int main () {
+	int numberOfChickens = 10;
+	printf("I have %d chickens.\n", numberOfChickens);
+	return 0;
+}
+```
+

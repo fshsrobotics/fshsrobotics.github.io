@@ -42,7 +42,7 @@ This program is complete - you probably can guess what it does! The key thing is
 | `return 0` | 0 tells the computer that the program finished without an error. |
 
 ## 1.3 Compiling your C program
-Copy and save the program above into a text editor (we suggest Notepad++ or Sublime Text) and **save it as `hello.c`**. All your code should have the `.c` file extension.
+Copy and save the program above into a text editor (we recommend VS Code) and **save it as `hello.c`**. All your code should have the `.c` file extension.
 
 To run your program, you first need to **compile it using a compiler**. A compiler converts your `.c` code into an executable program - a file that is machine code, which can be read by the computer. This is the same in RobotC.
 
@@ -50,14 +50,19 @@ To run your program, you first need to **compile it using a compiler**. A compil
 <img alt="Compiler becomes C code" src="{attach}compiler.png" style="max-width:400px;">
 </p>
 
-In our course, we use TCC ('tiny C compiler') for Windows and GCC for Mac and Linux to compile our programs. To do so, follow the guide [here](/c-course/tcc-guide). 
+In our course, we use TCC ('tiny C compiler') for Windows and GCC for Mac and Linux to compile our programs. Make sure you've installed this (check out our [VSCode Download guide](/c-course/downloading-vscode/) for more instructions).
+
+To compile in VSCode:
+
+1. Press CTRL+SHIFT+P, and type "TCC". 
+2. Select 'TCC: Compile'.
 
 ## 1.4 Run your C program
 Make sure you have:
 
 1. Copied and saved the code into a file called `hello.c`
-2. Installed TCC or GCC using the instructions above
-3. Navigated in your terminal/command prompt to the correct folder, or opened `cmd` in the desired folder with `tcc.exe`
+2. Press CTRL+SHIFT+P, and type "TCC". 
+3. Select 'TCC: Run'.
 
 To run the program on Mac:
 ```bash

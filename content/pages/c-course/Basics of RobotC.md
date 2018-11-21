@@ -34,10 +34,10 @@ Key things to note:
 * C reads top to bottom. So, the motor is set to 100, nothing happens for 1 second, then it stops.
 * The `=` **makes a change** to a particular variable. Here, it's changing the motor speed variable.
 * The `1000` in `wait1Msec(1000)` is an **argument** to the wait function. We can change this number if we want it to be longer or shorter.
-* The **motor speed is set**. It isn't '**pinged**' - from the point you call `motor[motorL] = 100`, it will run at 100 speed until it is stopped or the program terminates.
+* The **motor speed is set**. It isn't '**pinged**' - from the point you call `motor[motorL] = 100`, it will run at 100 speed forever until it is stopped or the program terminates.
 
 ## 2.3 Exercises
-Given the following starting code, copy the code into a new file, call it  `simplemotor.c` and save it in your Robotics folder.
+Given the following starting code, copy the code into a new file, call it `simplemotor.c` and save it in your Robotics folder.
 
 ```c
 #pragma config(Motor, motorA, motorL, tmotorNXT, PIDControl, encoder)
@@ -57,13 +57,3 @@ task main() {
 2. Change the code so that the robot goes forward for 1 second, spin clockwise for 3 seconds, moves backwards for 1 second and then stops.
 
 Ask for the code to be uploaded to a demo robot and see if it works!
-
-## Submission
-
-- Submit the file as `simplemotor.c` in the form below. 
-- The code should make a robot go forward for 1 second, spin clockwise for 3 seconds, moves backward for 1 second and then stop.
-- You will need to log in to a Google or DEC account.
-
-<p style="text-align:center">
-<a class="button" href="https://goo.gl/forms/Uu3p1sukJrtag1v42" target="_blank">Open submission form</a>
-</p>

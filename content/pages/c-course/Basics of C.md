@@ -10,7 +10,7 @@ back: /c-course/:Back to C Course
 C is a programming language. We learn it because:
 
  - Most of you have played around with Python or Scratch - this isn't much of a jump up.
- - It's sorta "low level", which means you can pretty directly talk to a robot's attachments (sensors, motors). 
+ - It's sorta "low level", which means you can pretty directly talk to a robot's attachments (sensors, motors), as well as interface well with custom sensors.
  - It's pretty straight forward - code reads from top to bottom.
 
 RobotC is a C-based editor and compiler. You'll be able to use most of what you learn in C in RobotC, and there are only some small differences.
@@ -41,39 +41,22 @@ This program is complete - you probably can guess what it does! The key thing is
 | `\n` | Inserts a new line - makes it pretty. |
 | `return 0` | 0 tells the computer that the program finished without an error. |
 
-## 1.3 Compiling your C program
-Copy and save the program above into a text editor (we recommend VS Code) and **save it as `hello.c`**. All your code should have the `.c` file extension.
+## 1.3 Running your C program
+We're going to be using an online C compiler - there's many out there but you can use (Repl.it)[https://repl.it/languages/c]. Copy the code above into the left panel of Repl.it. 
 
-To run your program, you first need to **compile it using a compiler**. A compiler converts your `.c` code into an executable program - a file that is machine code, which can be read by the computer. This is the same in RobotC.
-
-<p style="text-align:center">
-<img alt="Compiler becomes C code" src="{attach}compiler.png" style="max-width:400px;">
-</p>
-
-In our course, we use TCC ('tiny C compiler') for Windows and GCC for Mac and Linux to compile our programs. Make sure you've installed this (check out our [VSCode Download guide](/c-course/downloading-vscode/) for more instructions).
-
-To compile in VSCode:
-
-1. Press CTRL+SHIFT+P, and type "TCC". 
-2. Select 'TCC: Compile'.
-
-## 1.4 Run your C program
-Make sure you have:
-
-1. Copied and saved the code into a file called `hello.c`
-2. Press CTRL+SHIFT+P, and type "TCC". 
-3. Select 'TCC: Run'.
-
-To run the program on Mac:
-```bash
-./hello
-```
-To run the program on Windows:
-```bash
-hello
-```
 It should come up with:
 ```bash
 Hello, World!
 ```
+
 Congratulations, you've written and run your first program!
+
+## 1.4 Exercises
+1. **Monkey**: Print out the following ASCII art:
+```
+     __
+ )  ( ')
+(  /  )
+ \(__)|
+```
+Make sure the spacing is correct! To print a new line, you need to use the `\n` symbol. `\` is a special character, so you need to use `\\` (e.g. `printf(" \\(__)|\n");`).

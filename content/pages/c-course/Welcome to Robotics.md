@@ -11,7 +11,7 @@ back: /c-course/:Back to C Course
 </div>
 
 ## 0.1 Welcome!
-Hello and welcome to FSHS Robotics! We are a student run club dedicated to experiencing the rapidly evolving fields of mechanical, software and electrical engineering, and you can read much more about what we do on the [About page](/about/).
+Hello and welcome to FSHS Robotics! We are a student run club dedicated to experiencing the rapidly evolving fields of mechanical, software and electrical engineering.
 
 This site is our textbook for learning C and RobotC. Feel free to go through these chapters at your own pace - what matters is you learn and try out all sorts of problems that you are interested in. **Be self-directed and be motivated**!
 
@@ -33,6 +33,14 @@ Things you'll master:
 
 Robotics is also a really new field - you'll hear in the news all sorts of new robots, artificial intelligence and search and rescue automation. You'll feel you are actually making something and at the end of the year, you'll feel accomplished and it'll further your knowledge in whatever field you'll be interested in in the future.
 
-It is, however, **a lot of work**. The first year will be a learning experience - there are some who do really well, and some who don't set enough time for Robotics. You'll have to find your own balance. It **isn't like any other extra curricular activity** - it is a lot more about how much effort you put in. The people who put in the most effort are the ones who end up on the [Awards page](/awards/).
+There are loads of inspiring work done in the robotics field. Here are two 'case studies' that are in the forefront of robotics.
+
+* [Inside Tesla's Audacious Push to Reinvent the Way Cars Are Made - The New York Times](https://www.nytimes.com/2018/06/30/business/tesla-factory-musk.html)
+    * [Robot image link](https://static01.nyt.com/images/2018/07/01/business/01TESLA-4/merlin_139592442_b7c332a4-8dda-4bd7-a5db-d378b384cc75-superJumbo.jpg)
+* [Mars 2020 Rover - NASA](https://mars.nasa.gov/mars2020/mission/overview/)
+    * [Mission image](https://upload.wikimedia.org/wikipedia/commons/f/fc/Mars2020MissionTimeline-20130710.jpg)
+    * "Fetch rover"
+
+Robotics, however, is **a lot of work**. The first year will be a learning experience - there are some who do really well, and some who don't set enough time for Robotics. You'll have to find your own balance. It **isn't like any other extra curricular activity** - it is a lot more about how much effort you put in. The people who put in the most effort are the ones who end up on the [Awards page](/awards/).
 
 Hopefully you'll get more than just the fundamentals in programming - go outside your boundaries and try out all sorts of things, think of all sorts of solutions! Be smart and ask questions.

@@ -1,6 +1,6 @@
 title: 0. Welcome to Robotics!
 type: tutorial
-tutorialtype: c-course
+fullwidth: true
 sortorder: 000
 previous: /c-course/:Back to C Course
 next: /c-course/basics-of-c:Basics of C

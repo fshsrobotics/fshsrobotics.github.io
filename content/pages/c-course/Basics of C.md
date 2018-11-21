@@ -1,6 +1,6 @@
 title: 1. Basics of C
 type: tutorial
-tutorialtype: c-course
+fullwidth: true
 sortorder: 001
 previous: /c-course/welcome-to-robotics:Welcome to Robotics!
 next: /c-course/basics-of-robotc:Basics of RobotC
@@ -59,4 +59,4 @@ Congratulations, you've written and run your first program!
 (  /  )
  \(__)|
 ```
-Make sure the spacing is correct! To print a new line, you need to use the `\n` symbol. `\` is a special character, so you need to use `\\` (e.g. `printf(" \\(__)|\n");`).
+Make sure the spacing is correct! To print a new line, you need to use the `\n` symbol. `\` is a special character, so you need to use `\\` (e.g. `printf("\\");`).

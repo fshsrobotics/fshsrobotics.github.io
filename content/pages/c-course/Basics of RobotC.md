@@ -1,6 +1,6 @@
 title: 2. Basics of RobotC
 type: tutorial
-tutorialtype: c-course
+fullwidth: true
 sortorder: 002
 previous: /c-course/basics-of-c:Basics of C
 next: /c-course/variables:Variables

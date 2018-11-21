@@ -311,6 +311,10 @@ body {
 	font-size: 15px; 
 	overflow-x: auto;
 }
+.wiki code {
+	background-color: #EEE;
+	padding: 2px 4px;
+}
 
 .wiki .content a {
    color:#444;

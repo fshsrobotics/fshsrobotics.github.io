@@ -1,6 +1,6 @@
 title: 3. Variables
 type: tutorial
-tutorialtype: c-course
+fullwidth: true
 sortorder: 003
 previous: /c-course/basics-of-robotc:Basics of RobotC
 next: #:Coming soon

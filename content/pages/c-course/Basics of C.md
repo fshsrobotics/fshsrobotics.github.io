@@ -36,8 +36,8 @@ This program is complete - you probably can guess what it does! The key thing is
 | `//` | A single line comment. Anything after it on the same line will not be part of your code. |
 | `#include <stdio.h>` | Import the 'standard input/output' library. It supports functions (commands) like 'printf'. |
 | `int main() { ... }` | The main function must appear in every C program. It is the first thing the computer looks for when you run the code. |
-| `printf( ... )` | A string that we want to print out. Anything within double quotes is considered a string. |
-| `Hello, World!\n` | A function that lets you print something out to the screen. The 'f' stands for 'formatted'. |
+| `printf( ... )` | A function that lets you print something out to the screen. The 'f' stands for 'formatted'. |
+| `Hello, World!\n` | A string that we want to print out. Anything within double quotes is considered a string. |
 | `\n` | Inserts a new line - makes it pretty. |
 | `return 0` | 0 tells the computer that the program finished without an error. |
 

@@ -42,7 +42,7 @@ This program is complete - you probably can guess what it does! The key thing is
 | `return 0` | 0 tells the computer that the program finished without an error. |
 
 ## 1.3 Running your C program
-We're going to be using an online C compiler - there's many out there but you can use (Repl.it)[https://repl.it/languages/c]. Copy the code above into the left panel of Repl.it. 
+We're going to be using an online C compiler - there's many out there but you can use [Repl.it](https://repl.it/languages/c). Copy the code above into the left panel of Repl.it. 
 
 It should come up with:
 ```bash

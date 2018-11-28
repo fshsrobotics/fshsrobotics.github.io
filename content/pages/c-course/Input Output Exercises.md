@@ -49,11 +49,9 @@ Use `if` and a **condition** to make decisions.
 int x = 1;
 if (x != 3) {
     ...
-}
-else if (x <= 10) {
+} else if (x <= 10) {
     ...
-}
-else {
+} else {
     ...
 }
 ```

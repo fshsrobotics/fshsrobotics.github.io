@@ -633,6 +633,18 @@ body {
 	display:block;
 	font-size:80%;
 }
+.filecontainer {
+	border: 3px solid #DDD;
+	display: block;
+	padding: 10px;
+}
+
+.filecontainer h3 {
+	margin: -10px -10px 14px;
+	font-size: 16px;
+	padding: 10px;
+	background: #DDD;
+}
 
 /* Media Screen ####################################### */
 

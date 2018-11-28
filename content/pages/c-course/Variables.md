@@ -76,6 +76,7 @@ When you code, you are bound to get errors. Errors you receive from the compiler
 Let's try and change the code to make it wrong. Here, I have moved the quotation to the end of the `printf( ... )` statement, and removed the `return 0`.
 
 ```cpp
+// THIS CODE DOES NOT WORK AND WILL PRODUCE AN ERROR
 #include <stdio.h>
 
 int main () {

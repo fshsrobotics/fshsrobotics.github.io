@@ -62,6 +62,14 @@ else {
 
 **To do the exercises, use [Repl.it](https://repl.it/languages/c).**
 
+### 1. Calculator
+Write a program `calcs.c` that calculates `39*623+10`.
+
+Your program output the following:
+```
+24307
+```
+
 ### 2. Pizza Calculator
 Write a program `pizzacalcs.c` that allows the user to enter the number of pizzas. The program should print out the **total slices** (each pizza is divided into **8 slices**) and the **total slices per person** if there are **5 people**.
 

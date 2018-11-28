@@ -224,3 +224,6 @@ Enter the board:
 0 0 2
 No players have won.
 ```
+
+## Solutions
+Solutions will be posted [here](/c-course/input-output-exercises/solutions).

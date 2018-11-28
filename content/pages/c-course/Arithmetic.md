@@ -3,7 +3,7 @@ type: tutorial
 fullwidth: true
 sortorder: 004
 previous: /c-course/variables:Variables
-next: #:Coming soon
+next: /c-course/inputs-and-decisions:Inputs and Decisions
 back: /c-course/:Back to C Course
 
 ## 4.1 Introduction to Arithmetic

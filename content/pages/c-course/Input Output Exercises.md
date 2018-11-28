@@ -2,7 +2,7 @@ title: Input Output Exercises
 type: tutorial
 fullwidth: true
 sortorder: 004
-previous: #:Coming soon
+previous: /c-course/inputs-and-decisions:Inputs and Decisions
 next: #:Coming soon
 back: /c-course/:Back to C Course
 

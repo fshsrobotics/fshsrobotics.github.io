@@ -16,9 +16,10 @@ back: /resources/:Back to Resources
 <div class="filebox"><a href="/c-course/basics-of-robotc">2. Basics of RobotC <span>Week 6-7</span></a></div>
 <div class="filebox"><a href="/c-course/variables">3. Variables <span>Week 7</span></a></div>
 <div class="filebox"><a href="/c-course/arithmetic">4. Arithmetic <span>Week 7</span></a></div>
+<div class="filebox"><a href="/c-course/inputs-and-decisions">5. Inputs and Decisions <span>Week 7</span></a></div>
 </div>
 
 <div class="filecontainer">
 <h3>Week 8</h3>
-<div class="filebox"><a href="/c-course/input-output-exercises">Topic 1-6 Exercises<span>Week 7-8</span></a></div>
+<div class="filebox"><a href="/c-course/input-output-exercises">Topic 1-5 Exercises<span>Week 7-8</span></a></div>
 </div>

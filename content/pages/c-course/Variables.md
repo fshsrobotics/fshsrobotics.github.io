@@ -3,7 +3,7 @@ type: tutorial
 fullwidth: true
 sortorder: 003
 previous: /c-course/basics-of-robotc:Basics of RobotC
-next: #:Coming soon
+next: /c-course/arithmetic:Arithmetic
 back: /c-course/:Back to C Course
 
 ## 3.1 Introduction to Variables

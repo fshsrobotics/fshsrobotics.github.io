@@ -637,6 +637,7 @@ body {
 	border: 3px solid #DDD;
 	display: block;
 	padding: 10px;
+	margin-bottom: 10px;
 }
 
 .filecontainer h3 {

@@ -40,7 +40,7 @@ Use `scanf` to allow input from the user. Remember the `&`!
 ```
 int year;
 printf("Enter a year: ");
-scanf("%d", year);
+scanf("%d", &year);
 ```
 
 ### If Statements

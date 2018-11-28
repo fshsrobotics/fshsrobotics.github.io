@@ -7,11 +7,11 @@ back: /resources/:Back to Resources
 <div class="filecontainer">
 <h3>Week 6</h3>
 <div class="filebox"><a href="/c-course/welcome-to-robotics">0. Welcome to Robotics <span>Week 6</span></a></div>
-<div class="filebox"><a href="/c-course/basics-of-robotc">2. Basics of RobotC <span>Week 6-7</span></a></div>
 </div>
 
 <div class="filecontainer">
 <h3>Week 7</h3>
 <div class="filebox"><a href="/c-course/basics-of-c">1. Basics of C <span>Week 7</span></a></div>
+<div class="filebox"><a href="/c-course/basics-of-robotc">2. Basics of RobotC <span>Week 6-7</span></a></div>
 <div class="filebox"><a href="/c-course/basics-of-robotc">3. Variables <span>Week 7</span></a></div>
 </div>

@@ -21,6 +21,6 @@ back: /resources/:Back to Resources
 
 <div class="filecontainer">
 <h3>Week 8</h3>
-<!-- Will add: Sensors, RobotC questions with if -->
-<div class="filebox"><a href="/c-course/input-output-exercises#exercises">Topic 1-5 Exercises<span>Week 7-8</span></a></div>
+<div class="filebox"><a href="/c-course/input-output-exercises#exercises">Topic 1-5 Exercises <span>Week 7-8</span></a></div>
+<div class="filebox"><a href="/c-course/sensors-and-motors">6. Sensors and Motors <span>Week 8</span></a></div>
 </div>

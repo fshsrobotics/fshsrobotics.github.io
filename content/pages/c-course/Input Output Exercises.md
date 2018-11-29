@@ -3,7 +3,7 @@ type: tutorial
 fullwidth: true
 sortorder: 004
 previous: /c-course/inputs-and-decisions:Inputs and Decisions
-next: #:Coming soon
+next: /c-course/sensors-and-motors:Sensors and Motors
 back: /c-course/:Back to C Course
 
 ## Summary

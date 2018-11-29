@@ -132,5 +132,45 @@ else {
 }
 ```
 
-## 5.4 Exercises
+## 5.4 More conditions
+There are many more conditions we can use. These are called **relational operators**, much like the arithmetic operators we met in the previous topic.
+
+| Operator | Comment | Example |
+|----------|---------|---------|
+| `==` | **Equals**. Very different from `=`. | `5 == 10` is false. |
+| `!=` | **Not equals** | `5 != 10` is true. |
+| `<`  | **Less than**, checks if left is less than right. | `5 < 10` is true. |
+| `>`  | **Greater than**, checks if left is greater than right. | `5 > 10` is false. |
+| `<=` | **Less than or equal to**. | `5 <= 10` is true. |
+| `>=` | **Greater than or equal to**. | `5 >= 10` is false. |
+
+## 5.5 Multiple conditions at once
+You can string together multiple conditions in one condition.
+
+```cpp
+if (age >= 18 && age <= 65) {
+    printf("The person between 18 and 65\n");
+}
+else if (age == 13 || age == 14) {
+    printf("The person is 13 or 14\n");
+}
+else if (!(age == 16)) {
+    printf("The person is not 16\n");
+}
+else {
+    printf("The person is 16\n");
+}
+```
+
+| Operator | Comment | Example |
+|----------|---------|---------|
+| `&&` | AND | If two conditions are true. | `true && true` is true. |
+| `||` | OR  | If one of two conditions are true. | `true || false` is true. |
+| `!`  | NOT | Inverts the condition. | `!true` is false. |
+
+Be careful about joining too many. You need to place parentheses to avoid confusion.
+* `(true || false) && false` is true. Calculate `(true || false)` first.
+* `true || (false && false)` is also true. Calculate `(false && true)` first.
+
+## 5.6 Exercises
 * There are exercises in the [grouped exercises](/c-course/input-output-exercises/).

@@ -9,13 +9,16 @@ back: /c-course/:Back to C Course
 ## 6.1 Download RobotC
 To get started with RobotC, download it. Click on the blue button after you click the below blue button.
 
-<div class="button"><a href="http://www.robotc.net/download/lego/">Download RobotC</a></div>
+<a href="http://www.robotc.net/download/lego/" class="button">Download RobotC</a>
 
 Once downloaded, make sure the following two options are selected:
+
+<center>
 
 ![]({attach}mass_superuser.png)
 
 ![]({attach}mass_platform.png)
+</center>
 
 ## 6.2 Motor and Sensor Setup
 1. Click 'New File'.
@@ -118,4 +121,4 @@ else {
 
 Think about which directions the robot should go in:
 
-![]({attach}robotdirections.png)
+<img src="{attach}robotdirections.png" width="100%" />

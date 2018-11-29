@@ -56,6 +56,21 @@ if (x != 3) {
 }
 ```
 
+| Operator | Comment | Example |
+|----------|---------|---------|
+| `==` | **Equals**. Very different from `=`. | `5 == 10` is false. |
+| `!=` | **Not equals** | `5 != 10` is true. |
+| `<`  | **Less than**, checks if left is less than right. | `5 < 10` is true. |
+| `>`  | **Greater than**, checks if left is greater than right. | `5 > 10` is false. |
+| `<=` | **Less than or equal to**. | `5 <= 10` is true. |
+| `>=` | **Greater than or equal to**. | `5 >= 10` is false. |
+
+| Operator | Comment | Example |
+|----------|---------|---------|
+| `&&` | AND | If two conditions are true. | `true && true` is true. |
+| `||` | OR  | If one of two conditions are true. | `true || false` is true. |
+| `!`  | NOT | Inverts the condition. | `!true` is false. |
+
 ## Exercises
 
 **To do the exercises, use [Repl.it](https://repl.it/languages/c).**
@@ -67,6 +82,8 @@ Your program output the following:
 ```
 24307
 ```
+
+----
 
 ### 2. Pizza Calculator
 Write a program `pizzacalcs.c` that allows the user to enter the number of pizzas. The program should print out the **total slices** (each pizza is divided into **8 slices**) and the **total slices per person** if there are **5 people**.
@@ -116,6 +133,7 @@ How many scoops? 5
 How much per scoop? 3
 Rip, you don't have enough money :(
 ```
+----
 
 ### 5. Teen-age
 At Petersham's station, the ticket office wants a simple program that can immediately tell which ticket someone should buy.
@@ -140,6 +158,7 @@ Concession ticket
 Enter your age: 40
 Adult ticket
 ```
+----
 
 ### 6. Bad code
 Uh oh! We gave Mr Semaan the task to write some C code. Unfortunately, it's a bit wrong. It's meant to ask you to put in his favourite number, and print out if it is right or not.
@@ -161,6 +180,8 @@ printf("You're wrong.\n");
     return 0;
 }
 ```
+----
+
 ### 7. Leap year
 Write a C program `leapyear.c` that reads a year and then prints whether that year is a leap year.
 
@@ -192,6 +213,7 @@ Enter year: 2000
 Enter year: 3000
 3000 is not a leap year.
 ```
+----
 
 ### 8. Challenge: Tic Tac Toe
 Write a program `tictactoe.c` that takes in a tic tac toe board and determines who wins in that game. Player 1 is represented by '1', Player 2 is represented by '2', and empty cells are represented by '0's.

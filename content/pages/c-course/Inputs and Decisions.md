@@ -9,7 +9,7 @@ back: /c-course/:Back to C Course
 ## 5.1 Input, Process, Output
 In Engineering, we use a common pattern called **"input-process-output"** that exists across many fields in both software and hardware. In Robotics, we use it as a model the work your code will do when interfacing with the environment.
 
-![IPO Model](ipomodel.png)
+![IPO Model]({attach}ipomodel.png)
 
 * For robots:
     * **Input**: data from sensors that we take in. These are observations of the real world.

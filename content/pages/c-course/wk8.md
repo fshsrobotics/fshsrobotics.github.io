@@ -1,4 +1,4 @@
-title: Week 7 Demo Exercises
+title: Week 8 Introduction
 type: tutorial
 fullwidth: true
 sortorder: 004
@@ -6,7 +6,7 @@ back: /c-course/:Back to C Course
 
 ## Week 8
 
-### What we doin
+## What we doin
 * Continue C introduction
   * Work on exercises
 * The future: much more coding in 'workshop' style, less of me talking (I'm bad at talking)
@@ -17,7 +17,7 @@ back: /c-course/:Back to C Course
 
 Repl.it not working? Try [http://cpp.sh/](http://cpp.sh/) - the input (e.g. `scanf`) is a bit funky and not quite right. But it's nearly as good as repl.it.
 
-### 1. Chickens solution
+## 1. Chickens solution
 1. Ask the user for the number of chickens
 2. Make sure the number of chickens is reasonable
 3. Print out the number of chickens
@@ -44,7 +44,7 @@ int main(void) {
 }
 ```
 
-### 2. Pizza
+## 2. Pizza
 1. Ask the user for the number of pizzas.
 2. Ask the user for the number of slices per pizza.
 3. Ask the user how many people to share these slices between.
@@ -52,5 +52,6 @@ int main(void) {
 5. Calculate how many slices would be left, and print it out.
 
 ----
+## Exercises
 
 Now time to do some questions - [https://fshsrobotics.gitlab.io/c-course/input-output-exercises](https://fshsrobotics.gitlab.io/c-course/input-output-exercises)

@@ -19,7 +19,7 @@ back: /resources/:Back to Resources
 <div class="filebox"><a href="/c-course/inputs-and-decisions">5. Inputs and Decisions <span>Week 7</span></a></div>
 </div>
 
-<div class="filecontainer">
+<div class="filecontainer current">
 <h3>Week 8</h3>
 <div class="filebox"><a href="/c-course/wk8">Week 8 Intro<span>Week 8</span></a></div>
 <div class="filebox"><a href="/c-course/arithmetic">4. Arithmetic <span>Week 8</span></a></div>

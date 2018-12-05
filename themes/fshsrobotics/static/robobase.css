@@ -639,12 +639,24 @@ body {
 	padding: 10px;
 	margin-bottom: 10px;
 }
+.filecontainer.current {
+	border: 3px solid var(--main-blue);
+}
 
 .filecontainer h3 {
 	margin: -10px -10px 14px;
 	font-size: 16px;
 	padding: 10px;
 	background: #DDD;
+}
+.filecontainer.current h3 {
+	background: var(--main-blue);
+	color: #FFF;
+}
+.filecontainer.current h3::after {
+	content: ' (current)';
+	font-size: 14px;
+	font-weight: normal;
 }
 
 /* Media Screen ####################################### */

@@ -58,6 +58,7 @@ task main()
 {
     int lr,lg,lb; // create the variables
 
+    // Repeatedly do what is in the brackets
     while (true) {
         // Like scanf, input colour intensities into variables
         getColorRawRGB(sensorLeft, lr, lg, lb);
@@ -82,6 +83,7 @@ task main()
 {
     int lr,lg,lb; // create the variables
 
+    // Repeatedly do what is in the brackets
     while (true) {
         // Like scanf, input colour intensities into variables
         getColorRawRGB(sensorLeft, lr, lg, lb);
@@ -89,10 +91,12 @@ task main()
         // Print it on the 2nd line of the screen
         displayCenteredTextLine(2, "%d %d %d", lr, lg, lb);
 
+        // If a particular condition is met
         if (lr > 30) {
             motor[motorLeft] = 50;
             motor[motorRight] = 0;
         }
+        // Otherwise...
         else {
             motor[motorLeft] = 0;
             motor[motorRight] = 50;
@@ -103,7 +107,9 @@ task main()
 
 ## 6.7 Exercises
 1. Write a program that will make a beep whenever the sensor sees something that is very red, e.g. `red > (blue + green)`. Test it out on common red objects (e.g. your diary).
+    * To make the robot brick beep, use the function `playImmediateTone(<frequency>, <duration in 10ms>)`, e.g. `playImmediateTone(100, 10)`. 
 2. Write a program that will differentiate black, white and green (take a tile from the storeroom). Print these on the NXT/EV3 screen as 'black', 'white', 'green' and 'unknown'.
+    * To print on the screen, use the function shown above - `displayCenteredTextLine(<line>, <string>)`, e.g. `displayCenteredTextLine(2, "black");`.
 3. Try out line follow by following this pseudocode:
 
 ```

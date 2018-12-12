@@ -22,6 +22,8 @@ Students should work in teams. Teams should be based on the submitted form.
 Changes to the project will be posted here.
 
 ## Project Specification
+<img src="{attach}end_tile.png" style="float:right;max-width:170px;" />
+
 ### Milestone 1
 Write a program that moves forward until it detects a silver strip. When detected, it should print a message on the screen or play a sound. The robot should also stop for one second.
 
@@ -32,7 +34,7 @@ A demo robot will be available for students to upload code to.
 Teams ahead of time can start building their competitions robots from Term 1.
 
 ### Milestone 2 (Final)
-During its 360 degree spin, locate the can using sonar values. When located, push the silver can out and stop immediately after the robot’s sensors see white.
+During its 360 degree spin, locate the can using sonar values. When located, push the silver can out and stop immediately after the robot's sensors see white.
 
 Bonus points for robots that can return to the original starting point (silver strip).
 

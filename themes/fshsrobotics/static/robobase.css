@@ -706,3 +706,43 @@ body {
 		display:none;
 	}
 }
+
+
+/* CSS Tabs 
+   Source: https://codepen.io/oknoblich/pen/tfjFl
+*/
+.wiki .tabber section {
+	display: none;
+	padding: 20px 0 0;
+}
+.wiki .tabber input {
+	display: none;
+}
+.wiki .tabber label {
+	display: inline-block;
+	padding: 6px 12px;
+	border-radius: 4px;
+	text-align: center;
+	color: #333;
+}
+
+.wiki .tabber label:before {
+	font-family: fontawesome;
+	font-weight: normal;
+	margin-right: 10px;
+}
+
+.wiki .tabber label:hover {
+	color: #789;
+	cursor: pointer;
+}
+
+.wiki .tabber input:checked+label {
+	background: var(--main-blue);
+	color: #FFF;
+}
+
+.wiki .tabber #tab1:checked~#content1,
+.wiki .tabber #tab2:checked~#content2 {
+	display: block;
+}

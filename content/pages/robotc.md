@@ -12,5 +12,9 @@ back: /resources/:Back to Resources
 <div class="filebox"><a href="/robotc/nxt-motor-encoder">NXT: Motor Encoder</a></div>
 <div class="filebox"><a href="/robotc/nxt-colour-sensor">NXT: Colour Sensor</a></div>
 
+## Full RobotC documentation
+<div class="filebox"><a href="/robotc/ev3/">EV3 documentation</a></div>
+<div class="filebox"><a href="/robotc/nxt/">NXT documentation</a></div>
+
 ## Intermediate Tutorials
 <div class="filebox"><a href="/robotc/spill-exit">Spill Exit</a></div>

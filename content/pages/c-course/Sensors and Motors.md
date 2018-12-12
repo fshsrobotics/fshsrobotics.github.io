@@ -11,6 +11,8 @@ To get started with RobotC, download it. Click on the blue button after you clic
 
 <a href="http://www.robotc.net/download/lego/" class="button">Download RobotC</a>
 
+If you are stuck there are full instructions [here](http://help.robotc.net/WebHelpMindstorms/index.htm#Resources/topics/Getting_Started/Install_ROBOTC.htm).
+
 Once downloaded, make sure the following two options are selected:
 
 <center>

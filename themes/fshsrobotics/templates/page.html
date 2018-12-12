@@ -10,8 +10,6 @@
 {%endblock%}
 {% block subtitle %}{% if page.subtitle %}{{ page.subtitle }}{% endif %}{% endblock %}
 {% block content %}
-    {% import 'translations.html' as translations with context %}
-    {{ translations.translations_for(page) }}
     {% if 'tutorial' in page.type %}
 
     <div class="wiki" id="content_view" style="display: block;">

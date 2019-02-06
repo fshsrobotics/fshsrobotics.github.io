@@ -14,8 +14,10 @@ var loginSys = {};
 var equipSys = {};
 var attendanceSys = {};
 
+// Cache the users here to prevent writing duplicated values
 attendanceSys.currRollCache = [];
 
+// Get all rolls for /attendance/
 attendanceSys.getAllRolls = function(week, studentid) {
     db.ref('/roll/').once('value').then(function(snapshot) {
         console.log(snapshot.val());
@@ -33,6 +35,7 @@ attendanceSys.getAllRolls = function(week, studentid) {
     });
 }
 
+// Add student as attended for a particular week
 attendanceSys.addStudentAttend = function(week, studentid) {
     db.ref('/roll/' + week).once('value').then(function(snapshot) {
         if (snapshot.val() !== null) {
@@ -49,6 +52,7 @@ attendanceSys.addStudentAttend = function(week, studentid) {
     });
 }
 
+// Show attendance information for a particular week
 attendanceSys.showAttendanceInfo = function(week) {
     $('#attendance-list').empty().append("Loading attendance...");
     db.ref('/students/').once('value').then(function(studentssnapshot) {
@@ -107,6 +111,7 @@ loginSys.login = function(type, password) {
     });
 }
 
+// Log out of Firebase
 loginSys.logout = function() {
     firebase.auth().signOut().then(function(d) {
         loginSys.showLoginInterface();

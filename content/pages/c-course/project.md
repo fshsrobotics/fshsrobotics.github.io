@@ -6,8 +6,8 @@ back: /c-course/:Back to C Course
 
 ## Due Dates
 
-* **Milestone 1**: Week 3 Term 1 2019. Testing starts at 3:45 PM.
-* **Final Demonstration**: Week 5 Term 1 2019. Testing starts 3:45 PM.
+* **Milestone 1**: Week 4 Term 1 2019.
+* **Final Demonstration**: Week 6 Term 1 2019.
 * Let me know if you cannot demonstrate on these weeks.
 
 ## Overview

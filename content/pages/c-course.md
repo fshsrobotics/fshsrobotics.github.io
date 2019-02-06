@@ -32,7 +32,7 @@ back: /resources/:Back to Resources
 </div>
 
 <div class="filecontainer current">
-<h3>Term 1 Week 1</h3>
+<h3>Week 1 Term 1</h3>
 <div class="filebox"><a href="/c-course/sensors-and-motors">6. Sensors and Motors</a></div>
-<div class="filebox"><a href="/c-course/project">Project: Dangerous Chemicals <span>Due Week 3 and Week 5 Term 1</span></a></div>
+<div class="filebox"><a href="/c-course/project">Project: Dangerous Chemicals <span>Due Week 4 and 6 Term 1</span></a></div>
 </div>

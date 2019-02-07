@@ -73,7 +73,7 @@ attendanceSys.showAttendanceInfo = function(week) {
             $.each(todayAttendance.students, function(i, studentAttended) {
                 if (studentAttended && currstudents[studentAttended] && shownStudents.indexOf(studentAttended) <= -1) {
                     shownStudents.push(studentAttended);
-                    $('#attendance-list').append('<li>' + currstudents[studentAttended].name + '</li>');
+                    $('#attendance-list').append('<li>' + currstudents[studentAttended].name + ' (' + currstudents[studentAttended].year ')</li>');
                 }
             });
         });

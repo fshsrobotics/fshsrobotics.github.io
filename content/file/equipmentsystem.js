@@ -59,6 +59,7 @@ attendanceSys.showAttendanceInfo = function(week) {
         db.ref('/roll/' + week + '/').once('value').then(function(snapshot) {
             var todayAttendance = snapshot.val();
             var currstudents = studentssnapshot.val();
+            attendanceSys.notFound = [];
             if (todayAttendance == null) {
                 $('#attendance-list').empty().append("No attendance today");
                 return;
@@ -75,14 +76,22 @@ attendanceSys.showAttendanceInfo = function(week) {
                     $('#attendance-list').append('<li>' + currstudents[studentAttended].name + '</li>');
                 }
             });
-            // Load group equipment info
-            $('#es-group-info').append("<b>Equipment borrowed</b>");
-            if (!snapshot.val().equipment) {
-                $('#es-group-info').append("<div>No records found</div>");
-                return;
-            }
         });
     });
+}
+
+// Add a new student to the database
+attendanceSys.createStudent = function (name, year, card) {
+    var reStudentID = new RegExp(/^\d{9}$/i);
+    if (card.match(reStudentID)) {
+        db.ref('/students/' + card).set({
+            name: name,
+            year: year
+        });
+    }
+    else {
+        return false;
+    }
 }
 
 /**
@@ -252,11 +261,11 @@ equipSys.fillGroupInformation = function(groupid) {
 }
 
 function init() {
+    $('#createaccount').hide();
     $('#loginsystem').hide();
     $('#adminsystem').hide();
     $('#adminattendance').hide();
     $('#equipmentsystem').hide();
-    var pages = ['Equipment', 'equipment', 'Attendance', 'attendance'];
     if (!(window.location.pathname).match(/(equipment|attendance)/gi)) return;
     firebase.auth().onAuthStateChanged(function(user) {
         $('#login-loading').hide();
@@ -297,14 +306,44 @@ function init() {
             $('#attendance-student').val('');
             $('#attendance-student').focus();
             return;
-        } else {
-            $('#attendance-submit-status').empty();
-            attendanceSys.currRollCache.push($('#attendance-student').val());
-        }
+        } 
+        db.ref('/students/' + $('#attendance-student').val()).once('value').then(function(snapshot) {
+            // User doesn't exist
+            if (!snapshot.val() || !snapshot.val().name) {
+                // They have filled in the create form
+                if ($('#createaccount-fullname').val() !== '') {
+                    $('#attendance-submit-status').empty();
+                    attendanceSys.createStudent($('#createaccount-fullname').val(), $('#createaccount-year').val(), $('#attendance-student').val());
+                    attendanceSys.addStudentAttend($('#attendance-week').val(), $('#attendance-student').val());
+                    $('#createaccount').hide();
+                    $('#attendance-student').val('');
+                    $('#createaccount-fullname').val('');
+                    $('#createaccount-year').val('');
+                    $('#attendance-student').focus();
+                } else {
+                    // They have not filled in the create form
+                    $('#attendance-submit-status').empty().append('Account could not be found, please create one.');
+                    $('#createaccount').show();
+                }
+            } else {
+                $('#attendance-submit-status').empty();
+                attendanceSys.currRollCache.push($('#attendance-student').val());
+                attendanceSys.addStudentAttend($('#attendance-week').val(), $('#attendance-student').val());
+                $('#attendance-student').val('');
+                $('#attendance-student').focus();
+            }
+        })
+    });
+
+    $('#createaccount-check').on('click', function (e) {
+        $('#attendance-submit-status').empty();
+        attendanceSys.createStudent($('#createaccount-fullname').val(), $('#createaccount-year').val(), $('#attendance-student').val());
         attendanceSys.addStudentAttend($('#attendance-week').val(), $('#attendance-student').val());
+        $('#createaccount').hide();
         $('#attendance-student').val('');
         $('#attendance-student').focus();
-    });
+    })
+
     $('#es-groupid').on('input', function(e){
         equipSys.loadGroupData();
     });

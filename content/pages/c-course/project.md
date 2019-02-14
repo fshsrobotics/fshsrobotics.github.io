@@ -21,6 +21,8 @@ Students should work in teams. Teams should be based on the submitted form.
 ## Changelog
 Changes to the project will be posted here.
 
+1. I have added a new page with [some tips on getting started](/c-course/project-start/).
+
 ## Project Specification
 <img src="{attach}end_tile.png" style="float:right;max-width:170px;" />
 

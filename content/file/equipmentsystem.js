@@ -30,6 +30,7 @@ attendanceSys.getAllRolls = function(week, studentid) {
 
         $('#adminattendance-week').on('change', function(e) {
             attendanceSys.showAttendanceInfo($(this).val());
+            attendanceSys.showAttendanceInfoIds($(this).val());
         });
 
     });
@@ -76,6 +77,24 @@ attendanceSys.showAttendanceInfo = function(week) {
                     $('#attendance-list').append('<li>' + currstudents[studentAttended].name + ' (' + currstudents[studentAttended].year + ')</li>');
                 }
             });
+        });
+    });
+}
+
+// Show attendance information for a particular week
+attendanceSys.showAttendanceInfoIds = function (week) {
+    $('#attendance-list-ids').empty().append("Loading attendance...");
+    db.ref('/roll/' + week + '/').once('value').then(function (snapshot) {
+        var todayAttendance = snapshot.val();
+        // Load attendance list
+        $('#attendance-list-ids').empty();
+        $('#attendance-list-ids').append('<h3>Student card IDs for ' + week + '</h3>');
+        var shownStudents = [];
+        $.each(todayAttendance.students, function (i, studentAttended) {
+            if (studentAttended && shownStudents.indexOf(studentAttended) <= -1) {
+                shownStudents.push(studentAttended);
+                $('#attendance-list-ids').append('<li>' + studentAttended + '</li>');
+            }
         });
     });
 }

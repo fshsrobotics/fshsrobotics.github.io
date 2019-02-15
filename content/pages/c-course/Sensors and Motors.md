@@ -3,7 +3,7 @@ type: tutorial
 fullwidth: true
 sortorder: 002
 previous: /c-course/input-output-exercises:Input Output Exercises
-next: #:Coming soon
+next: /c-course/making-sounds:Making Sounds
 back: /c-course/:Back to C Course
 
 ## 6.1 Download RobotC

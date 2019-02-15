@@ -3,7 +3,7 @@ type: tutorial
 fullwidth: true
 sortorder: 002
 previous: /c-course/sensors-and-motors:Sensors and Motors
-next: #:Coming soon
+next: /c-course/sonar:Sonar
 back: /c-course/:Back to C Course
 
 ## 7.1 Playing tones

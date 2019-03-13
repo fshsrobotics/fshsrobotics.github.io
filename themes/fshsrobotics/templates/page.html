@@ -22,14 +22,21 @@
     <h3>FSHS Robotics C Course</h3>
     <h1>{{page.title}}</h1>
     </div>
+    
     {% if page.tutorialtype %}
-        {% set type = page.tutorialtype %}
         <div class="learn-contents-nav">
-        {% for pg in pages %}
-            {% if pg.tutorialtype == type %}
-                <a href="{{SITEURL}}/{{pg.url}}">{{pg.title}}</a>
+        {% if page.tutoriallinks %}
+        {% for pg in page.tutoriallinks.split('||') %}
+            {% set tutlinkscomps = pg.split(',') %}
+            {% if tutlinkscomps[2] == 'c' %}
+                <a href="{{tutlinkscomps[0]}}" class="completed">{{tutlinkscomps[1]}}</a>
+            {% elif tutlinkscomps[2] == 'a' %}
+                <a href="{{tutlinkscomps[0]}}" class="selected">{{tutlinkscomps[1]}}</a>
+            {% else %}
+                <a href="{{tutlinkscomps[0]}}" class="">{{tutlinkscomps[1]}}</a>
             {% endif %}
         {% endfor %}
+        {% endif %}
         </div>
     {% endif %}
     <div class="learn-contents-text" {% if page.fullwidth %}style="grid-column: 1/4"{% endif %}>

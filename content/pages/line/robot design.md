@@ -26,6 +26,7 @@ tutoriallinks: /line/,Rescue Line,c||/line/tiles,Tiles and Turns,c||/line/obstac
     * There are many ways to do it, take a look at [this playlist](https://www.youtube.com/playlist?list=PLRDsN7mSMNDprkxp-qq-WL6D2TtYLx4Pm) for some ideas, as well as our sample logbooks.
 
 ## Some FSHS designs
+* Some good designs are shown here: [http://www.clubengineer.org/build-instructions/#OREV3](http://www.clubengineer.org/build-instructions/#OREV3)
 <img src="{filename}robotdesign1.jpg" style="width:100%;max-width:500px">
 <img src="{filename}robotdesign2.jpg" style="width:100%;max-width:500px">
 <img src="{filename}robotdesign3.jpg" style="width:100%;max-width:500px">

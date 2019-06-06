@@ -2,7 +2,7 @@ title: Chemical Spill
 type: tutorial
 tutorialtype:line
 back: /line/:Back to Rescue Line
-tutoriallinks: /line/,Rescue Line,c||/line/tiles,Tiles and Turns,c||/line/obstacles,Obstacles,c||/line/spill,Chemical Spill,a||/line/competition,At the Competition,-||/line/logbooks,Sample Logbooks,-||/line/robot-design,Robot Design,-||/line/code-design,Code Design,-
+tutoriallinks: /line/,Rescue Line,c||/line/tiles,Tiles and Turns,c||/line/obstacles,Obstacles,c||/line/spill,Chemical Spill,a||/line/logbooks,Sample Logbooks,-||/line/robot-design,Robot Design,-||/line/code-design,Code Design,-
 
 ## Chemical Spill
 * At the end of the course, there is a chemical spill. There is a silver strip at the start of the spill

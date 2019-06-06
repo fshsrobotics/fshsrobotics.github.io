@@ -2,7 +2,7 @@ title: Obstacles
 type: tutorial
 tutorialtype:line
 back: /line/:Back to Rescue Line
-tutoriallinks: /line/,Rescue Line,c||/line/tiles,Tiles and Turns,c||/line/obstacles,Obstacles,a||/line/spill,Chemical Spill,-||/line/competition,At the Competition,-||/line/logbooks,Sample Logbooks,-||/line/robot-design,Robot Design,-||/line/code-design,Code Design,-
+tutoriallinks: /line/,Rescue Line,c||/line/tiles,Tiles and Turns,c||/line/obstacles,Obstacles,a||/line/spill,Chemical Spill,-||/line/logbooks,Sample Logbooks,-||/line/robot-design,Robot Design,-||/line/code-design,Code Design,-
 
 ## Obstacles
 There are a few tile-based obstacles:

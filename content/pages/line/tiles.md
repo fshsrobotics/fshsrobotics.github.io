@@ -2,7 +2,7 @@ title: Tiles and Turns
 type: tutorial
 tutorialtype:line
 back: /line/:Back to Rescue Line
-tutoriallinks: /line/,Rescue Line,c||/line/tiles,Tiles and Turns,a||/line/obstacles,Obstacles,-||/line/spill,Chemical Spill,-||/line/competition,At the Competition,-||/line/logbooks,Sample Logbooks,-||/line/robot-design,Robot Design,-||/line/code-design,Code Design,-
+tutoriallinks: /line/,Rescue Line,c||/line/tiles,Tiles and Turns,a||/line/obstacles,Obstacles,-||/line/spill,Chemical Spill,-||/line/logbooks,Sample Logbooks,-||/line/robot-design,Robot Design,-||/line/code-design,Code Design,-
 
 ## Tiles
 <img src="{filename}small.jpg" style="width:100%;max-width:500px">

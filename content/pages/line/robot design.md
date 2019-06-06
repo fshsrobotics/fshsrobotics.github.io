@@ -2,7 +2,7 @@ title: Robot Design
 type: tutorial
 tutorialtype:line
 back: /line/:Back to Rescue Line
-tutoriallinks: /line/,Rescue Line,c||/line/tiles,Tiles and Turns,c||/line/obstacles,Obstacles,c||/line/spill,Chemical Spill,c||/line/competition,At the Competition,c||/line/logbooks,Sample Logbooks,c||/line/robot-design,Robot Design,a||/line/code-design,Code Design,-
+tutoriallinks: /line/,Rescue Line,c||/line/tiles,Tiles and Turns,c||/line/obstacles,Obstacles,c||/line/spill,Chemical Spill,c||/line/logbooks,Sample Logbooks,c||/line/robot-design,Robot Design,a||/line/code-design,Code Design,-
 
 ## Tips for Line Follow
 * Wrap your colour sensors with paper that nearly touches the ground.

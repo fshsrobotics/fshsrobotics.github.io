@@ -2,7 +2,7 @@ title: Code Design
 type: tutorial
 tutorialtype:line
 back: /line/:Back to Rescue Line
-tutoriallinks: /line/,Rescue Line,c||/line/tiles,Tiles and Turns,c||/line/obstacles,Obstacles,c||/line/spill,Chemical Spill,c||/line/competition,At the Competition,c||/line/logbooks,Sample Logbooks,c||/line/robot-design,Robot Design,c||/line/code-design,Code Design,a
+tutoriallinks: /line/,Rescue Line,c||/line/tiles,Tiles and Turns,c||/line/obstacles,Obstacles,c||/line/spill,Chemical Spill,c||/line/logbooks,Sample Logbooks,c||/line/robot-design,Robot Design,c||/line/code-design,Code Design,a
 
 ## General tips
 * Print things to the screen, make sounds to know which part of the code you are up to.

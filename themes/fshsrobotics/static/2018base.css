@@ -169,6 +169,18 @@ h2 {
 .sponsors {
     text-align:center;
 }
+.sponsors-big {
+    display: grid;
+    max-width:760px;
+    margin:0 auto;
+    font-family: 'Open Sans';
+    text-align: left;
+    grid-template-columns: 200px 1fr;
+    grid-gap:24px;
+}
+.sponsors-big p {
+    vertical-align: middle;
+}
 .sponsors a {
     display:inline-block;
     vertical-align:middle;

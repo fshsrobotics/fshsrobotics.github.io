@@ -25,3 +25,8 @@ back: /resources/:Back to Resources
 <div class="filebox"><a href="/c-course/project">Project: Dangerous Chemicals <span>Due Week 4 and 6 Term 1</span></a></div>
 <div class="filebox"><a href="/c-course/project-start">Tips on starting the project</a></div>
 </div>
+
+<div class="filecontainer current">
+<h3>Robotics Concepts</h3>
+<div class="filebox"><a href="/c-course/proportional-line-follow">9. Proportional Line Follow</a></div>
+</div>

@@ -25,7 +25,7 @@ fullwidth:true
 </ul>
 <h3>RoboCupJunior Internationals (Sydney)</h3>
 <ul>
-<li><b>22nd Rescue Line</b>: Mango Bot: Gabriel Thien, Xavier Cooney, Cristina Koprinski</li>
+<li><b>22nd Rescue Line</b>: Mango Bot: Gabriel Thien, Xavier Cooney, Cristina Koprinski (representing Australia)</li>
 </ul>
 
 <h2>2018</h2>

@@ -1,10 +1,11 @@
-<html>
-  <head>
-    <title>Achievements - FSHS Robotics</title>
-  </head>
-  <body>
-    <div class="wiki" id="content_view" style="display: block;">
-<div style="padding:20px">
+title: Awards
+type: awards
+fullwidth:true
+
+<div class="wiki" id="content_view" style="display: block;">
+<div class="learn-wrapper">
+<h1 style="margin-bottom:0">Awards</h1>
+<div class="learn-contents-text" style="grid-column: 1/4">
 <img src="/file/achievements_group_2019.jpg" width="100%" />
 <h2>2019</h2>
 <h3>RoboCupJunior Internationals (Sydney)</h3>
@@ -14,14 +15,21 @@
 <h3>NSW State Competition</h3>
 <ul>
 <li><b>2nd Open Rescue Line</b>: ductAPE: Gabriel Thien, Xavier Cooney, Felix Fan</li>
-<li><b>2nd Open Rescue Maze</b>: Ariadne: Cristina Koprinski, Amelie Skelton</li>
+<li><b>2nd Rescue Maze</b>: Ariadne: Cristina Koprinski, Amelie Skelton</li>
 <li><b>3rd Open Rescue Line</b>: Space Monkeys: Yash Agarwal, Pranav Rao, Jacob Joseph, Carlo Famularo</li>
 <li><b>Rescue Innovation Award</b>: ductAPE: Gabriel Thien, Xavier Cooney, Felix Fan</li>
 <li><b>Soccer Honourable Mention</b>: X-MANkey: Manit Anand, Xavier Cooney, Gabriel Thien, Felix Fan</li>
 </ul>
+<h3>Nationals (Melbourne)</h3>
+<ul>
+<li><b>3rd Rescue Maze</b>: EscAPE: Cristina Koprinski and Amelie Skelton</li>
+<li><b>Robogals Award for Innovation in Rescue Maze</b>: EscAPE: Cristina Koprinski and Amelie Skelton</li>
+<li><b>University of Melbourne Prize for Best Robot Design for Open Rescue Line</b>: ductAPE: Xavier Cooney, Gabriel Thien and Felix Fan</li>
+<li><b>4th Rescue Line</b>: Space Monkeys: Yash Agarwal and Carlo Famularo</li>
+</ul>
 
-<img src="/file/achievements_group_2018.jpg" width="400px" style="float:right;" />
 <h2>2018</h2>
+<img src="/file/achievements_group_2018.jpg" width="300px" style="float:right;margin:0 20px;" />
 <h3>NSW State Competition</h3>
 <ul>
 <li><b>2nd Open Rescue</b>: Mars Rover: Cristina Koprinski, Amelie Skelton</li>
@@ -30,10 +38,10 @@
 </ul>
 <h3>Nationals (Melbourne)</h3>
 <ul>
-<li><b>University of Melbourne Dean of Engineering Prize for Best Robot Design for Open Rescue</b>: Mars Rover: Cristina Koprinski, Amelie Skelton, Georgio Hawi</li>
+<li><b>University of Melbourne Prize for Best Robot Design for Open Rescue</b>: Mars Rover: Cristina Koprinski, Amelie Skelton, Georgio Hawi</li>
 </ul>
-<img src="/file/achievements_group_2017.jpg" width="400px" style="float:right;" />
 <h2>2017</h2>
+<img src="/file/achievements_group_2017.jpg" width="300px" style="float:right;margin:0 20px;" />
 <h3>NSW State Competition</h3>
 <ul>
 <li><b>1st Lightweight Soccer</b>: chimpanZHU: Oliver Locke, Kevin Zhu, Alex Pham, Angela Zheng</li>
@@ -55,8 +63,8 @@
 <li><b>2nd Open Soccer</b>: Robo sAPEiens: Kevin Zhu, Victor Kuo, Brendon Ly</li>
 <li><b>2nd Lightweight Soccer</b>: Harambe: Oliver Locke, Alex Pham, Angela Zheng, Brandon Wong</li>
 </ul>
-<img src="/file/achievements_group_2015.jpg" width="400px" style="float:right;" />
 <h2>2015</h2>
+<img src="/file/achievements_group_2015.jpg" width="300px" style="float:right;margin:0 20px;" />
 <h3>NSW State Competition</h3>
 <ul>
 <li><b>1st Lightweight Soccer</b>: Cyborg Chimpanzees: Kevin Zhu, Aidan Kemp</li>
@@ -80,8 +88,8 @@
 <li><b>Innovation Award</b>: FSHS01 CyberApe: Darren Nguyen, Stephen Huang, Yiwei Mao</li>
 <li><b>2nd Lightweight Soccer</b>: FSHS10 Infernape: Kris Choy, Anthony Vassil, Aidan Kemp</li>
 </ul>
-<img src="/file/achievements_group_2013.jpg" width="400px" style="float:right;" />
 <h2>2013</h2>
+<img src="/file/achievements_group_2013.jpg" width="300px" style="float:right;margin:0 20px;" />
 <h3>NSW State Competition</h3>
 <ul>
 <li><b>1st Open Soccer</b>: Varundam Soccer: Darren Nguyen, Stephen Huang</li>
@@ -92,8 +100,8 @@
 <ul>
   <li><b>Encouragement Award</b>: APE Soccer: Darren Nguyen, Stephen Huang</li>
 </ul>
-<img src="/file/achievements_group_2012.jpg" width="400px" style="float:right;" />
 <h2>2012</h2>
+<img src="/file/achievements_group_2012.jpg" width="300px" style="float:right;margin:0 20px;" />
 <h3>NSW State Competition</h3>
 <ul>
 <li><b>1st Senior Dance Performance</b>: Monkey Dance: Pamela Vassil, Alisha Tang</li>
@@ -108,8 +116,8 @@
 <ul>
 <li><b>22nd, Robot Van Gogh</b>: Monkey (representing Australia)</li>
 </ul>
-<img src="/file/achievements_group_2010.jpg" width="400px" style="float:right;" />
 <h2>2010</h2>
+<img src="/file/achievements_group_2010.jpg" width="300px" style="float:right;margin:0 20px;" />
 <h3>NSW State Competition</h3>
 <ul>
   <li><b>1st Soccer</b>: Monkey Soccer: Daniel Playfair Cal, Simon Ko, Gordon Liang</li>
@@ -124,6 +132,5 @@
 <li><b>2nd Premier Rescue</b>: Artificial Intelligence: Daniel Playfair Cal, Simon Ko</li>
 </ul>
 </div>
-    </div>
-  </body>
-</html>
+</div>
+</div>

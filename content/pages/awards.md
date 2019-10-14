@@ -23,7 +23,7 @@ fullwidth:true
 <h3>Nationals (Melbourne)</h3>
 <ul>
 <li><b>3rd Rescue Maze</b>: EscAPE: Cristina Koprinski and Amelie Skelton</li>
-<li><b>Robogals Award for Innovation in Rescue Maze</b>: EscAPE: Cristina Koprinski and Amelie Skelton</li>
+<li><b>RoboGals Award for Innovation in Rescue Maze</b>: EscAPE: Cristina Koprinski and Amelie Skelton</li>
 <li><b>University of Melbourne Prize for Best Robot Design for Open Rescue Line</b>: ductAPE: Xavier Cooney, Gabriel Thien and Felix Fan</li>
 <li><b>4th Rescue Line</b>: Space Monkeys: Yash Agarwal and Carlo Famularo</li>
 </ul>

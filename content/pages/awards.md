@@ -8,10 +8,6 @@ fullwidth:true
 <div class="learn-contents-text" style="grid-column: 1/4">
 <img src="/file/achievements_group_2019.jpg" width="100%" />
 <h2>2019</h2>
-<h3>RoboCupJunior Internationals (Sydney)</h3>
-<ul>
-<li><b>22nd Rescue Line</b>: Mango Bot: Gabriel Thien, Xavier Cooney, Cristina Koprinski</li>
-</ul>
 <h3>NSW State Competition</h3>
 <ul>
 <li><b>2nd Open Rescue Line</b>: ductAPE: Gabriel Thien, Xavier Cooney, Felix Fan</li>
@@ -25,7 +21,11 @@ fullwidth:true
 <li><b>3rd Rescue Maze</b>: EscAPE: Cristina Koprinski and Amelie Skelton</li>
 <li><b>RoboGals Award for Innovation in Rescue Maze</b>: EscAPE: Cristina Koprinski and Amelie Skelton</li>
 <li><b>University of Melbourne Prize for Best Robot Design for Open Rescue Line</b>: ductAPE: Xavier Cooney, Gabriel Thien and Felix Fan</li>
-<li><b>4th Rescue Line</b>: Space Monkeys: Yash Agarwal and Carlo Famularo</li>
+<!-- <li><b>4th Rescue Line</b>: Space Monkeys: Yash Agarwal and Carlo Famularo</li> -->
+</ul>
+<h3>RoboCupJunior Internationals (Sydney)</h3>
+<ul>
+<li><b>22nd Rescue Line</b>: Mango Bot: Gabriel Thien, Xavier Cooney, Cristina Koprinski</li>
 </ul>
 
 <h2>2018</h2>

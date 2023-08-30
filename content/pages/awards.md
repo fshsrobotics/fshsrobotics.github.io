@@ -17,7 +17,6 @@ fullwidth: true
 <ul>
 <li><b>3rd Open Rescue Line</b>: DOMINANT GORILLA: Riley Hendra, Tymon Le, Caitlyn Lu, Hugh Phan</li>
 </ul>
-<img src="/file/achievements_group_2019.jpg" width="100%" />
 <h2>2020</h2>
 <h3>NSW State Competition</h3>
 <ul>

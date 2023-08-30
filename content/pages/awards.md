@@ -7,11 +7,11 @@ fullwidth: true
 <h1 style="margin-bottom:0">Awards</h1>
 <div class="learn-contents-text" style="grid-column: 1/4">
 <h2>2023</h2>
+<img src="/file/achievements_group_2023.jpg" width="100%" />
 <h3>NSW State Competition</h3>
 <ul>
 <li><b>1st Open Soccer</b>: Silverback: Issey Lee, Jayden Nguyen, Hugh Phan, Jack Sumner</li>
 </ul>
-<img src="/file/achievements_group_2023.jpg" width="100%" />
 <h2>2022</h2>
 <h3>NSW State Competition</h3>
 <ul>
@@ -22,8 +22,8 @@ fullwidth: true
 <ul>
 <li><b>1st Soccer Simulation JavaScript Division</b>: NP Comp-l-ete: Xavier Cooney, Yash Agarwal</li>
 </ul>
-<img src="/file/achievements_group_2019.jpg" width="100%" />
 <h2>2019</h2>
+<img src="/file/achievements_group_2019.jpg" width="300px" style="float:right;margin:0 20px;" />
 <h3>NSW State Competition</h3>
 <ul>
 <li><b>2nd Open Rescue Line</b>: ductAPE: Gabriel Thien, Xavier Cooney, Felix Fan</li>

@@ -1,11 +1,22 @@
 title: Awards
 type: awards
-fullwidth:true
+fullwidth: true
 
 <div class="wiki" id="content_view" style="display: block;">
 <div class="learn-wrapper">
 <h1 style="margin-bottom:0">Awards</h1>
 <div class="learn-contents-text" style="grid-column: 1/4">
+<h2>2023</h2>
+<h3>NSW State Competition</h3>
+<ul>
+<li><b>1st Open Soccer</b>: Silverback: Issey Lee, Jayden Nguyen, Hugh Phan, Jack Sumner</li>
+<img src="/file/achievements_group_2023.jpg" width="100%" />
+<h2>2022</h2>
+<h3>NSW State Competition</h3>
+<ul>
+<li><b>3rd Open Rescue Line</b>: DOMINANT GORILLA: Riley Hendra, Tymon Le, Caitlyn Lu, Hugh Phan</li>
+</ul>
+<img src="/file/achievements_group_2019.jpg" width="100%" />
 <h2>2020</h2>
 <h3>NSW State Competition</h3>
 <ul>

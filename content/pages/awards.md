@@ -10,7 +10,11 @@ fullwidth: true
 <img src="/file/achievements_group_2023.jpg" width="100%" />
 <h3>NSW State Competition</h3>
 <ul>
-<li><b>1st Open Soccer</b>: Silverback: Issey Lee, Jayden Nguyen, Hugh Phan, Jack Sumner</li>
+<li><b>1st Open Soccer</b>: Silverback: Hugh Phan, Issey Lee, Jayden Nguyen, Jack Sumner</li>
+</ul>
+<h3>Nationals (Melbourne)</h3>
+<ul>
+<li><b>2nd Open Soccer</b>: Silverback: Hugh Phan, Issey Lee, Jayden Nguyen, Jack Sumner</li>
 </ul>
 <h2>2022</h2>
 <h3>NSW State Competition</h3>

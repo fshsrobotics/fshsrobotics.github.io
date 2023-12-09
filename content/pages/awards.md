@@ -16,6 +16,10 @@ fullwidth: true
 <ul>
 <li><b>2nd Open Soccer</b>: Silverback: Hugh Phan, Issey Lee, Jayden Nguyen, Jack Sumner</li>
 </ul>
+<h3>RoboCupJunior Asia Pacific (South Korea)</h3>
+<ul>
+<li><b>2nd Open Soccer</b>: Silverback: Hugh Phan, Issey Lee, Jayden Nguyen, Jack Sumner</li>
+</ul>
 <h2>2022</h2>
 <h3>NSW State Competition</h3>
 <ul>

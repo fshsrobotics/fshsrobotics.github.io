@@ -1,0 +1,104 @@
+<!doctype html>
+<html>
+    <head>
+        <title>FSHS Robotics</title>
+        <meta name="google-site-verification" content="4_RMTp03qKZnXNroL0gme91C1A0V24nC9np8xE_GRt4" />
+        <link rel="icon" type="image/png" href="/theme/favicon.png">
+        <meta name="viewport" content="width=device-width, initial-scale=1"/>
+        <meta name="theme-color" content="#4060fa" />
+        <link type="text/css" rel="stylesheet" href="/theme/robobase.css"/>
+        <link type="text/css" rel="stylesheet" href="/theme/2018base.css"/>
+        <link type="text/css" rel="stylesheet" href="/theme/friendly.css"/>
+        <link type="text/css" rel="stylesheet" href="https://fonts.googleapis.com/css?family=Open+Sans:300,400,700|Raleway:400,900|PT+Mono">
+    </head>
+
+<body>
+    <div class="header-2018">
+        <h2><a href="/">FSHS Robotics</a></h2>
+        <div id="nav">
+            <ul class="nav-transparent">
+                <li class="nav-transparent__link"><a href="/about">About</a></li>
+                <li class="nav-transparent__link"><a href="/awards">Awards</a></li>
+                <li class="nav-transparent__link"><a href="/resources">Resources</a></li>
+                <li class="nav-transparent__link"><a href="/equipment">Admin</a></li>
+
+            </ul>
+        </div>
+    </div>
+<div id="wrapper">
+
+    <div class="wiki" id="content_view" style="display: block;">
+    <div class="learn-wrapper">
+    <div class="hero full-width">
+    <a class="hero-back" href="/line/">Back to Rescue Line</a>
+    <h3>FSHS Robotics C Course</h3>
+    <h1>Robot Design</h1>
+    </div>
+    
+        <div class="learn-contents-nav">
+                <a href="/line/" class="completed">Rescue Line</a>
+                <a href="/line/tiles" class="completed">Tiles and Turns</a>
+                <a href="/line/obstacles" class="completed">Obstacles</a>
+                <a href="/line/spill" class="completed">Chemical Spill</a>
+                <a href="/line/logbooks" class="completed">Sample Logbooks</a>
+                <a href="/line/robot-design" class="selected">Robot Design</a>
+                <a href="/line/code-design" class="">Code Design</a>
+        </div>
+    <div class="learn-contents-text" >
+    <h2 id="tips-for-line-follow">Tips for Line Follow</h2>
+<ul>
+<li>Wrap your colour sensors with paper that nearly touches the ground.</li>
+<li>Make sure your wheels are relatively <strong>close to and behind</strong> your colour sensors. <ul>
+<li>Making the wheels really wide will make your robot turn more suddenly - which is not something you want.</li>
+<li>Having your colour sensors too far from the wheels will mean your robot reacts too fast.</li>
+<li>Having your colour sensors after the wheels means you react too late.</li>
+</ul>
+</li>
+<li>Keep your <strong>colour sensors as close</strong> as you can, and consistent as you can.<ul>
+<li>This makes your movements less erratic.</li>
+<li>The colour sensors should float on top, independent of the robot chassis. If the sensors can slide up and down, you will have generally consistent readings.</li>
+</ul>
+</li>
+</ul>
+<h2 id="tips-for-obstacles">Tips for Obstacles</h2>
+<ul>
+<li>Detecting the water tower using a <strong>touch sensor</strong> is more reliable - if there is space, use a touch sensor.</li>
+<li>Make sure your robot does not get stuck on ramps, speed bumps or seesaws. Whenever you change your robot, check that it works on these tricky tiles.<ul>
+<li>Make sure your centre of gravity for the robot is over your driving wheels when climbing up and down slopes.</li>
+</ul>
+</li>
+</ul>
+<h2 id="tips-for-spill">Tips for Spill</h2>
+<ul>
+<li>Your sonar needs to be low enough to detect cans and the final platform. Or, if you can find space for a camera and coders are up to the challenge, you can use a Pixy or NXTCam to detect coloured objects. </li>
+<li>If you run out of sensor connections, you can use a sensor splitter, but this may take some more time to get working.</li>
+<li><strong>Pickup mechanism tips</strong><ul>
+<li>There are many ways to do it, take a look at <a href="https://www.youtube.com/playlist?list=PLRDsN7mSMNDprkxp-qq-WL6D2TtYLx4Pm">this playlist</a> for some ideas, as well as our sample logbooks.</li>
+</ul>
+</li>
+</ul>
+<h2 id="some-fshs-designs">Some FSHS designs</h2>
+<ul>
+<li>Some good designs are shown here: <a href="http://www.clubengineer.org/build-instructions/#OREV3">http://www.clubengineer.org/build-instructions/#OREV3</a>
+<img src="../../pages/line/robotdesign1.jpg" style="width:100%;max-width:500px">
+<img src="../../pages/line/robotdesign2.jpg" style="width:100%;max-width:500px">
+<img src="../../pages/line/robotdesign3.jpg" style="width:100%;max-width:500px"></li>
+</ul>
+<p>More in the logbook samples.</p>
+    </div>
+    </div>
+</div>
+<div id="mainFooter">
+<p>&copy; Fort Street High School Robotics</p>
+</div>
+</div>
+</body>
+    <link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/highlight.js/9.9.0/styles/default.min.css">
+    <script src="//cdnjs.cloudflare.com/ajax/libs/highlight.js/9.9.0/highlight.min.js"></script>
+    <script>hljs.initHighlightingOnLoad();</script>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.0.3/jquery.min.js"></script>
+    <!-- Firebase - Equipment System -->
+    <script type="text/javascript" src="https://www.gstatic.com/firebasejs/4.8.0/firebase.js"></script>
+    <script type="text/javascript" src="/file/equipmentsystem.js"></script>
+    <link type="text/css" rel="stylesheet" href="/file/equipmentsystem.css"/>
+</html>

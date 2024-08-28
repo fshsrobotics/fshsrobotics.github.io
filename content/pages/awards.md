@@ -6,6 +6,11 @@ fullwidth: true
 <div class="learn-wrapper">
 <h1 style="margin-bottom:0">Awards</h1>
 <div class="learn-contents-text" style="grid-column: 1/4">
+<h2>2024</h2>
+<h3>NSW State Competition</h3>
+<ul>
+<li><b>1st Open Soccer</b>: Team Silverback: Hugh Phan, Issey Lee, Jayden Nguyen, Jack Sumner</li>
+</ul>
 <h2>2023</h2>
 <img src="/file/achievements_group_2023.jpg" width="100%" />
 <h3>NSW State Competition</h3>

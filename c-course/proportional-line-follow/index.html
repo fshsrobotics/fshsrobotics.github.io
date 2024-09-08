@@ -1,0 +1,206 @@
+<!doctype html>
+<html>
+    <head>
+        <title>FSHS Robotics</title>
+        <meta name="google-site-verification" content="4_RMTp03qKZnXNroL0gme91C1A0V24nC9np8xE_GRt4" />
+        <link rel="icon" type="image/png" href="/theme/favicon.png">
+        <meta name="viewport" content="width=device-width, initial-scale=1"/>
+        <meta name="theme-color" content="#4060fa" />
+        <link type="text/css" rel="stylesheet" href="/theme/robobase.css"/>
+        <link type="text/css" rel="stylesheet" href="/theme/2018base.css"/>
+        <link type="text/css" rel="stylesheet" href="/theme/friendly.css"/>
+        <link type="text/css" rel="stylesheet" href="https://fonts.googleapis.com/css?family=Open+Sans:300,400,700|Raleway:400,900|PT+Mono">
+    </head>
+
+<body>
+    <div class="header-2018">
+        <h2><a href="/">FSHS Robotics</a></h2>
+        <div id="nav">
+            <ul class="nav-transparent">
+                <li class="nav-transparent__link"><a href="/about">About</a></li>
+                <li class="nav-transparent__link"><a href="/awards">Awards</a></li>
+                <li class="nav-transparent__link"><a href="/resources">Resources</a></li>
+                <li class="nav-transparent__link"><a href="/equipment">Admin</a></li>
+
+            </ul>
+        </div>
+    </div>
+<div id="wrapper">
+
+    <div class="wiki" id="content_view" style="display: block;">
+    <div class="learn-wrapper">
+    <div class="hero full-width">
+    <a class="hero-back" href="/resources/">Back to Resources</a>
+    <h3>FSHS Robotics C Course</h3>
+    <h1>Proportional Line Follow, EV3</h1>
+    </div>
+    
+    <div class="learn-contents-text" style="grid-column: 1/4">
+    <p>To begin, you're expected to know how to manipulate C variables, obtain sensor values and output motor speeds.</p>
+<p>Make sure you can:</p>
+<ul>
+<li>Get sensor values</li>
+<li>Send motor speeds</li>
+</ul>
+<h2 id="threshold-line-follow">Threshold Line Follow</h2>
+<p>So far, we have learnt how to detect certain colours that are within certain ranges. For example, we can get the colours from both sensors, add them together, and repeatedly check if they are between 300 and 400.</p>
+<p>Note: code won't work when simply copy pasting.</p>
+<div class="highlight"><pre><span></span><code><span class="n">task</span><span class="w"> </span><span class="nf">main</span><span class="p">()</span><span class="w"> </span><span class="p">{</span>
+<span class="w">    </span><span class="c1">// Initialise sensor variables (left rgb, right rgb)</span>
+<span class="w">    </span><span class="kt">int</span><span class="w"> </span><span class="n">lr</span><span class="p">,</span><span class="w"> </span><span class="n">lg</span><span class="p">,</span><span class="w"> </span><span class="n">lb</span><span class="p">;</span>
+<span class="w">    </span><span class="kt">int</span><span class="w"> </span><span class="n">rr</span><span class="p">,</span><span class="w"> </span><span class="n">rg</span><span class="p">,</span><span class="w"> </span><span class="n">rb</span><span class="p">;</span>
+<span class="w">    </span><span class="kt">int</span><span class="w"> </span><span class="n">lall</span><span class="p">,</span><span class="w"> </span><span class="n">rall</span><span class="p">;</span><span class="w"> </span><span class="c1">// Store sums of rgb</span>
+
+<span class="w">    </span><span class="c1">// Repeatedly get sensor values and process them</span>
+<span class="w">    </span><span class="k">while</span><span class="w"> </span><span class="p">(</span><span class="mi">1</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
+<span class="w">        </span><span class="n">getColorRawRGB</span><span class="p">(</span><span class="n">sensorLeft</span><span class="p">,</span><span class="w"> </span><span class="n">lr</span><span class="p">,</span><span class="w"> </span><span class="n">lg</span><span class="p">,</span><span class="w"> </span><span class="n">lb</span><span class="p">);</span>
+<span class="w">        </span><span class="n">getColorRawRGB</span><span class="p">(</span><span class="n">sensorRight</span><span class="p">,</span><span class="w"> </span><span class="n">rr</span><span class="p">,</span><span class="w"> </span><span class="n">rg</span><span class="p">,</span><span class="w"> </span><span class="n">rb</span><span class="p">);</span>
+<span class="w">        </span><span class="n">lall</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">lr</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="n">lg</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="n">lb</span><span class="p">;</span>
+<span class="w">        </span><span class="n">rall</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">rr</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="n">rg</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="n">rb</span><span class="p">;</span>
+
+<span class="w">        </span><span class="c1">// if both are between 300 and 400, stop</span>
+<span class="w">        </span><span class="k">if</span><span class="w"> </span><span class="p">(</span><span class="n">lall</span><span class="w"> </span><span class="o">&gt;</span><span class="w"> </span><span class="mi">300</span><span class="w"> </span><span class="o">&amp;&amp;</span><span class="w"> </span><span class="n">rall</span><span class="w"> </span><span class="o">&gt;</span><span class="w"> </span><span class="mi">300</span><span class="w"> </span><span class="o">&amp;&amp;</span><span class="w"> </span><span class="n">lall</span><span class="w"> </span><span class="o">&lt;</span><span class="w"> </span><span class="mi">400</span><span class="w"> </span><span class="o">&amp;&amp;</span><span class="w"> </span><span class="n">rall</span><span class="w"> </span><span class="o">&lt;</span><span class="w"> </span><span class="mi">400</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
+<span class="w">            </span><span class="n">motor</span><span class="p">[</span><span class="n">mLeft</span><span class="p">]</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mi">0</span><span class="p">;</span>
+<span class="w">            </span><span class="n">motor</span><span class="p">[</span><span class="n">mRight</span><span class="p">]</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mi">0</span><span class="p">;</span>
+<span class="w">        </span><span class="p">}</span>
+<span class="w">        </span><span class="c1">// Otherwise, continue forwards</span>
+<span class="w">        </span><span class="k">else</span><span class="w"> </span><span class="p">{</span>
+<span class="w">            </span><span class="n">motor</span><span class="p">[</span><span class="n">mLeft</span><span class="p">]</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mi">20</span><span class="p">;</span>
+<span class="w">            </span><span class="n">motor</span><span class="p">[</span><span class="n">mRight</span><span class="p">]</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mi">20</span><span class="p">;</span>
+<span class="w">        </span><span class="p">}</span>
+<span class="w">    </span><span class="p">}</span>
+<span class="p">}</span>
+</code></pre></div>
+
+<p>The thresholds here is "between 300 and 400". It's easy to see that this can be extended to thresholds for white/white, white/black, black/white and black/black.</p>
+<div class="highlight"><pre><span></span><code><span class="c1">// #defines are CONSTANTS, they stay the same throughout the whole code. Use them for fixed numbers like thresholds.</span>
+<span class="cp">#define L_MIN_WHITE 200</span>
+<span class="cp">#define L_MAX_WHITE 1000</span>
+<span class="cp">#define R_MIN_WHITE 200</span>
+<span class="cp">#define R_MAX_WHITE 1000</span>
+
+<span class="cp">#define L_MIN_BLACK 0</span>
+<span class="cp">#define L_MAX_BLACK 199</span>
+<span class="cp">#define R_MIN_BLACK 0</span>
+<span class="cp">#define R_MAX_BLACK 199</span>
+
+<span class="n">task</span><span class="w"> </span><span class="nf">main</span><span class="p">()</span><span class="w"> </span><span class="p">{</span>
+<span class="w">    </span><span class="c1">// Initialise sensor variables (left rgb, right rgb)</span>
+<span class="w">    </span><span class="kt">int</span><span class="w"> </span><span class="n">lr</span><span class="p">,</span><span class="w"> </span><span class="n">lg</span><span class="p">,</span><span class="w"> </span><span class="n">lb</span><span class="p">;</span>
+<span class="w">    </span><span class="kt">int</span><span class="w"> </span><span class="n">rr</span><span class="p">,</span><span class="w"> </span><span class="n">rg</span><span class="p">,</span><span class="w"> </span><span class="n">rb</span><span class="p">;</span>
+<span class="w">    </span><span class="kt">int</span><span class="w"> </span><span class="n">lall</span><span class="p">,</span><span class="w"> </span><span class="n">rall</span><span class="p">;</span><span class="w"> </span><span class="c1">// Store sums of rgb</span>
+
+<span class="w">    </span><span class="c1">// Repeatedly get sensor values and process them</span>
+<span class="w">    </span><span class="k">while</span><span class="w"> </span><span class="p">(</span><span class="mi">1</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
+<span class="w">        </span><span class="n">getColorRawRGB</span><span class="p">(</span><span class="n">sensorLeft</span><span class="p">,</span><span class="w"> </span><span class="n">lr</span><span class="p">,</span><span class="w"> </span><span class="n">lg</span><span class="p">,</span><span class="w"> </span><span class="n">lb</span><span class="p">);</span>
+<span class="w">        </span><span class="n">getColorRawRGB</span><span class="p">(</span><span class="n">sensorRight</span><span class="p">,</span><span class="w"> </span><span class="n">rr</span><span class="p">,</span><span class="w"> </span><span class="n">rg</span><span class="p">,</span><span class="w"> </span><span class="n">rb</span><span class="p">);</span>
+<span class="w">        </span><span class="n">lall</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">lr</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="n">lg</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="n">lb</span><span class="p">;</span>
+<span class="w">        </span><span class="n">rall</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">rr</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="n">rg</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="n">rb</span><span class="p">;</span>
+
+<span class="w">        </span><span class="c1">// both white, go forward</span>
+<span class="w">        </span><span class="k">if</span><span class="w"> </span><span class="p">(</span><span class="n">lAll</span><span class="w"> </span><span class="o">&gt;</span><span class="w"> </span><span class="n">L_MIN_WHITE</span><span class="w"> </span><span class="o">&amp;&amp;</span><span class="w"> </span><span class="n">lAll</span><span class="w"> </span><span class="o">&lt;</span><span class="w"> </span><span class="n">L_MAX_WHITE</span><span class="w"> </span><span class="o">&amp;&amp;</span><span class="w"> </span><span class="n">rAll</span><span class="w"> </span><span class="o">&gt;</span><span class="w"> </span><span class="n">R_MIN_WHITE</span><span class="w"> </span><span class="o">&amp;&amp;</span><span class="w"> </span><span class="n">rAll</span><span class="w"> </span><span class="o">&lt;</span><span class="w"> </span><span class="n">R_MAX_WHITE</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
+<span class="w">            </span><span class="n">motor</span><span class="p">[</span><span class="n">mLeft</span><span class="p">]</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mi">20</span><span class="p">;</span>
+<span class="w">            </span><span class="n">motor</span><span class="p">[</span><span class="n">mRight</span><span class="p">]</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mi">20</span><span class="p">;</span>
+<span class="w">        </span><span class="p">}</span>
+<span class="w">        </span><span class="c1">// left is white, right is black, turn right</span>
+<span class="w">        </span><span class="k">else</span><span class="w"> </span><span class="k">if</span><span class="w"> </span><span class="p">(</span><span class="n">lAll</span><span class="w"> </span><span class="o">&gt;</span><span class="w"> </span><span class="n">L_MIN_WHITE</span><span class="w"> </span><span class="o">&amp;&amp;</span><span class="w"> </span><span class="n">lAll</span><span class="w"> </span><span class="o">&lt;</span><span class="w"> </span><span class="n">L_MAX_WHITE</span><span class="w"> </span><span class="o">&amp;&amp;</span><span class="w"> </span><span class="n">rAll</span><span class="w"> </span><span class="o">&gt;</span><span class="w"> </span><span class="n">R_MIN_BLACK</span><span class="w"> </span><span class="o">&amp;&amp;</span><span class="w"> </span><span class="n">rAll</span><span class="w"> </span><span class="o">&lt;</span><span class="w"> </span><span class="n">R_MAX_BLACK</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
+<span class="w">            </span><span class="n">motor</span><span class="p">[</span><span class="n">mLeft</span><span class="p">]</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mi">20</span><span class="p">;</span>
+<span class="w">            </span><span class="n">motor</span><span class="p">[</span><span class="n">mRight</span><span class="p">]</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mi">0</span><span class="p">;</span>
+<span class="w">        </span><span class="p">}</span>
+
+<span class="w">        </span><span class="c1">// ... etc</span>
+
+<span class="w">    </span><span class="p">}</span>
+<span class="p">}</span>
+</code></pre></div>
+
+<h2 id="proportional-line-follow">Proportional Line Follow</h2>
+<p><img src="http://www.ermicro.com/blog/wp-content/uploads/2011/01/op-amp_lfr_01.jpg" width="100%" /></p>
+<p>Proportional line follow is a smoother way of doing line follow. Thresholds usually make jerking motions, which aren't desireable.</p>
+<p>Threshold line follow is bad because:</p>
+<ul>
+<li>Robot has only three fixed speeds, so it will either turn left, turn right or go straight</li>
+<li>If it only needs a slight adjustment, it will either do no adjustment or a sudden adjustment</li>
+<li>You may start zigzagging to follow the line - which will be worse if the light sensors are further away from each other.</li>
+</ul>
+<p>Instead, we want to <strong>incrementally adjust the speeds based on how dark or how bright</strong> the light sensor reads.</p>
+<p>How? Consider the extremes. Let's say very black is 1 and white is 5</p>
+<ul>
+<li>When left is very black (1) and right is white (5), we want to turn very left - difference is 1 - 5 = -4</li>
+<li>When left is slightly black (3) and right is white (5), we want to turn slightly left - difference is 3 - 5 = -2</li>
+<li>When left is white (5) and right is white (5), difference is 0</li>
+<li>When left is white (5) and right is slightly black (3), difference is 5 - 3 = 2</li>
+<li>When left is white (5) and right is very black (1), difference is 5 - 1 = 4</li>
+</ul>
+<p>Cool? We can scale this number to fit the motor speeds. We basically need to use these values to make the left and right motors change speed.</p>
+<div class="highlight"><pre><span></span><code>Base speed = 20
+
+l, r =&gt; difference | motor left | motor right
+5, 5 =&gt; 0          | 20 + 0     | 20 - 0
+5, 1 =&gt; 4          | 20 + 4     | 20 - 4
+1, 5 =&gt; -4         | 20 + (-4)  | 20 - (-4)
+</code></pre></div>
+
+<ul>
+<li>In case 1, both wheels turn at the same speed so it goes straight</li>
+<li>In case 2, left is white, right is black and so it turns right - hence left wheel spins faster than right</li>
+<li>In case 3, it's the opposite, so right wheel spins faster.</li>
+</ul>
+<p>In RobotC, we can code this up and use some extra variables for scaling.</p>
+<div class="highlight"><pre><span></span><code><span class="c1">// #defines are CONSTANTS, they stay the same throughout the whole code. Use them for fixed numbers like thresholds.</span>
+<span class="cp">#define L_MIN_WHITE 200</span>
+<span class="cp">#define L_MAX_WHITE 1000</span>
+<span class="cp">#define R_MIN_WHITE 200</span>
+<span class="cp">#define R_MAX_WHITE 1000</span>
+
+<span class="cp">#define L_MIN_BLACK 0</span>
+<span class="cp">#define L_MAX_BLACK 199</span>
+<span class="cp">#define R_MIN_BLACK 0</span>
+<span class="cp">#define R_MAX_BLACK 199</span>
+
+<span class="n">task</span><span class="w"> </span><span class="nf">main</span><span class="p">()</span><span class="w"> </span><span class="p">{</span>
+<span class="w">    </span><span class="c1">// Initialise sensor variables (left rgb, right rgb)</span>
+<span class="w">    </span><span class="kt">int</span><span class="w"> </span><span class="n">lr</span><span class="p">,</span><span class="w"> </span><span class="n">lg</span><span class="p">,</span><span class="w"> </span><span class="n">lb</span><span class="p">;</span>
+<span class="w">    </span><span class="kt">int</span><span class="w"> </span><span class="n">rr</span><span class="p">,</span><span class="w"> </span><span class="n">rg</span><span class="p">,</span><span class="w"> </span><span class="n">rb</span><span class="p">;</span>
+<span class="w">    </span><span class="kt">int</span><span class="w"> </span><span class="n">lall</span><span class="p">,</span><span class="w"> </span><span class="n">rall</span><span class="p">;</span><span class="w"> </span><span class="c1">// Store sums of rgb</span>
+<span class="w">    </span><span class="kt">int</span><span class="w"> </span><span class="n">difference</span><span class="p">;</span>
+
+<span class="w">    </span><span class="kt">float</span><span class="w"> </span><span class="n">multiplier</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mf">0.05</span><span class="p">;</span><span class="w"> </span><span class="c1">// multiplier to the speed differences</span>
+
+<span class="w">    </span><span class="c1">// Repeatedly get sensor values and process them</span>
+<span class="w">    </span><span class="k">while</span><span class="w"> </span><span class="p">(</span><span class="mi">1</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
+<span class="w">        </span><span class="n">getColorRawRGB</span><span class="p">(</span><span class="n">sensorLeft</span><span class="p">,</span><span class="w"> </span><span class="n">lr</span><span class="p">,</span><span class="w"> </span><span class="n">lg</span><span class="p">,</span><span class="w"> </span><span class="n">lb</span><span class="p">);</span>
+<span class="w">        </span><span class="n">getColorRawRGB</span><span class="p">(</span><span class="n">sensorRight</span><span class="p">,</span><span class="w"> </span><span class="n">rr</span><span class="p">,</span><span class="w"> </span><span class="n">rg</span><span class="p">,</span><span class="w"> </span><span class="n">rb</span><span class="p">);</span>
+<span class="w">        </span><span class="n">lall</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">lr</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="n">lg</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="n">lb</span><span class="p">;</span>
+<span class="w">        </span><span class="n">rall</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">rr</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="n">rg</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="n">rb</span><span class="p">;</span>
+
+<span class="w">        </span><span class="n">difference</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">lall</span><span class="w"> </span><span class="o">-</span><span class="w"> </span><span class="n">rall</span><span class="p">;</span>
+
+<span class="w">        </span><span class="n">motor</span><span class="p">[</span><span class="n">mLeft</span><span class="p">]</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mi">20</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="n">difference</span><span class="w"> </span><span class="o">*</span><span class="w"> </span><span class="n">multiplier</span><span class="p">;</span>
+<span class="w">        </span><span class="n">motor</span><span class="p">[</span><span class="n">mRight</span><span class="p">]</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mi">20</span><span class="w"> </span><span class="o">-</span><span class="w"> </span><span class="n">difference</span><span class="w"> </span><span class="o">*</span><span class="w"> </span><span class="n">multiplier</span><span class="p">;</span>
+<span class="w">        </span><span class="c1">// So, the extremes are left-right = 1000 - 150</span>
+<span class="w">        </span><span class="c1">// difference = 850</span>
+<span class="w">        </span><span class="c1">// Multiplying by multiplier 850 * 0.05 = 42.5</span>
+<span class="w">        </span><span class="c1">// left motor goes at 20 + 42.5 = 62.5</span>
+<span class="w">        </span><span class="c1">// right motor goes at 20 - 42.5 = -22.5</span>
+<span class="w">        </span><span class="c1">// Is this too much? yes</span>
+<span class="w">    </span><span class="p">}</span>
+<span class="p">}</span>
+</code></pre></div>
+    </div>
+    </div>
+</div>
+<div id="mainFooter">
+<p>&copy; Fort Street High School Robotics</p>
+</div>
+</div>
+</body>
+    <link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/highlight.js/9.9.0/styles/default.min.css">
+    <script src="//cdnjs.cloudflare.com/ajax/libs/highlight.js/9.9.0/highlight.min.js"></script>
+    <script>hljs.initHighlightingOnLoad();</script>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.0.3/jquery.min.js"></script>
+    <!-- Firebase - Equipment System -->
+    <script type="text/javascript" src="https://www.gstatic.com/firebasejs/4.8.0/firebase.js"></script>
+    <script type="text/javascript" src="/file/equipmentsystem.js"></script>
+    <link type="text/css" rel="stylesheet" href="/file/equipmentsystem.css"/>
+</html>

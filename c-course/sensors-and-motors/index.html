@@ -1,0 +1,175 @@
+<!doctype html>
+<html>
+    <head>
+        <title>FSHS Robotics</title>
+        <meta name="google-site-verification" content="4_RMTp03qKZnXNroL0gme91C1A0V24nC9np8xE_GRt4" />
+        <link rel="icon" type="image/png" href="/theme/favicon.png">
+        <meta name="viewport" content="width=device-width, initial-scale=1"/>
+        <meta name="theme-color" content="#4060fa" />
+        <link type="text/css" rel="stylesheet" href="/theme/robobase.css"/>
+        <link type="text/css" rel="stylesheet" href="/theme/2018base.css"/>
+        <link type="text/css" rel="stylesheet" href="/theme/friendly.css"/>
+        <link type="text/css" rel="stylesheet" href="https://fonts.googleapis.com/css?family=Open+Sans:300,400,700|Raleway:400,900|PT+Mono">
+    </head>
+
+<body>
+    <div class="header-2018">
+        <h2><a href="/">FSHS Robotics</a></h2>
+        <div id="nav">
+            <ul class="nav-transparent">
+                <li class="nav-transparent__link"><a href="/about">About</a></li>
+                <li class="nav-transparent__link"><a href="/awards">Awards</a></li>
+                <li class="nav-transparent__link"><a href="/resources">Resources</a></li>
+                <li class="nav-transparent__link"><a href="/equipment">Admin</a></li>
+
+            </ul>
+        </div>
+    </div>
+<div id="wrapper">
+
+    <div class="wiki" id="content_view" style="display: block;">
+    <div class="learn-wrapper">
+    <div class="hero full-width">
+    <a class="hero-back" href="/c-course/">Back to C Course</a>
+    <h3>FSHS Robotics C Course</h3>
+    <h1>6. Sensors and Motors</h1>
+    </div>
+    
+    <div class="learn-contents-text" style="grid-column: 1/4">
+    <h2 id="61-download-robotc">6.1 Download RobotC</h2>
+<p>To get started with RobotC, download it. Click on the blue button after you click the below blue button.</p>
+<p><a href="http://www.robotc.net/download/lego/" class="button">Download RobotC</a></p>
+<p>If you are stuck there are full instructions <a href="http://help.robotc.net/WebHelpMindstorms/index.htm#Resources/topics/Getting_Started/Install_ROBOTC.htm">here</a>.</p>
+<p>Once downloaded, make sure the following two options are selected:</p>
+<p><center></p>
+<p><img alt="" src="../../c-course/sensors-and-motors/mass_superuser.png" /></p>
+<p><img alt="" src="../../c-course/sensors-and-motors/mass_platform.png" />
+</center></p>
+<h2 id="62-motor-and-sensor-setup">6.2 Motor and Sensor Setup</h2>
+<ol>
+<li>Click 'New File'.</li>
+<li>Click 'Motor and Sensor Setup'.</li>
+<li><strong>Motors</strong> have a name, a type, and can be reversed. There can be 4 motors on an EV3 brick, and 3 motors on an NXT brick. They are labelled A, B, C and D.<ul>
+<li>Name your motors, e.g. <code>motorLeft</code> and <code>motorRight</code>.</li>
+<li>Here, we plug the left into A, the right into D.</li>
+</ul>
+</li>
+</ol>
+<p><img alt="" src="../../c-course/sensors-and-motors/mass_motors.png" /></p>
+<ol>
+<li><strong>Sensors</strong> have a name and type as well. There can be 4 sensors on both EV3 and NXT bricks.<ul>
+<li>Name your sensors, e.g. <code>sensorLeft</code> and <code>sensorRight</code>. Set them to be <code>Color (EV3)</code>.</li>
+<li>Here, we plug the left into 1, the right into 4.</li>
+</ul>
+</li>
+</ol>
+<p><img alt="" src="../../c-course/sensors-and-motors/mass_sensors.png" /></p>
+<ol>
+<li>When you click 'OK', there should be some 'automatically generated' code applied above the code. The code there should generally match what we put in the boxes above.</li>
+</ol>
+<h2 id="63-introduction-to-colour-sensors">6.3 Introduction to colour sensors</h2>
+<p>Colour sensors return red, green and blue (RGB) values. They're like light sensors but instead of shining red/white light and measuring the reflected light, they shine red, green and blue light and measure their reflected components.</p>
+<p>This is a lot of data to work with (you will have six variables, 3 for left sensor, 3 for right). Sometimes we add them up to get a combined 'white' value (though you will notice some colours change slower than others). You will have to experiment with this.</p>
+<h2 id="64-dont-trust-your-eyes">6.4 Don't trust your eyes!</h2>
+<p>Our eyes also do not see the same way as a colour sensor - what we say is green might not be green. So, always trust your colour sensor. (If you print a piece of paper that has a rgb(255,0,0) red square, you won't actually get a reading of 255, 0, 0 - printers usually print brighter than actual).</p>
+<h2 id="65-sensor-input">6.5 Sensor input</h2>
+<p>The main function is the one that will be run at the very start. Later, you might make some other functions.</p>
+<p>Let's first try and read in the left sensor values, and then print it on the screen. To repeatedly show it on the screen, we need to surround it in a loop.</p>
+<p>Note: you can find the functions <code>getColorRawRGB</code> and <code>displayCenteredTextLine</code> under 'Sensors' and 'Display' on the left 'Text Functions' panel. You can drag these functions into your code.</p>
+<div class="highlight"><pre><span></span><code><span class="n">task</span><span class="w"> </span><span class="nf">main</span><span class="p">()</span>
+<span class="p">{</span>
+<span class="w">    </span><span class="kt">int</span><span class="w"> </span><span class="n">lr</span><span class="p">,</span><span class="n">lg</span><span class="p">,</span><span class="n">lb</span><span class="p">;</span><span class="w"> </span><span class="c1">// create the variables</span>
+
+<span class="w">    </span><span class="c1">// Repeatedly do what is in the brackets</span>
+<span class="w">    </span><span class="k">while</span><span class="w"> </span><span class="p">(</span><span class="nb">true</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
+<span class="w">        </span><span class="c1">// Like scanf, input colour intensities into variables</span>
+<span class="w">        </span><span class="n">getColorRawRGB</span><span class="p">(</span><span class="n">sensorLeft</span><span class="p">,</span><span class="w"> </span><span class="n">lr</span><span class="p">,</span><span class="w"> </span><span class="n">lg</span><span class="p">,</span><span class="w"> </span><span class="n">lb</span><span class="p">);</span>
+
+<span class="w">        </span><span class="c1">// Print it on the 2nd line of the screen</span>
+<span class="w">        </span><span class="n">displayCenteredTextLine</span><span class="p">(</span><span class="mi">2</span><span class="p">,</span><span class="w"> </span><span class="s">&quot;%d %d %d&quot;</span><span class="p">,</span><span class="w"> </span><span class="n">lr</span><span class="p">,</span><span class="w"> </span><span class="n">lg</span><span class="p">,</span><span class="w"> </span><span class="n">lb</span><span class="p">);</span>
+<span class="w">    </span><span class="p">}</span>
+<span class="p">}</span>
+</code></pre></div>
+
+<p>Here, we use two new functions:</p>
+<ul>
+<li><code>getColorRawRGB(nDeviceIndex, pRedChannel, pGreenChannel, pBlueChannel);</code>, where <code>nDeviceIndex</code> is the name of your sensor (or S1, S2, ...)</li>
+<li><code>displayCenteredTextLine(nLineNumber, pChar, ...);</code>, where <code>nLineNumber</code> is the number from 1 to 8, and <code>pChar, ...</code> is what you would put in a <code>printf</code> statement. </li>
+</ul>
+<h2 id="66-more-with-colour">6.6 More with colour</h2>
+<p>We can apply what we've learnt from if statements to do more.</p>
+<p>What does this program do?</p>
+<div class="highlight"><pre><span></span><code><span class="n">task</span><span class="w"> </span><span class="nf">main</span><span class="p">()</span>
+<span class="p">{</span>
+<span class="w">    </span><span class="kt">int</span><span class="w"> </span><span class="n">lr</span><span class="p">,</span><span class="n">lg</span><span class="p">,</span><span class="n">lb</span><span class="p">;</span><span class="w"> </span><span class="c1">// create the variables</span>
+
+<span class="w">    </span><span class="c1">// Repeatedly do what is in the brackets</span>
+<span class="w">    </span><span class="k">while</span><span class="w"> </span><span class="p">(</span><span class="nb">true</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
+<span class="w">        </span><span class="c1">// Like scanf, input colour intensities into variables</span>
+<span class="w">        </span><span class="n">getColorRawRGB</span><span class="p">(</span><span class="n">sensorLeft</span><span class="p">,</span><span class="w"> </span><span class="n">lr</span><span class="p">,</span><span class="w"> </span><span class="n">lg</span><span class="p">,</span><span class="w"> </span><span class="n">lb</span><span class="p">);</span>
+
+<span class="w">        </span><span class="c1">// Print it on the 2nd line of the screen</span>
+<span class="w">        </span><span class="n">displayCenteredTextLine</span><span class="p">(</span><span class="mi">2</span><span class="p">,</span><span class="w"> </span><span class="s">&quot;%d %d %d&quot;</span><span class="p">,</span><span class="w"> </span><span class="n">lr</span><span class="p">,</span><span class="w"> </span><span class="n">lg</span><span class="p">,</span><span class="w"> </span><span class="n">lb</span><span class="p">);</span>
+
+<span class="w">        </span><span class="c1">// If a particular condition is met</span>
+<span class="w">        </span><span class="k">if</span><span class="w"> </span><span class="p">(</span><span class="n">lr</span><span class="w"> </span><span class="o">&gt;</span><span class="w"> </span><span class="mi">30</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
+<span class="w">            </span><span class="n">motor</span><span class="p">[</span><span class="n">motorLeft</span><span class="p">]</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mi">50</span><span class="p">;</span>
+<span class="w">            </span><span class="n">motor</span><span class="p">[</span><span class="n">motorRight</span><span class="p">]</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mi">0</span><span class="p">;</span>
+<span class="w">        </span><span class="p">}</span>
+<span class="w">        </span><span class="c1">// Otherwise...</span>
+<span class="w">        </span><span class="k">else</span><span class="w"> </span><span class="p">{</span>
+<span class="w">            </span><span class="n">motor</span><span class="p">[</span><span class="n">motorLeft</span><span class="p">]</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mi">0</span><span class="p">;</span>
+<span class="w">            </span><span class="n">motor</span><span class="p">[</span><span class="n">motorRight</span><span class="p">]</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mi">50</span><span class="p">;</span>
+<span class="w">        </span><span class="p">}</span>
+<span class="w">    </span><span class="p">}</span>
+<span class="p">}</span>
+</code></pre></div>
+
+<h2 id="67-exercises">6.7 Exercises</h2>
+<ol>
+<li>Write a program that will make a beep whenever the sensor sees something that is very red, e.g. <code>red &gt; (blue + green)</code>. Test it out on common red objects (e.g. your diary).<ul>
+<li>To make the robot brick beep, use the function <code>playImmediateTone(&lt;frequency&gt;, &lt;duration in 10ms&gt;)</code>, e.g. <code>playImmediateTone(100, 10)</code>. </li>
+</ul>
+</li>
+<li>Write a program that will differentiate black, white and green (take a tile from the storeroom). Print these on the NXT/EV3 screen as 'black', 'white', 'green' and 'unknown'.<ul>
+<li>To print on the screen, use the function shown above - <code>displayCenteredTextLine(&lt;line&gt;, &lt;string&gt;)</code>, e.g. <code>displayCenteredTextLine(2, "black");</code>.</li>
+</ul>
+</li>
+<li>Try out line follow by following this pseudocode:</li>
+</ol>
+<div class="highlight"><pre><span></span><code><span class="k">if</span><span class="w"> </span><span class="p">(</span><span class="nf">left</span><span class="w"> </span><span class="k">is</span><span class="w"> </span><span class="k">on</span><span class="w"> </span><span class="n">black</span><span class="p">,</span><span class="w"> </span><span class="nf">right</span><span class="w"> </span><span class="k">is</span><span class="w"> </span><span class="k">on</span><span class="w"> </span><span class="n">white</span><span class="p">)</span><span class="w"> </span><span class="err">{</span>
+<span class="w">    </span><span class="n">turn</span><span class="w"> </span><span class="nf">right</span><span class="w"> </span><span class="n">a</span><span class="w"> </span><span class="nc">bit</span>
+<span class="err">}</span>
+<span class="k">else</span><span class="w"> </span><span class="k">if</span><span class="w"> </span><span class="p">(</span><span class="nf">left</span><span class="w"> </span><span class="k">is</span><span class="w"> </span><span class="k">on</span><span class="w"> </span><span class="n">white</span><span class="p">,</span><span class="w"> </span><span class="nf">right</span><span class="w"> </span><span class="k">is</span><span class="w"> </span><span class="k">on</span><span class="w"> </span><span class="n">black</span><span class="p">)</span><span class="w"> </span><span class="err">{</span>
+<span class="w">    </span><span class="n">turn</span><span class="w"> </span><span class="nf">left</span><span class="w"> </span><span class="n">a</span><span class="w"> </span><span class="nc">bit</span>
+<span class="err">}</span>
+<span class="k">else</span><span class="w"> </span><span class="err">{</span>
+<span class="w">    </span><span class="o">//</span><span class="w"> </span><span class="k">both</span><span class="w"> </span><span class="k">are</span><span class="w"> </span><span class="k">on</span><span class="w"> </span><span class="n">white</span><span class="p">,</span><span class="w"> </span><span class="ow">or</span><span class="w"> </span><span class="k">both</span><span class="w"> </span><span class="k">on</span><span class="w"> </span><span class="n">black</span>
+<span class="w">    </span><span class="k">go</span><span class="w"> </span><span class="n">forward</span>
+<span class="err">}</span>
+</code></pre></div>
+
+<p>Think about which directions the robot should go in:</p>
+<p><img src="../../c-course/sensors-and-motors/robotdirections.png" width="100%" /></p>
+    </div>
+        <div class="learn-contents-navigate full-width">
+            <a class="previous" href="/c-course/input-output-exercises">Input Output Exercises</a>
+            <a class="next" href="/c-course/making-sounds">Making Sounds</a>
+            <div class="separator"></div>
+        </div>
+    </div>
+</div>
+<div id="mainFooter">
+<p>&copy; Fort Street High School Robotics</p>
+</div>
+</div>
+</body>
+    <link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/highlight.js/9.9.0/styles/default.min.css">
+    <script src="//cdnjs.cloudflare.com/ajax/libs/highlight.js/9.9.0/highlight.min.js"></script>
+    <script>hljs.initHighlightingOnLoad();</script>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.0.3/jquery.min.js"></script>
+    <!-- Firebase - Equipment System -->
+    <script type="text/javascript" src="https://www.gstatic.com/firebasejs/4.8.0/firebase.js"></script>
+    <script type="text/javascript" src="/file/equipmentsystem.js"></script>
+    <link type="text/css" rel="stylesheet" href="/file/equipmentsystem.css"/>
+</html>

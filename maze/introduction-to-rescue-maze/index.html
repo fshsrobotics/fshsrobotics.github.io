@@ -1,0 +1,107 @@
+<!doctype html>
+<html>
+    <head>
+        <title>FSHS Robotics</title>
+        <meta name="google-site-verification" content="4_RMTp03qKZnXNroL0gme91C1A0V24nC9np8xE_GRt4" />
+        <link rel="icon" type="image/png" href="/theme/favicon.png">
+        <meta name="viewport" content="width=device-width, initial-scale=1"/>
+        <meta name="theme-color" content="#4060fa" />
+        <link type="text/css" rel="stylesheet" href="/theme/robobase.css"/>
+        <link type="text/css" rel="stylesheet" href="/theme/2018base.css"/>
+        <link type="text/css" rel="stylesheet" href="/theme/friendly.css"/>
+        <link type="text/css" rel="stylesheet" href="https://fonts.googleapis.com/css?family=Open+Sans:300,400,700|Raleway:400,900|PT+Mono">
+    </head>
+
+<body>
+    <div class="header-2018">
+        <h2><a href="/">FSHS Robotics</a></h2>
+        <div id="nav">
+            <ul class="nav-transparent">
+                <li class="nav-transparent__link"><a href="/about">About</a></li>
+                <li class="nav-transparent__link"><a href="/awards">Awards</a></li>
+                <li class="nav-transparent__link"><a href="/resources">Resources</a></li>
+                <li class="nav-transparent__link"><a href="/equipment">Admin</a></li>
+
+            </ul>
+        </div>
+    </div>
+<div id="wrapper">
+
+    <div class="wiki" id="content_view" style="display: block;">
+    <div class="learn-wrapper">
+    <div class="hero full-width">
+    <a class="hero-back" href="/maze/">Back to Maze</a>
+    <h3>FSHS Robotics C Course</h3>
+    <h1>Introduction to Rescue Maze</h1>
+    </div>
+    
+        <div class="learn-contents-nav">
+        </div>
+    <div class="learn-contents-text" >
+    <h2 id="overview">Overview</h2>
+<p>This is a video of the winning team in the 2017 National Competition in Brisbane.</p>
+<video width="100%" height="auto" controls>
+    <source src="/file/maze1.mp4" type="video/mp4">
+    Your browser does not support the video tag.
+</video>
+
+<ul>
+<li>The robot should be able to navigate around the maze. It goes around and looks for heat packs - they are 28 to 40 degrees Celcius.</li>
+<li>When a heat pack is spotted, it needs to drop a small piece (e.g. a flat Lego piece or a small 3D printed block) on the side where the heat pack is placed. You will need to store up to 12 of these 'rescue kits'.</li>
+<li>You need to avoid tiles that are black ('holes') and the silver tiles are checkpoints.<ul>
+<li>You can restart at either the checkpoint or at the start.</li>
+</ul>
+</li>
+<li>Each round is timed. You are given a certain period of time to get all heat packs and return to the start.</li>
+<li>There's debris - things like rocks, spaghetti and water towers.</li>
+</ul>
+<p>Full rules are here: <a href="https://www.robocupjunior.org.au/sites/default/files/Official%20RCJA%20Rescue%20Maze%20Rules%202018%20%28KBTC%29.pdf">Official RCJA Rescue Maze Rules 2018 (KBTC)</a></p>
+<h2 id="construction">Construction</h2>
+<h3 id="construction-sensors">Construction: Sensors</h3>
+<ul>
+<li><strong>One colour sensor</strong> facing down for observing the tile colour</li>
+<li>Sensors to identify walls (choose one of the options):<ul>
+<li><strong>2 Pixy cameras</strong>: harder to get right (in code), but less movement. Easier to quickly identify what's there, as long as the heat packs are coloured, and easier to identify when it's a possible route or a wall.</li>
+<li><strong>2 Colour sensors</strong>: you will need to drive up to the wall and properly see the heat pack to accurately detect the colour. Similarly, heat packs must be coloured. There should be enough detectable colour difference between the walls and not having a wall.</li>
+<li><strong>1 colour, 1 sonar</strong>: Colour is used to identify objects on the wall, sonar spins around to locate walls in the maze.</li>
+</ul>
+</li>
+<li><strong>Compass or Gyro</strong>: you need to know which way you're facing at all times. You may be able to make do with reorienting yourself by hitting the walls.</li>
+</ul>
+<p>Ideally, you have more sensor ports. There are some sensor multiplexers and you may also build a hybrid robot, which will allow you to have more ports.</p>
+<ul>
+<li><strong>Distance/sonar sensors</strong> to more accurately detect wall/path.</li>
+<li><strong>Heat sensors</strong> to more accurately detect the victims. NXT/EV3 heat sensor available <a href="http://www.mindsensors.com/products/170-ir-temperature-sensor-for-ev3-or-nxt">here</a>.</li>
+</ul>
+<h3 id="construction-motors">Construction: Motors</h3>
+<ul>
+<li><strong>Two or three driving motors</strong> - would be ideal to have the robot be omnidirectional, to save time. However, two wheels is absolutely fine.<ul>
+<li>Your robot needs to be able to look around, e.g. rotate 90 degrees to look at all walls.</li>
+<li>Robot needs to easily traverse in any direction up/down/left/right in the maze</li>
+<li>If spinning sensors around, use one motor for rotating the sensor around.</li>
+</ul>
+</li>
+<li><strong>One package motor</strong> for dropping the package</li>
+</ul>
+<h3 id="general-construction">General construction</h3>
+<ul>
+<li>It seems like robots that have a square base are nicer - the 90 degree rotations won't be reliable but you will be able to readjust yourself easily by hitting the walls. Robots that don't self adjust will struggle with creating a good map.</li>
+<li>Using tracks for wheels (if having two driving motors) seems good as it lets you travel pretty efficiently around the course.</li>
+</ul>
+    </div>
+    </div>
+</div>
+<div id="mainFooter">
+<p>&copy; Fort Street High School Robotics</p>
+</div>
+</div>
+</body>
+    <link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/highlight.js/9.9.0/styles/default.min.css">
+    <script src="//cdnjs.cloudflare.com/ajax/libs/highlight.js/9.9.0/highlight.min.js"></script>
+    <script>hljs.initHighlightingOnLoad();</script>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.0.3/jquery.min.js"></script>
+    <!-- Firebase - Equipment System -->
+    <script type="text/javascript" src="https://www.gstatic.com/firebasejs/4.8.0/firebase.js"></script>
+    <script type="text/javascript" src="/file/equipmentsystem.js"></script>
+    <link type="text/css" rel="stylesheet" href="/file/equipmentsystem.css"/>
+</html>

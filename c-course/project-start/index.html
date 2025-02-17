@@ -1,0 +1,110 @@
+<!doctype html>
+<html>
+    <head>
+        <title>FSHS Robotics</title>
+        <meta name="google-site-verification" content="4_RMTp03qKZnXNroL0gme91C1A0V24nC9np8xE_GRt4" />
+        <link rel="icon" type="image/png" href="/theme/favicon.png">
+        <meta name="viewport" content="width=device-width, initial-scale=1"/>
+        <meta name="theme-color" content="#4060fa" />
+        <link type="text/css" rel="stylesheet" href="/theme/robobase.css"/>
+        <link type="text/css" rel="stylesheet" href="/theme/2018base.css"/>
+        <link type="text/css" rel="stylesheet" href="/theme/friendly.css"/>
+        <link type="text/css" rel="stylesheet" href="https://fonts.googleapis.com/css?family=Open+Sans:300,400,700|Raleway:400,900|PT+Mono">
+    </head>
+
+<body>
+    <div class="header-2018">
+        <h2><a href="/">FSHS Robotics</a></h2>
+        <div id="nav">
+            <ul class="nav-transparent">
+                <li class="nav-transparent__link"><a href="/about">About</a></li>
+                <li class="nav-transparent__link"><a href="/awards">Awards</a></li>
+                <li class="nav-transparent__link"><a href="/resources">Resources</a></li>
+                <li class="nav-transparent__link"><a href="/equipment">Admin</a></li>
+
+            </ul>
+        </div>
+    </div>
+<div id="wrapper">
+
+    <div class="wiki" id="content_view" style="display: block;">
+    <div class="learn-wrapper">
+    <div class="hero full-width">
+    <a class="hero-back" href="/c-course/">Back to C Course</a>
+    <h3>FSHS Robotics C Course</h3>
+    <h1>Project: tips</h1>
+    </div>
+    
+    <div class="learn-contents-text" style="grid-column: 1/4">
+    <h2 id="detecting-the-silver-strip">Detecting the silver strip</h2>
+<p>To detect the silver strip, you will need to:</p>
+<ol>
+<li>Get colour readings for the silver strip (RGB) for at least one sensor (more accurate with both left and right).</li>
+<li>Set up a big loop for your program, e.g.</li>
+</ol>
+<div class="highlight"><pre><span></span><code><span class="n">task</span><span class="w"> </span><span class="nf">main</span><span class="p">()</span><span class="w"> </span><span class="p">{</span>
+<span class="w">    </span><span class="c1">// put variables here</span>
+<span class="w">    </span><span class="kt">int</span><span class="w"> </span><span class="n">leftR</span><span class="p">,</span><span class="w"> </span><span class="n">leftG</span><span class="p">,</span><span class="w"> </span><span class="n">leftB</span><span class="p">;</span>
+<span class="w">    </span><span class="kt">int</span><span class="w"> </span><span class="n">rightR</span><span class="p">,</span><span class="w"> </span><span class="n">rightG</span><span class="p">,</span><span class="w"> </span><span class="n">rightB</span><span class="p">;</span>
+
+<span class="w">    </span><span class="k">while</span><span class="w"> </span><span class="p">(</span><span class="mi">1</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
+<span class="w">        </span><span class="c1">// repeatedly get the sensor values</span>
+<span class="w">        </span><span class="c1">// repeatedly check the sensor values to see if it is silver</span>
+<span class="w">    </span><span class="p">}</span>
+<span class="p">}</span>
+</code></pre></div>
+
+<ol>
+<li>Make an if statement within the big loop that checks the sensor values to see if it is silver.</li>
+<li>When you see silver, make a sound and stop for a second.</li>
+</ol>
+<h2 id="transitioning-from-silver-strip-detection-to-other-code">Transitioning from silver strip detection to other code</h2>
+<p>Code likes to run from top to bottom, but you want your code to <em>either</em> be detecting the silver strip OR performing the search. </p>
+<p>The easiest way to do this is to set up a <strong>flag</strong> that tells the code which task we want to do. If the flag is 1, we do strip detection, if the flag is 2 we go forward, if the flag is 3, we are done.</p>
+<div class="highlight"><pre><span></span><code><span class="n">task</span><span class="w"> </span><span class="nf">main</span><span class="p">()</span><span class="w"> </span><span class="p">{</span>
+<span class="w">    </span><span class="c1">// put variables here</span>
+<span class="w">    </span><span class="kt">int</span><span class="w"> </span><span class="n">leftR</span><span class="p">,</span><span class="w"> </span><span class="n">leftG</span><span class="p">,</span><span class="w"> </span><span class="n">leftB</span><span class="p">;</span>
+<span class="w">    </span><span class="kt">int</span><span class="w"> </span><span class="n">rightR</span><span class="p">,</span><span class="w"> </span><span class="n">rightG</span><span class="p">,</span><span class="w"> </span><span class="n">rightB</span><span class="p">;</span>
+
+<span class="w">    </span><span class="kt">int</span><span class="w"> </span><span class="n">currentTask</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mi">1</span><span class="p">;</span><span class="w"> </span><span class="c1">// our &#39;task&#39; flag</span>
+<span class="w">                         </span><span class="c1">// 1: silver strip detection</span>
+<span class="w">                         </span><span class="c1">// 2: going forward</span>
+<span class="w">                         </span><span class="c1">// 3: idle/stop program</span>
+<span class="w">    </span><span class="k">while</span><span class="w"> </span><span class="p">(</span><span class="mi">1</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
+<span class="w">        </span><span class="k">if</span><span class="w"> </span><span class="p">(</span><span class="n">currentTask</span><span class="w"> </span><span class="o">==</span><span class="w"> </span><span class="mi">1</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
+<span class="w">            </span><span class="c1">// repeatedly get the sensor values</span>
+<span class="w">            </span><span class="c1">// repeatedly check the sensor values to see if it is silver</span>
+<span class="w">            </span><span class="k">if</span><span class="w"> </span><span class="p">(</span><span class="n">silver</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
+<span class="w">                </span><span class="c1">// beep and wait a second</span>
+<span class="w">                </span><span class="n">currentTask</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mi">2</span><span class="p">;</span><span class="w"> </span><span class="c1">// change task to &#39;go forward&#39;</span>
+<span class="w">            </span><span class="p">}</span>
+<span class="w">        </span><span class="p">}</span>
+<span class="w">        </span><span class="k">else</span><span class="w"> </span><span class="k">if</span><span class="w"> </span><span class="p">(</span><span class="n">currentTask</span><span class="w"> </span><span class="o">==</span><span class="w"> </span><span class="mi">2</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
+<span class="w">            </span><span class="c1">// go forward</span>
+<span class="w">            </span><span class="k">if</span><span class="w"> </span><span class="p">(</span><span class="n">forward</span><span class="w"> </span><span class="n">enough</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
+<span class="w">                </span><span class="n">currentTask</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mi">3</span><span class="p">;</span>
+<span class="w">            </span><span class="p">}</span>
+<span class="w">        </span><span class="p">}</span>
+<span class="w">        </span><span class="k">else</span><span class="w"> </span><span class="k">if</span><span class="w"> </span><span class="p">(</span><span class="n">currentTask</span><span class="w"> </span><span class="o">==</span><span class="w"> </span><span class="mi">3</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
+<span class="w">            </span><span class="c1">// stop all motors, do nothing else</span>
+<span class="w">        </span><span class="p">}</span>
+<span class="w">    </span><span class="p">}</span>
+<span class="p">}</span>
+</code></pre></div>
+    </div>
+    </div>
+</div>
+<div id="mainFooter">
+<p>&copy; Fort Street High School Robotics</p>
+</div>
+</div>
+</body>
+    <link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/highlight.js/9.9.0/styles/default.min.css">
+    <script src="//cdnjs.cloudflare.com/ajax/libs/highlight.js/9.9.0/highlight.min.js"></script>
+    <script>hljs.initHighlightingOnLoad();</script>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.0.3/jquery.min.js"></script>
+    <!-- Firebase - Equipment System -->
+    <script type="text/javascript" src="https://www.gstatic.com/firebasejs/4.8.0/firebase.js"></script>
+    <script type="text/javascript" src="/file/equipmentsystem.js"></script>
+    <link type="text/css" rel="stylesheet" href="/file/equipmentsystem.css"/>
+</html>

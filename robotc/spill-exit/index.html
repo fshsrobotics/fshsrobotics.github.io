@@ -1,0 +1,193 @@
+<!doctype html>
+<html>
+    <head>
+        <title>FSHS Robotics</title>
+        <meta name="google-site-verification" content="4_RMTp03qKZnXNroL0gme91C1A0V24nC9np8xE_GRt4" />
+        <link rel="icon" type="image/png" href="/theme/favicon.png">
+        <meta name="viewport" content="width=device-width, initial-scale=1"/>
+        <meta name="theme-color" content="#4060fa" />
+        <link type="text/css" rel="stylesheet" href="/theme/robobase.css"/>
+        <link type="text/css" rel="stylesheet" href="/theme/2018base.css"/>
+        <link type="text/css" rel="stylesheet" href="/theme/friendly.css"/>
+        <link type="text/css" rel="stylesheet" href="https://fonts.googleapis.com/css?family=Open+Sans:300,400,700|Raleway:400,900|PT+Mono">
+    </head>
+
+<body>
+    <div class="header-2018">
+        <h2><a href="/">FSHS Robotics</a></h2>
+        <div id="nav">
+            <ul class="nav-transparent">
+                <li class="nav-transparent__link"><a href="/about">About</a></li>
+                <li class="nav-transparent__link"><a href="/awards">Awards</a></li>
+                <li class="nav-transparent__link"><a href="/resources">Resources</a></li>
+                <li class="nav-transparent__link"><a href="/equipment">Admin</a></li>
+
+            </ul>
+        </div>
+    </div>
+<div id="wrapper">
+
+    <div class="wiki" id="content_view" style="display: block;">
+    <div class="learn-wrapper">
+    <div class="hero full-width">
+    <a class="hero-back" href="/robotc/">Back to RobotC</a>
+    <h3>FSHS Robotics C Course</h3>
+    <h1>Spill Exit</h1>
+    </div>
+    
+    <div class="learn-contents-text" style="grid-column: 1/4">
+    <h2 id="pseudocode">Pseudocode</h2>
+<ul>
+<li>To exit the spill, you need to:<ul>
+<li>Store past data on where you came from and how you got to your current location</li>
+<li>Backtrack and reverse those past actions</li>
+<li>An action includes both motor's speeds and the degrees the motors have rotated (motor encoder)</li>
+</ul>
+</li>
+<li>In code, this is pretty much equivalent to:</li>
+</ul>
+<div class="highlight"><pre><span></span><code><span class="k">for</span><span class="w"> </span><span class="nv">each</span><span class="w"> </span><span class="nv">action</span><span class="w"> </span><span class="nv">within</span><span class="w"> </span><span class="nv">the</span><span class="w"> </span><span class="nv">spill</span>
+<span class="w">    </span><span class="nv">reset</span><span class="w"> </span><span class="nv">counters</span>
+<span class="w">    </span><span class="k">do</span><span class="w"> </span><span class="nv">the</span><span class="w"> </span><span class="nv">action</span>
+<span class="w">    </span><span class="nv">record</span><span class="w"> </span><span class="nv">the</span><span class="w"> </span><span class="nv">action</span><span class="w"> </span><span class="nv">speed</span><span class="w"> </span><span class="nv">and</span><span class="w"> </span><span class="nv">rotation</span><span class="w"> </span><span class="nv">counts</span>
+<span class="w">    </span><span class="nv">store</span><span class="w"> </span><span class="nv">this</span><span class="w"> </span><span class="nv">data</span><span class="w"> </span><span class="nv">somewhere</span>
+
+<span class="nv">drop</span><span class="w"> </span><span class="nv">the</span><span class="w"> </span><span class="nv">can</span>
+
+<span class="k">for</span><span class="w"> </span><span class="nv">each</span><span class="w"> </span><span class="nv">action</span><span class="w"> </span><span class="nv">taken</span><span class="w"> </span><span class="nv">so</span><span class="w"> </span><span class="nv">far</span>,<span class="w"> </span><span class="nv">other</span><span class="w"> </span><span class="nv">than</span><span class="w"> </span><span class="nv">can</span><span class="w"> </span><span class="nv">drop</span>
+<span class="w">    </span><span class="nv">start</span><span class="w"> </span><span class="nv">from</span><span class="w"> </span><span class="nv">the</span><span class="w"> </span><span class="nv">latest</span><span class="w"> </span><span class="nv">action</span>
+<span class="w">    </span><span class="nv">reset</span><span class="w"> </span><span class="nv">counters</span>
+<span class="w">    </span><span class="k">do</span><span class="w"> </span><span class="nv">the</span><span class="w"> </span><span class="nv">action</span>,<span class="w"> </span><span class="nv">in</span><span class="w"> </span><span class="nv">reverse</span>
+</code></pre></div>
+
+<h2 id="storing-the-values">Storing the values</h2>
+<h3 id="storing-action-data">Storing action data</h3>
+<ul>
+<li>To group the four data points into one 'block' of information, you can use a <code>struct</code>. <ul>
+<li><a href="https://www.tutorialspoint.com/cprogramming/c_structures.htm">C Structures - tutorialspoint</a></li>
+</ul>
+</li>
+<li>A struct for this spill exit will look something like:</li>
+</ul>
+<div class="highlight"><pre><span></span><code><span class="c1">// Place this before your main function</span>
+<span class="k">struct</span><span class="w"> </span><span class="nc">ActionData</span><span class="w"> </span><span class="p">{</span>
+<span class="w">    </span><span class="kt">int</span><span class="w"> </span><span class="n">leftMotorSpeed</span><span class="p">;</span>
+<span class="w">    </span><span class="kt">int</span><span class="w"> </span><span class="n">rightMotorSpeed</span><span class="p">;</span>
+<span class="w">    </span><span class="kt">int</span><span class="w"> </span><span class="n">leftMotorCount</span><span class="p">;</span>
+<span class="w">    </span><span class="kt">int</span><span class="w"> </span><span class="n">rightMotorCount</span><span class="p">;</span>
+<span class="p">};</span>
+</code></pre></div>
+
+<h3 id="storing-all-actions">Storing all actions</h3>
+<ul>
+<li>To store all these blocks of information, you want to put them in an 'array'. This is an ordered list of items, with a maximum size.<ul>
+<li><a href="https://www.tutorialspoint.com/cprogramming/c_arrays.htm">C Arrays - tutorialspoint</a></li>
+<li><a href="https://stackoverflow.com/a/32185804">How to make an array of struct in C?</a></li>
+</ul>
+</li>
+</ul>
+<div class="highlight"><pre><span></span><code><span class="c1">// Place this at the top within the main function</span>
+<span class="k">struct</span><span class="w"> </span><span class="nc">ActionData</span><span class="w"> </span><span class="n">allActions</span><span class="p">[</span><span class="mi">10</span><span class="p">];</span><span class="w"> </span><span class="c1">// Create an array of ActionData</span>
+<span class="kt">int</span><span class="w"> </span><span class="n">currentAction</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mi">0</span><span class="p">;</span><span class="w">       </span><span class="c1">// Keep track of where we are</span>
+
+<span class="p">...</span>
+
+<span class="c1">// For each action within the spill, record the data</span>
+<span class="n">nMotorEncoder</span><span class="p">[</span><span class="n">leftMotor</span><span class="p">]</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mi">0</span><span class="p">;</span>
+<span class="n">nMotorEncoder</span><span class="p">[</span><span class="n">rightMotor</span><span class="p">]</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mi">0</span><span class="p">;</span>
+<span class="c1">// Rotate around until we find something on the sonar</span>
+<span class="n">move</span><span class="p">(</span><span class="mi">10</span><span class="p">,</span><span class="w"> </span><span class="mi">-10</span><span class="p">);</span>
+<span class="k">while</span><span class="w"> </span><span class="p">(</span><span class="n">SensorValue</span><span class="p">[</span><span class="n">Sonar</span><span class="p">]</span><span class="w"> </span><span class="o">&lt;</span><span class="w"> </span><span class="mi">10</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
+<span class="w">    </span><span class="c1">// finding...</span>
+<span class="p">}</span>
+<span class="c1">// Store this data</span>
+<span class="n">allActions</span><span class="p">[</span><span class="n">currentAction</span><span class="p">].</span><span class="n">leftMotorSpeed</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mi">10</span><span class="p">;</span>
+<span class="n">allActions</span><span class="p">[</span><span class="n">currentAction</span><span class="p">].</span><span class="n">rightMotorSpeed</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mi">-10</span><span class="p">;</span>
+<span class="n">allActions</span><span class="p">[</span><span class="n">currentAction</span><span class="p">].</span><span class="n">leftMotorCount</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">nMotorEncoder</span><span class="p">[</span><span class="n">leftMotor</span><span class="p">];</span>
+<span class="n">allActions</span><span class="p">[</span><span class="n">currentAction</span><span class="p">].</span><span class="n">rightMotorCount</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">nMotorEncoder</span><span class="p">[</span><span class="n">rightMotor</span><span class="p">];</span>
+<span class="n">currentAction</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">currentAction</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="mi">1</span><span class="p">;</span>
+
+<span class="c1">// Next action can now start!</span>
+<span class="p">...</span>
+</code></pre></div>
+
+<h3 id="backtracking-through-the-actions">Backtracking through the actions</h3>
+<ul>
+<li>We know that all the actions have been stored in our array, <code>allActions</code>, and that the latest action was number <code>currentAction - 1</code> (because we increment after the action is completed). So:<ul>
+<li>We can have a loop that goes through each action, but backwards</li>
+<li>We start at <code>currentAction - 1</code></li>
+<li>We end when <code>currentAction == -1</code></li>
+<li>While we are in the loop, we do the action (also inversed).</li>
+</ul>
+</li>
+</ul>
+<p>Let's take a look at this in code:</p>
+<div class="highlight"><pre><span></span><code><span class="n">currentAction</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">currentAction</span><span class="w"> </span><span class="o">-</span><span class="w"> </span><span class="mi">1</span><span class="p">;</span>
+<span class="k">while</span><span class="w"> </span><span class="p">(</span><span class="n">currentAction</span><span class="w"> </span><span class="o">&gt;=</span><span class="w"> </span><span class="mi">0</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
+<span class="w">    </span><span class="c1">// Reset counters</span>
+<span class="w">    </span><span class="n">nMotorEncoder</span><span class="p">[</span><span class="n">leftMotor</span><span class="p">]</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mi">0</span><span class="p">;</span>
+<span class="w">    </span><span class="n">nMotorEncoder</span><span class="p">[</span><span class="n">rightMotor</span><span class="p">]</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mi">0</span><span class="p">;</span>
+
+<span class="w">    </span><span class="c1">// Get the data out of the struct</span>
+<span class="w">    </span><span class="kt">int</span><span class="w"> </span><span class="n">leftSpeed</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">allActions</span><span class="p">[</span><span class="n">currentAction</span><span class="p">].</span><span class="n">leftMotorSpeed</span><span class="p">;</span>
+<span class="w">    </span><span class="kt">int</span><span class="w"> </span><span class="n">rightSpeed</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">allActions</span><span class="p">[</span><span class="n">currentAction</span><span class="p">].</span><span class="n">rightMotorSpeed</span><span class="p">;</span>
+<span class="w">    </span><span class="kt">int</span><span class="w"> </span><span class="n">leftCount</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">allActions</span><span class="p">[</span><span class="n">currentAction</span><span class="p">].</span><span class="n">leftMotorCount</span><span class="p">;</span>
+<span class="w">    </span><span class="kt">int</span><span class="w"> </span><span class="n">rightCount</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">allActions</span><span class="p">[</span><span class="n">currentAction</span><span class="p">].</span><span class="n">rightMotorCount</span><span class="p">;</span>
+
+<span class="w">    </span><span class="c1">// Inverse these actions</span>
+<span class="w">    </span><span class="c1">// We can just keep track of the absolute values of the counts</span>
+<span class="w">    </span><span class="c1">// Because otherwise it gets messy with negative values.</span>
+<span class="w">    </span><span class="n">leftSpeed</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="o">-</span><span class="n">leftSpeed</span><span class="p">;</span>
+<span class="w">    </span><span class="n">rightSpeed</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="o">-</span><span class="n">rightSpeed</span><span class="p">;</span>
+<span class="w">    </span><span class="n">leftCount</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">abs</span><span class="p">(</span><span class="n">leftCount</span><span class="p">);</span>
+<span class="w">    </span><span class="n">rightCount</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">abs</span><span class="p">(</span><span class="n">rightCount</span><span class="p">);</span>
+
+<span class="w">    </span><span class="c1">// Do the action</span>
+<span class="w">    </span><span class="n">move</span><span class="p">(</span><span class="n">leftSpeed</span><span class="p">,</span><span class="w"> </span><span class="n">rightSpeed</span><span class="p">);</span>
+<span class="w">    </span><span class="k">while</span><span class="w"> </span><span class="p">(</span><span class="n">leftCount</span><span class="w"> </span><span class="o">&gt;</span><span class="w"> </span><span class="n">abs</span><span class="p">(</span><span class="n">nMotorEncoder</span><span class="p">[</span><span class="n">leftMotor</span><span class="p">])</span><span class="w"> </span><span class="o">||</span><span class="w"> </span><span class="n">rightCount</span><span class="w"> </span><span class="o">&gt;</span><span class="w"> </span><span class="n">abs</span><span class="p">(</span><span class="n">nMotorEncoder</span><span class="p">[</span><span class="n">rightMotor</span><span class="p">])))</span><span class="w"> </span><span class="p">{</span>
+<span class="w">        </span><span class="c1">// moving...</span>
+<span class="w">    </span><span class="p">}</span>
+
+<span class="w">    </span><span class="n">move</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span><span class="w"> </span><span class="mi">0</span><span class="p">);</span>
+<span class="w">    </span><span class="c1">// We should be back to where we were before this action.</span>
+<span class="w">    </span><span class="n">currentAction</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">currentAction</span><span class="w"> </span><span class="o">-</span><span class="w"> </span><span class="mi">1</span><span class="p">;</span>
+<span class="w">    </span><span class="c1">// Subtract so that we can take the previous action.</span>
+<span class="p">}</span>
+</code></pre></div>
+
+<h2 id="exercises">Exercises</h2>
+<ol>
+<li>Try and use this framework in a new file and make the robot simply move forwards, then backtrack. <ul>
+<li>Record the robot moving forward at 20 speed for 5 seconds.</li>
+<li>Replay the robot reversing for the same amount.</li>
+<li>See how accurate it is - it should be decent but not perfect.</li>
+</ul>
+</li>
+<li>Try and make the robot do a few recorded movements, and backtrack those actions.</li>
+<li>Incorporate the code into your spill exit code.</li>
+</ol>
+<h2 id="its-not-working">It's not working</h2>
+<ul>
+<li>Make sure you're resetting the motorEncoder count every time you store values.</li>
+<li>If you want to store two paths separately and interchange between them, you'll need two allActions structs.<ul>
+<li>Remember that you only need to store the data when you need it!</li>
+</ul>
+</li>
+</ul>
+    </div>
+    </div>
+</div>
+<div id="mainFooter">
+<p>&copy; Fort Street High School Robotics</p>
+</div>
+</div>
+</body>
+    <link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/highlight.js/9.9.0/styles/default.min.css">
+    <script src="//cdnjs.cloudflare.com/ajax/libs/highlight.js/9.9.0/highlight.min.js"></script>
+    <script>hljs.initHighlightingOnLoad();</script>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.0.3/jquery.min.js"></script>
+    <!-- Firebase - Equipment System -->
+    <script type="text/javascript" src="https://www.gstatic.com/firebasejs/4.8.0/firebase.js"></script>
+    <script type="text/javascript" src="/file/equipmentsystem.js"></script>
+    <link type="text/css" rel="stylesheet" href="/file/equipmentsystem.css"/>
+</html>

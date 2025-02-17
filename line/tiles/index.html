@@ -1,0 +1,102 @@
+<!doctype html>
+<html>
+    <head>
+        <title>FSHS Robotics</title>
+        <meta name="google-site-verification" content="4_RMTp03qKZnXNroL0gme91C1A0V24nC9np8xE_GRt4" />
+        <link rel="icon" type="image/png" href="/theme/favicon.png">
+        <meta name="viewport" content="width=device-width, initial-scale=1"/>
+        <meta name="theme-color" content="#4060fa" />
+        <link type="text/css" rel="stylesheet" href="/theme/robobase.css"/>
+        <link type="text/css" rel="stylesheet" href="/theme/2018base.css"/>
+        <link type="text/css" rel="stylesheet" href="/theme/friendly.css"/>
+        <link type="text/css" rel="stylesheet" href="https://fonts.googleapis.com/css?family=Open+Sans:300,400,700|Raleway:400,900|PT+Mono">
+    </head>
+
+<body>
+    <div class="header-2018">
+        <h2><a href="/">FSHS Robotics</a></h2>
+        <div id="nav">
+            <ul class="nav-transparent">
+                <li class="nav-transparent__link"><a href="/about">About</a></li>
+                <li class="nav-transparent__link"><a href="/awards">Awards</a></li>
+                <li class="nav-transparent__link"><a href="/resources">Resources</a></li>
+                <li class="nav-transparent__link"><a href="/equipment">Admin</a></li>
+
+            </ul>
+        </div>
+    </div>
+<div id="wrapper">
+
+    <div class="wiki" id="content_view" style="display: block;">
+    <div class="learn-wrapper">
+    <div class="hero full-width">
+    <a class="hero-back" href="/line/">Back to Rescue Line</a>
+    <h3>FSHS Robotics C Course</h3>
+    <h1>Tiles and Turns</h1>
+    </div>
+    
+        <div class="learn-contents-nav">
+                <a href="/line/" class="completed">Rescue Line</a>
+                <a href="/line/tiles" class="selected">Tiles and Turns</a>
+                <a href="/line/obstacles" class="">Obstacles</a>
+                <a href="/line/spill" class="">Chemical Spill</a>
+                <a href="/line/logbooks" class="">Sample Logbooks</a>
+                <a href="/line/robot-design" class="">Robot Design</a>
+                <a href="/line/code-design" class="">Code Design</a>
+        </div>
+    <div class="learn-contents-text" >
+    <h2 id="tiles">Tiles</h2>
+<p><img src="../../pages/line/small.jpg" style="width:100%;max-width:500px">
+<img src="../../pages/line/large.jpg" style="width:100%;max-width:500px"></p>
+<ul>
+<li>Before the spill, the robot must navigate a selection of large and small tiles. The smallest tile will be 300 x 300mm, the largest tile is 600 x 600mm.</li>
+<li>The course has some tight bends, which are very difficult on small tiles - make sure your line follow algorithm can handle these!</li>
+</ul>
+<p><img src="../../pages/line/green.jpg" style="width:100%;max-width:140px">
+<img src="../../pages/line/gridlock.jpg" style="width:100%;max-width:140px"></p>
+<ul>
+<li><strong>Green turns</strong> are turns that tell you which way to turn. In the above image, going up the tile, you must turn left. </li>
+<li><strong>Gridlock</strong> is a special tile that might look complicated, but is simple. Think about what you want to do at each intersection. </li>
+<li>There are many other tiles - see these PDFs:<ul>
+<li><a href="../../pages/line/600x600.pdf">600 x 600 tiles</a></li>
+<li><a href="../../pages/line/300x300.pdf">300 x 300 tiles</a></li>
+</ul>
+</li>
+</ul>
+<h2 id="markers">Markers</h2>
+<ul>
+<li>In some rounds, you may see a coloured (non-green) line. The judge will ask you to do a particular action, such as:<ul>
+<li>When you reach the red line, stop for 3 seconds</li>
+<li>When you reach the blue line, make a noise or flash a light</li>
+<li>The yellow line is a shortcut you may use</li>
+</ul>
+</li>
+</ul>
+<h2 id="colours">Colours</h2>
+<ul>
+<li>While all tiles and boards are black line on white background, this may change in the future and may be inversed or changed in some way. In the past we've practiced with black line on orange background, white on black, etc. Make sure you are able to change your code to deal with this.</li>
+</ul>
+<h2 id="tips">Tips</h2>
+<ul>
+<li>You will get more reliable readings from your colour sensors if you shield them. You can wrap white paper around the sensor so that the paper is right above the ground.</li>
+<li>Don't make your robot travel too fast - start slow. If the tiles are small, </li>
+<li>Using black electrical tape, create your own sharp turns (we do not own 300 x 300mm tiles).</li>
+<li>A good rule is your robot should be able to do complete a tile at least 9 of 10 tries. </li>
+</ul>
+    </div>
+    </div>
+</div>
+<div id="mainFooter">
+<p>&copy; Fort Street High School Robotics</p>
+</div>
+</div>
+</body>
+    <link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/highlight.js/9.9.0/styles/default.min.css">
+    <script src="//cdnjs.cloudflare.com/ajax/libs/highlight.js/9.9.0/highlight.min.js"></script>
+    <script>hljs.initHighlightingOnLoad();</script>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.0.3/jquery.min.js"></script>
+    <!-- Firebase - Equipment System -->
+    <script type="text/javascript" src="https://www.gstatic.com/firebasejs/4.8.0/firebase.js"></script>
+    <script type="text/javascript" src="/file/equipmentsystem.js"></script>
+    <link type="text/css" rel="stylesheet" href="/file/equipmentsystem.css"/>
+</html>

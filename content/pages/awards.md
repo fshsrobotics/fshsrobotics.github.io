@@ -6,6 +6,13 @@ fullwidth: true
 <div class="learn-wrapper">
 <h1 style="margin-bottom:0">Awards</h1>
 <div class="learn-contents-text" style="grid-column: 1/4">
+<h2>2025</h2>
+<h3>NSW State Competition</h3>
+<ul>
+<li><b>1st Lightweight Soccer</b>: Eurovision: Edward, Brayden, Dimitri, Elliot</li>
+<li><b>2nd Lightweight Soccer</b>: Polynices Bot: Madelyn, Gabriel, Sebastian, Dexter</li>
+<li><b>3rd Open Rescue Line</b>: Blackbird: Aditya, Sophia, Hayden, Joshua</li>
+</ul>
 <h2>2024</h2>
 <h3>NSW State Competition</h3>
 <ul>

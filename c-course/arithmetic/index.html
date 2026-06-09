@@ -1,0 +1,144 @@
+<!doctype html>
+<html>
+    <head>
+        <title>FSHS Robotics</title>
+        <meta name="google-site-verification" content="4_RMTp03qKZnXNroL0gme91C1A0V24nC9np8xE_GRt4" />
+        <link rel="icon" type="image/png" href="/theme/favicon.png">
+        <meta name="viewport" content="width=device-width, initial-scale=1"/>
+        <meta name="theme-color" content="#4060fa" />
+        <link type="text/css" rel="stylesheet" href="/theme/robobase.css"/>
+        <link type="text/css" rel="stylesheet" href="/theme/2018base.css"/>
+        <link type="text/css" rel="stylesheet" href="/theme/friendly.css"/>
+        <link type="text/css" rel="stylesheet" href="https://fonts.googleapis.com/css?family=Open+Sans:300,400,700|Raleway:400,900|PT+Mono">
+    </head>
+
+<body>
+    <div class="header-2018">
+        <h2><a href="/">FSHS Robotics</a></h2>
+        <div id="nav">
+            <ul class="nav-transparent">
+                <li class="nav-transparent__link"><a href="/about">About</a></li>
+                <li class="nav-transparent__link"><a href="/awards">Awards</a></li>
+                <li class="nav-transparent__link"><a href="/resources">Resources</a></li>
+                <li class="nav-transparent__link"><a href="/equipment">Admin</a></li>
+
+            </ul>
+        </div>
+    </div>
+<div id="wrapper">
+
+    <div class="wiki" id="content_view" style="display: block;">
+    <div class="learn-wrapper">
+    <div class="hero full-width">
+    <a class="hero-back" href="/c-course/">Back to C Course</a>
+    <h3>FSHS Robotics C Course</h3>
+    <h1>4. Arithmetic</h1>
+    </div>
+    
+    <div class="learn-contents-text" style="grid-column: 1/4">
+    <h2 id="41-introduction-to-arithmetic">4.1 Introduction to Arithmetic</h2>
+<p>Computers are useful because it can do calculations very quickly. C allows us to perform some arithmetic operations, as well as some logical operations (the next topic!)</p>
+<p>We'll introduce some new symbols - addition, subtraction, multiplication and 'division'!</p>
+<table>
+<thead>
+<tr>
+<th>Action</th>
+<th>Symbol</th>
+<th>Comment</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Addition</td>
+<td><code>+</code></td>
+<td>Adds two numbers, e.g. <code>5 + 3 = 8</code></td>
+</tr>
+<tr>
+<td>Subtraction</td>
+<td><code>-</code></td>
+<td>Subtracts two numbers, e.g. <code>5 - 3 = 2</code></td>
+</tr>
+<tr>
+<td>Multiplication</td>
+<td><code>*</code></td>
+<td>Multiplies two numbers, e.g. <code>5 * 3 = 15</code></td>
+</tr>
+<tr>
+<td>Division</td>
+<td><code>/</code></td>
+<td>Divides and rounds down, e.g. <code>5 / 3 = 1</code></td>
+</tr>
+<tr>
+<td>Modulus</td>
+<td><code>%</code></td>
+<td>Gets the remainder, e.g. <code>5 % 3 = 2</code></td>
+</tr>
+</tbody>
+</table>
+<h2 id="42-multiplication-example">4.2 Multiplication example</h2>
+<p>Let's buy some pizza.</p>
+<div class="highlight"><pre><span></span><code><span class="cp">#include</span><span class="w"> </span><span class="cpf">&lt;stdio.h&gt;</span>
+
+<span class="kt">int</span><span class="w"> </span><span class="nf">main</span><span class="w"> </span><span class="p">()</span><span class="w"> </span><span class="p">{</span>
+<span class="w">    </span><span class="kt">int</span><span class="w"> </span><span class="n">pizzas</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mi">10</span><span class="p">;</span><span class="w"> </span><span class="c1">// Create a variable</span>
+<span class="w">    </span><span class="kt">int</span><span class="w"> </span><span class="n">cost</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">pizzas</span><span class="w"> </span><span class="o">*</span><span class="w"> </span><span class="mi">8</span><span class="p">;</span>
+
+<span class="w">    </span><span class="c1">// print out the number and price of pizzas</span>
+<span class="w">    </span><span class="n">printf</span><span class="p">(</span><span class="s">&quot;%d pizzas cost %d.</span><span class="se">\n</span><span class="s">&quot;</span><span class="p">,</span><span class="w"> </span><span class="n">pizzas</span><span class="p">,</span><span class="w"> </span><span class="n">cost</span><span class="p">);</span>
+<span class="w">    </span><span class="k">return</span><span class="w"> </span><span class="mi">0</span><span class="p">;</span>
+<span class="p">}</span>
+</code></pre></div>
+
+<ul>
+<li>The cost of the pizzas is <strong>8 dollars</strong>, and we purchase <strong>10 pizzas</strong>. <ul>
+<li>We calculate the cost in this line: <code>cost = pizzas * 8</code></li>
+</ul>
+</li>
+<li>To print out both numbers, we add another placeholder <code>%d</code>, and fill it in with another argument, <code>cost</code>. Look carefully at the location of the quotes and commas.</li>
+</ul>
+<h2 id="43-division-and-remainder-example">4.3 Division and Remainder example</h2>
+<p>Let's split our pizza and share some slices!</p>
+<div class="highlight"><pre><span></span><code><span class="cp">#include</span><span class="w"> </span><span class="cpf">&lt;stdio.h&gt;</span>
+
+<span class="kt">int</span><span class="w"> </span><span class="nf">main</span><span class="w"> </span><span class="p">()</span><span class="w"> </span><span class="p">{</span>
+<span class="w">    </span><span class="c1">// We have 17 slices of pizza to share between 4 people.</span>
+<span class="w">    </span><span class="kt">int</span><span class="w"> </span><span class="n">slices</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mi">17</span><span class="p">;</span>
+<span class="w">    </span><span class="kt">int</span><span class="w"> </span><span class="n">people</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mi">4</span><span class="p">;</span>
+
+<span class="w">    </span><span class="c1">// print out how many slices per person</span>
+<span class="w">    </span><span class="n">printf</span><span class="p">(</span><span class="s">&quot;Each person gets %d slices.</span><span class="se">\n</span><span class="s">&quot;</span><span class="p">,</span><span class="w"> </span><span class="n">slices</span><span class="w"> </span><span class="o">/</span><span class="w"> </span><span class="n">people</span><span class="p">);</span>
+<span class="w">    </span><span class="c1">// print out the remainder</span>
+<span class="w">    </span><span class="n">printf</span><span class="p">(</span><span class="s">&quot;There will be %d slices left.</span><span class="se">\n</span><span class="s">&quot;</span><span class="p">,</span><span class="w"> </span><span class="n">slices</span><span class="w"> </span><span class="o">%</span><span class="w"> </span><span class="n">people</span><span class="p">);</span>
+<span class="w">    </span><span class="k">return</span><span class="w"> </span><span class="mi">0</span><span class="p">;</span>
+<span class="p">}</span>
+</code></pre></div>
+
+<ul>
+<li>Note that wherever you can place a number of variable, you can place the arithmetic equation. Here, we don't create new variables (e.g. there's no <code>slicesPerPerson</code> and <code>slicesLeft</code> - we just let <code>printf</code> calculate it before printing.</li>
+</ul>
+<h2 id="43-exercises">4.3 Exercises</h2>
+<ul>
+<li>There are exercises in the <a href="/c-course/input-output-exercises/">grouped exercises</a>.</li>
+</ul>
+    </div>
+        <div class="learn-contents-navigate full-width">
+            <a class="previous" href="/c-course/variables">Variables</a>
+            <a class="next" href="/c-course/inputs-and-decisions">Inputs and Decisions</a>
+            <div class="separator"></div>
+        </div>
+    </div>
+</div>
+<div id="mainFooter">
+<p>&copy; Fort Street High School Robotics</p>
+</div>
+</div>
+</body>
+    <link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/highlight.js/9.9.0/styles/default.min.css">
+    <script src="//cdnjs.cloudflare.com/ajax/libs/highlight.js/9.9.0/highlight.min.js"></script>
+    <script>hljs.initHighlightingOnLoad();</script>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.0.3/jquery.min.js"></script>
+    <!-- Firebase - Equipment System -->
+    <script type="text/javascript" src="https://www.gstatic.com/firebasejs/4.8.0/firebase.js"></script>
+    <script type="text/javascript" src="/file/equipmentsystem.js"></script>
+    <link type="text/css" rel="stylesheet" href="/file/equipmentsystem.css"/>
+</html>

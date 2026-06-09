@@ -1,0 +1,361 @@
+<!doctype html>
+<html>
+    <head>
+        <title>FSHS Robotics</title>
+        <meta name="google-site-verification" content="4_RMTp03qKZnXNroL0gme91C1A0V24nC9np8xE_GRt4" />
+        <link rel="icon" type="image/png" href="/theme/favicon.png">
+        <meta name="viewport" content="width=device-width, initial-scale=1"/>
+        <meta name="theme-color" content="#4060fa" />
+        <link type="text/css" rel="stylesheet" href="/theme/robobase.css"/>
+        <link type="text/css" rel="stylesheet" href="/theme/2018base.css"/>
+        <link type="text/css" rel="stylesheet" href="/theme/friendly.css"/>
+        <link type="text/css" rel="stylesheet" href="https://fonts.googleapis.com/css?family=Open+Sans:300,400,700|Raleway:400,900|PT+Mono">
+    </head>
+
+<body>
+    <div class="header-2018">
+        <h2><a href="/">FSHS Robotics</a></h2>
+        <div id="nav">
+            <ul class="nav-transparent">
+                <li class="nav-transparent__link"><a href="/about">About</a></li>
+                <li class="nav-transparent__link"><a href="/awards">Awards</a></li>
+                <li class="nav-transparent__link"><a href="/resources">Resources</a></li>
+                <li class="nav-transparent__link"><a href="/equipment">Admin</a></li>
+
+            </ul>
+        </div>
+    </div>
+<div id="wrapper">
+
+    <div class="wiki" id="content_view" style="display: block;">
+    <div class="learn-wrapper">
+    <div class="hero full-width">
+    <a class="hero-back" href="/c-course/">Back to C Course</a>
+    <h3>FSHS Robotics C Course</h3>
+    <h1>Input Output Exercises</h1>
+    </div>
+    
+    <div class="learn-contents-text" style="grid-column: 1/4">
+    <h2 id="summary">Summary</h2>
+<h3 id="printing">Printing</h3>
+<p>Use <code>printf</code> to display text on the screen.</p>
+<div class="highlight"><pre><span></span><code>printf(&quot;I like robotics!\n&quot;);
+printf(&quot;%d pizzas cost %d.\n&quot;, pizzas, cost);
+</code></pre></div>
+
+<h3 id="variables">Variables</h3>
+<p>Store numbers in variables. Start them with <code>int</code> (and maybe <code>float</code>).</p>
+<div class="highlight"><pre><span></span><code>int chickens = 17;
+int people;
+people = 10;
+</code></pre></div>
+
+<h3 id="arithmetic">Arithmetic</h3>
+<p>Use the various symbols to do mathematical operations.</p>
+<table>
+<thead>
+<tr>
+<th>Action</th>
+<th>Symbol</th>
+<th>Example</th>
+<th>Comment</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Addition</td>
+<td><code>+</code></td>
+<td><code>pizzas = 5 + 3;</code></td>
+<td></td>
+</tr>
+<tr>
+<td>Subtraction</td>
+<td><code>-</code></td>
+<td><code>coolnessFactor = coolnessFactor - 1;</code></td>
+<td>Can refer to itself - e.g. it will count down by 1</td>
+</tr>
+<tr>
+<td>Multiplication</td>
+<td><code>*</code></td>
+<td><code>money = money * money;</code></td>
+<td>This is equivalent to squaring the original</td>
+</tr>
+<tr>
+<td>Division</td>
+<td><code>/</code></td>
+<td><code>printf("%d", 5 / 3)</code></td>
+<td></td>
+</tr>
+<tr>
+<td>Modulus</td>
+<td><code>%</code></td>
+<td><code>printf("%d", 5 % 3)</code></td>
+<td></td>
+</tr>
+</tbody>
+</table>
+<h3 id="input">Input</h3>
+<p>Use <code>scanf</code> to allow input from the user. Remember the <code>&amp;</code>!</p>
+<div class="highlight"><pre><span></span><code><span class="nt">int</span><span class="w"> </span><span class="nt">year</span><span class="o">;</span>
+<span class="nt">printf</span><span class="o">(</span><span class="s2">&quot;Enter a year: &quot;</span><span class="o">);</span>
+<span class="nt">scanf</span><span class="o">(</span><span class="s2">&quot;%d&quot;</span><span class="o">,</span><span class="w"> </span><span class="o">&amp;</span><span class="nt">year</span><span class="o">);</span>
+</code></pre></div>
+
+<h3 id="if-statements">If Statements</h3>
+<p>Use <code>if</code> and a <strong>condition</strong> to make decisions.</p>
+<div class="highlight"><pre><span></span><code><span class="nv">int</span><span class="w"> </span><span class="nv">x</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mi">1</span><span class="c1">;</span>
+<span class="k">if</span><span class="w"> </span><span class="ss">(</span><span class="nv">x</span><span class="w"> </span><span class="o">!=</span><span class="w"> </span><span class="mi">3</span><span class="ss">)</span><span class="w"> </span>{
+<span class="w">    </span>...
+}<span class="w"> </span><span class="k">else</span><span class="w"> </span><span class="k">if</span><span class="w"> </span><span class="ss">(</span><span class="nv">x</span><span class="w"> </span><span class="o">&lt;=</span><span class="w"> </span><span class="mi">10</span><span class="ss">)</span><span class="w"> </span>{
+<span class="w">    </span>...
+}<span class="w"> </span><span class="k">else</span><span class="w"> </span>{
+<span class="w">    </span>...
+}
+</code></pre></div>
+
+<table>
+<thead>
+<tr>
+<th>Operator</th>
+<th>Comment</th>
+<th>Example</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>==</code></td>
+<td><strong>Equals</strong>. Very different from <code>=</code>.</td>
+<td><code>5 == 10</code> is false.</td>
+</tr>
+<tr>
+<td><code>!=</code></td>
+<td><strong>Not equals</strong></td>
+<td><code>5 != 10</code> is true.</td>
+</tr>
+<tr>
+<td><code>&lt;</code></td>
+<td><strong>Less than</strong>, checks if left is less than right.</td>
+<td><code>5 &lt; 10</code> is true.</td>
+</tr>
+<tr>
+<td><code>&gt;</code></td>
+<td><strong>Greater than</strong>, checks if left is greater than right.</td>
+<td><code>5 &gt; 10</code> is false.</td>
+</tr>
+<tr>
+<td><code>&lt;=</code></td>
+<td><strong>Less than or equal to</strong>.</td>
+<td><code>5 &lt;= 10</code> is true.</td>
+</tr>
+<tr>
+<td><code>&gt;=</code></td>
+<td><strong>Greater than or equal to</strong>.</td>
+<td><code>5 &gt;= 10</code> is false.</td>
+</tr>
+</tbody>
+</table>
+<table>
+<thead>
+<tr>
+<th>Operator</th>
+<th>Comment</th>
+<th>Example</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>&amp;&amp;</code></td>
+<td>AND</td>
+<td>If two conditions are true.</td>
+</tr>
+<tr>
+<td><code>||</code></td>
+<td>OR</td>
+<td>If one of two conditions are true.</td>
+</tr>
+<tr>
+<td><code>!</code></td>
+<td>NOT</td>
+<td>Inverts the condition.</td>
+</tr>
+</tbody>
+</table>
+<h2 id="exercises">Exercises</h2>
+<p><strong>To do the exercises, use <a href="https://repl.it/languages/c">Repl.it</a>.</strong></p>
+<h3 id="1-calculator">1. Calculator</h3>
+<p>Write a program <code>calcs.c</code> that calculates <code>39*623+10</code>.</p>
+<p>Your program output the following:</p>
+<div class="highlight"><pre><span></span><code><span class="mf">24307</span>
+</code></pre></div>
+
+<hr />
+<h3 id="2-pizza-calculator">2. Pizza Calculator</h3>
+<p>Write a program <code>pizzacalcs.c</code> that allows the user to enter the number of pizzas. The program should print out the <strong>total slices</strong> (each pizza is divided into <strong>8 slices</strong>) and the <strong>total slices per person</strong> if there are <strong>5 people</strong>.</p>
+<p>Examples:</p>
+<div class="highlight"><pre><span></span><code>How many pizzas: 5
+There are 40 slices of pizza.
+Each person gets 8.
+</code></pre></div>
+
+<div class="highlight"><pre><span></span><code>How many pizzas: 1
+There are 8 slices of pizza.
+Each person gets 1.
+</code></pre></div>
+
+<hr />
+<h3 id="3-soccer-robots">3. Soccer Robots</h3>
+<p>Using an <code>if</code> statement (with <code>else if</code> and <code>else</code>), write a program <code>soccerrobots.c</code> that allows the user to enter a number of robots. It should check if the <strong>number of robots is 2</strong>:</p>
+<ul>
+<li>If the number is 2, print <code>You have the correct number of robots!</code></li>
+<li>If the number is <strong>less than 2</strong>, print <code>You don't have enough robots.</code></li>
+<li>If the number is <strong>more than 2</strong>, print <code>You have too many robots.</code></li>
+</ul>
+<p>Examples:</p>
+<div class="highlight"><pre><span></span><code>Number of robots: 5
+You have too many robots.
+</code></pre></div>
+
+<div class="highlight"><pre><span></span><code>Number of robots: 2
+You have the correct number of robots!
+</code></pre></div>
+
+<hr />
+<h3 id="4-icecream">4. Icecream</h3>
+<p>Georgio has $10 dollars and he wants to buy his friend some icecream. Write a program so that he can input <strong>the number of scoops</strong> and <strong>how much each scoop costs</strong>, and it will tell him if he has enough money.</p>
+<p>Your program should perform as follows:</p>
+<div class="highlight"><pre><span></span><code>How many scoops? 5
+How much per scoop? 1
+You can buy the icecream!
+</code></pre></div>
+
+<div class="highlight"><pre><span></span><code>How many scoops? 5
+How much per scoop? 3
+Rip, you don&#39;t have enough money :(
+</code></pre></div>
+
+<hr />
+<h3 id="5-teen-age">5. Teen-age</h3>
+<p>At Petersham's station, the ticket office wants a simple program that can immediately tell which ticket someone should buy.</p>
+<p>Write a program that allows the user to enter an age, and it should print out which ticket they should receive.</p>
+<ul>
+<li>If the age is <strong>less than 13</strong>, print <code>Child ticket</code></li>
+<li>If the age is <strong>between 13 and 19 inclusive</strong>, print <code>Concession ticket</code></li>
+<li>If the age is <strong>equal to or above 65</strong>, it should print <code>Concession ticket</code></li>
+<li><strong>Otherwise</strong>, print <code>Adult ticket</code></li>
+</ul>
+<p>Your program should perform as follows:</p>
+<div class="highlight"><pre><span></span><code>Enter your age: 12
+Child ticket
+</code></pre></div>
+
+<div class="highlight"><pre><span></span><code>Enter your age: 13
+Concession ticket
+</code></pre></div>
+
+<div class="highlight"><pre><span></span><code>Enter your age: 40
+Adult ticket
+</code></pre></div>
+
+<hr />
+<h3 id="6-bad-code">6. Bad code</h3>
+<p>Uh oh! We gave Mr Semaan the task to write some C code. Unfortunately, it's a bit wrong. It's meant to ask you to put in his favourite number, and print out if it is right or not.</p>
+<p>Your task is to fix up his program so that it is <strong>indented properly</strong>, <strong>compiles with no errors</strong> and it <strong>returns the correct results</strong>.</p>
+<div class="highlight"><pre><span></span><code><span class="cp">#include stdio.h&gt;</span>
+<span class="kt">int</span><span class="w"> </span><span class="nf">main</span><span class="p">()</span><span class="w"> </span><span class="p">{</span>
+<span class="w">    </span><span class="n">printf</span><span class="p">(</span><span class="s">&quot;Guess my favourite number: &quot;</span><span class="p">);</span>
+<span class="w">        </span><span class="n">scanf</span><span class="p">(</span><span class="s">&quot;%d&quot;</span><span class="p">,</span><span class="w"> </span><span class="n">n</span><span class="p">);</span>
+<span class="w">            </span><span class="kt">int</span><span class="w"> </span><span class="n">faveNumber</span><span class="p">;</span>
+<span class="k">if</span><span class="w"> </span><span class="p">(</span><span class="n">faveNumber</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mi">17</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
+<span class="n">printf</span><span class="p">(</span><span class="s">&quot;You&#39;re right!</span><span class="se">\n</span><span class="s">&quot;</span><span class="p">);</span>
+<span class="p">}</span><span class="w"> </span>
+<span class="k">else</span><span class="w"> </span><span class="p">{</span>
+<span class="n">printf</span><span class="p">(</span><span class="s">&quot;You&#39;re wrong.</span><span class="se">\n</span><span class="s">&quot;</span><span class="p">);</span>
+<span class="p">}</span>
+<span class="w">    </span><span class="k">return</span><span class="w"> </span><span class="mi">0</span><span class="p">;</span>
+<span class="p">}</span>
+</code></pre></div>
+
+<hr />
+<h3 id="7-leap-year">7. Leap year</h3>
+<p>Write a C program <code>leapyear.c</code> that reads a year and then prints whether that year is a leap year.</p>
+<p>Note that leap years aren't just divisble by 4. Use this pseudocode from <a href="https://en.wikipedia.org/wiki/Leap_year#Algorithm">Wikipedia</a>:</p>
+<div class="highlight"><pre><span></span><code><span class="k">if</span><span class="w"> </span><span class="ss">(</span><span class="nv">year</span><span class="w"> </span><span class="nv">is</span><span class="w"> </span><span class="nv">not</span><span class="w"> </span><span class="nv">divisible</span><span class="w"> </span><span class="nv">by</span><span class="w"> </span><span class="mi">4</span><span class="ss">)</span><span class="w"> </span><span class="k">then</span><span class="w"> </span><span class="ss">(</span><span class="nv">it</span><span class="w"> </span><span class="nv">is</span><span class="w"> </span><span class="nv">a</span><span class="w"> </span><span class="nv">common</span><span class="w"> </span><span class="nv">year</span><span class="ss">)</span>
+<span class="k">else</span><span class="w"> </span><span class="k">if</span><span class="w"> </span><span class="ss">(</span><span class="nv">year</span><span class="w"> </span><span class="nv">is</span><span class="w"> </span><span class="nv">not</span><span class="w"> </span><span class="nv">divisible</span><span class="w"> </span><span class="nv">by</span><span class="w"> </span><span class="mi">100</span><span class="ss">)</span><span class="w"> </span><span class="k">then</span><span class="w"> </span><span class="ss">(</span><span class="nv">it</span><span class="w"> </span><span class="nv">is</span><span class="w"> </span><span class="nv">a</span><span class="w"> </span><span class="nv">leap</span><span class="w"> </span><span class="nv">year</span><span class="ss">)</span>
+<span class="k">else</span><span class="w"> </span><span class="k">if</span><span class="w"> </span><span class="ss">(</span><span class="nv">year</span><span class="w"> </span><span class="nv">is</span><span class="w"> </span><span class="nv">not</span><span class="w"> </span><span class="nv">divisible</span><span class="w"> </span><span class="nv">by</span><span class="w"> </span><span class="mi">400</span><span class="ss">)</span><span class="w"> </span><span class="k">then</span><span class="w"> </span><span class="ss">(</span><span class="nv">it</span><span class="w"> </span><span class="nv">is</span><span class="w"> </span><span class="nv">a</span><span class="w"> </span><span class="nv">common</span><span class="w"> </span><span class="nv">year</span><span class="ss">)</span>
+<span class="k">else</span><span class="w"> </span><span class="ss">(</span><span class="nv">it</span><span class="w"> </span><span class="nv">is</span><span class="w"> </span><span class="nv">a</span><span class="w"> </span><span class="nv">leap</span><span class="w"> </span><span class="nv">year</span><span class="ss">)</span>
+</code></pre></div>
+
+<ul>
+<li>Hint: you only need use the int type, modulus (%) and if statement(s).</li>
+</ul>
+<p>Examples:</p>
+<div class="highlight"><pre><span></span><code>Enter year: 2017
+2017 is not a leap year.
+</code></pre></div>
+
+<div class="highlight"><pre><span></span><code>Enter year: 2016
+2016 is a leap year.
+</code></pre></div>
+
+<div class="highlight"><pre><span></span><code>Enter year: 2000
+2000 is a leap year.
+</code></pre></div>
+
+<div class="highlight"><pre><span></span><code>Enter year: 3000
+3000 is not a leap year.
+</code></pre></div>
+
+<hr />
+<h3 id="8-challenge-tic-tac-toe">8. Challenge: Tic Tac Toe</h3>
+<p>Write a program <code>tictactoe.c</code> that takes in a tic tac toe board and determines who wins in that game. Player 1 is represented by '1', Player 2 is represented by '2', and empty cells are represented by '0's.</p>
+<ul>
+<li>Your program should take in nine integers, three per line separated by spaces (so, three rows, each row has three integers separated by spaces)</li>
+<li><strong>Tip</strong>: to get three integers instead of one, you can scanf 3 integers: <code>scanf("%d %d %d", &amp;cell1, &amp;cell2, &amp;cell3);</code></li>
+<li>Your program should print out who wins, or if no one has won</li>
+</ul>
+<p>Your program should behave as follows:</p>
+<div class="highlight"><pre><span></span><code>Enter the board:
+1 2 1
+1 1 2
+2 2 1
+Player 1 has won!
+</code></pre></div>
+
+<div class="highlight"><pre><span></span><code>Enter the board:
+0 0 1
+1 1 0
+2 2 2
+Player 2 has won!
+</code></pre></div>
+
+<div class="highlight"><pre><span></span><code>Enter the board:
+0 0 1
+0 0 0
+0 0 2
+No players have won.
+</code></pre></div>
+
+<h2 id="solutions">Solutions</h2>
+<p>Solutions will be posted <a href="/c-course/input-output-exercises/solutions">here</a>.</p>
+    </div>
+        <div class="learn-contents-navigate full-width">
+            <a class="previous" href="/c-course/inputs-and-decisions">Inputs and Decisions</a>
+            <a class="next" href="/c-course/sensors-and-motors">Sensors and Motors</a>
+            <div class="separator"></div>
+        </div>
+    </div>
+</div>
+<div id="mainFooter">
+<p>&copy; Fort Street High School Robotics</p>
+</div>
+</div>
+</body>
+    <link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/highlight.js/9.9.0/styles/default.min.css">
+    <script src="//cdnjs.cloudflare.com/ajax/libs/highlight.js/9.9.0/highlight.min.js"></script>
+    <script>hljs.initHighlightingOnLoad();</script>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.0.3/jquery.min.js"></script>
+    <!-- Firebase - Equipment System -->
+    <script type="text/javascript" src="https://www.gstatic.com/firebasejs/4.8.0/firebase.js"></script>
+    <script type="text/javascript" src="/file/equipmentsystem.js"></script>
+    <link type="text/css" rel="stylesheet" href="/file/equipmentsystem.css"/>
+</html>

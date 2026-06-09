@@ -1,0 +1,90 @@
+<!doctype html>
+<html>
+    <head>
+        <title>FSHS Robotics</title>
+        <meta name="google-site-verification" content="4_RMTp03qKZnXNroL0gme91C1A0V24nC9np8xE_GRt4" />
+        <link rel="icon" type="image/png" href="/theme/favicon.png">
+        <meta name="viewport" content="width=device-width, initial-scale=1"/>
+        <meta name="theme-color" content="#4060fa" />
+        <link type="text/css" rel="stylesheet" href="/theme/robobase.css"/>
+        <link type="text/css" rel="stylesheet" href="/theme/2018base.css"/>
+        <link type="text/css" rel="stylesheet" href="/theme/friendly.css"/>
+        <link type="text/css" rel="stylesheet" href="https://fonts.googleapis.com/css?family=Open+Sans:300,400,700|Raleway:400,900|PT+Mono">
+    </head>
+
+<body>
+    <div class="header-2018">
+        <h2><a href="/">FSHS Robotics</a></h2>
+        <div id="nav">
+            <ul class="nav-transparent">
+                <li class="nav-transparent__link"><a href="/about">About</a></li>
+                <li class="nav-transparent__link"><a href="/awards">Awards</a></li>
+                <li class="nav-transparent__link"><a href="/resources">Resources</a></li>
+                <li class="nav-transparent__link"><a href="/equipment">Admin</a></li>
+
+            </ul>
+        </div>
+    </div>
+<div id="wrapper">
+
+    <div class="wiki" id="content_view" style="display: block;">
+    <div class="learn-wrapper">
+    <div class="hero full-width">
+    <a class="hero-back" href="/c-course/">Back to C Course</a>
+    <h3>FSHS Robotics C Course</h3>
+    <h1>7. Making Sounds</h1>
+    </div>
+    
+    <div class="learn-contents-text" style="grid-column: 1/4">
+    <h2 id="71-playing-tones">7.1 Playing tones</h2>
+<p>Beep beep! Tones are very useful for testing purposes. If you are confused at where you are in a piece of code, you can make the robot make a noise, so you have a 'breakpoint'.</p>
+<p>To make a noise, use the function:</p>
+<pre class="rds-code">
+<code class="cpp">playTone(500, 100);</code>
+</pre>
+
+<p>This plays a <strong>tone at frequency of 500 Hz for 1000 milliseconds (1 second)</strong>. That second number is the number of 10 milliseconds.</p>
+<p>To make different noises, simply change the frequency or time. Try changing 500 to 100, and 900.</p>
+<h2 id="72-playing-sounds">7.2 Playing sounds</h2>
+<p>You can also play some other patterns:</p>
+<pre class="rds-code">
+<code class="cpp">playSound(soundUpwardTones);</code>
+</pre>
+
+<p>You can do the following sounds. Try them out!
+* soundBlip
+* soundBeepBeep
+* soundDownwardTones
+* soundUpwardTones
+* soundLowBuzz
+* soundFastUpwardTones
+* soundShortBlip
+* soundException
+* soundLowBuzzShort</p>
+<h2 id="73-discovering-more-functions-in-text-functions">7.3 Discovering more functions in 'Text Functions'</h2>
+<p>In RobotC, you should be able to see a section on the left called 'Text Functions'. This panel lets you drag and drop functions into the code. Look for playSound and playTone under 'Sound':</p>
+<p><img src="../../c-course/making-sounds/text_functions.png" style="max-width:400px;width:100%;"></p>
+<p>Try dragging functions out from this menu and into the code area.</p>
+<p>If you cannot see this panel, go to the top menu and select View &gt; Function Libarry (text).</p>
+    </div>
+        <div class="learn-contents-navigate full-width">
+            <a class="previous" href="/c-course/sensors-and-motors">Sensors and Motors</a>
+            <a class="next" href="/c-course/sonar">Sonar</a>
+            <div class="separator"></div>
+        </div>
+    </div>
+</div>
+<div id="mainFooter">
+<p>&copy; Fort Street High School Robotics</p>
+</div>
+</div>
+</body>
+    <link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/highlight.js/9.9.0/styles/default.min.css">
+    <script src="//cdnjs.cloudflare.com/ajax/libs/highlight.js/9.9.0/highlight.min.js"></script>
+    <script>hljs.initHighlightingOnLoad();</script>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.0.3/jquery.min.js"></script>
+    <!-- Firebase - Equipment System -->
+    <script type="text/javascript" src="https://www.gstatic.com/firebasejs/4.8.0/firebase.js"></script>
+    <script type="text/javascript" src="/file/equipmentsystem.js"></script>
+    <link type="text/css" rel="stylesheet" href="/file/equipmentsystem.css"/>
+</html>

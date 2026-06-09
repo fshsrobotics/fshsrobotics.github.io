@@ -1,0 +1,282 @@
+<!doctype html>
+<html>
+    <head>
+        <title>FSHS Robotics</title>
+        <meta name="google-site-verification" content="4_RMTp03qKZnXNroL0gme91C1A0V24nC9np8xE_GRt4" />
+        <link rel="icon" type="image/png" href="/theme/favicon.png">
+        <meta name="viewport" content="width=device-width, initial-scale=1"/>
+        <meta name="theme-color" content="#4060fa" />
+        <link type="text/css" rel="stylesheet" href="/theme/robobase.css"/>
+        <link type="text/css" rel="stylesheet" href="/theme/2018base.css"/>
+        <link type="text/css" rel="stylesheet" href="/theme/friendly.css"/>
+        <link type="text/css" rel="stylesheet" href="https://fonts.googleapis.com/css?family=Open+Sans:300,400,700|Raleway:400,900|PT+Mono">
+    </head>
+
+<body>
+    <div class="header-2018">
+        <h2><a href="/">FSHS Robotics</a></h2>
+        <div id="nav">
+            <ul class="nav-transparent">
+                <li class="nav-transparent__link"><a href="/about">About</a></li>
+                <li class="nav-transparent__link"><a href="/awards">Awards</a></li>
+                <li class="nav-transparent__link"><a href="/resources">Resources</a></li>
+                <li class="nav-transparent__link"><a href="/equipment">Admin</a></li>
+
+            </ul>
+        </div>
+    </div>
+<div id="wrapper">
+
+    <div class="wiki" id="content_view" style="display: block;">
+    <div class="learn-wrapper">
+    <div class="hero full-width">
+    <a class="hero-back" href="/c-course/">Back to C Course</a>
+    <h3>FSHS Robotics C Course</h3>
+    <h1>5. Inputs and Decisions</h1>
+    </div>
+    
+    <div class="learn-contents-text" style="grid-column: 1/4">
+    <h2 id="51-input-process-output">5.1 Input, Process, Output</h2>
+<p>In Engineering, we use a common pattern called <strong>"input-process-output"</strong> that exists across many fields in both software and hardware. In Robotics, we use it as a model the work your code will do when interfacing with the environment.</p>
+<p><img alt="IPO Model" src="../../c-course/inputs-and-decisions/ipomodel.png" /></p>
+<ul>
+<li>
+<p>For robots:</p>
+<ul>
+<li><strong>Input</strong>: data from sensors that we take in. These are observations of the real world.</li>
+<li><strong>Process</strong>: we process this data from the sensors and transform it to useful results</li>
+<li><strong>Output</strong>: Producing movement or action as a result of a change in environment</li>
+</ul>
+</li>
+<li>
+<p>For solving problems in C:</p>
+<ul>
+<li><strong>Input</strong>: input using the function <code>scanf</code></li>
+<li><strong>Process</strong>: processing the input - one way of making decisions is by using <code>if</code></li>
+<li><strong>Output</strong>: output using the function <code>printf</code></li>
+</ul>
+</li>
+</ul>
+<h2 id="52-the-scanf-function">5.2 The <code>scanf</code> function</h2>
+<p>In Section 3, we were able to print out that we had 10 chickens.</p>
+<div class="highlight"><pre><span></span><code><span class="cp">#include</span><span class="w"> </span><span class="cpf">&lt;stdio.h&gt;</span>
+
+<span class="kt">int</span><span class="w"> </span><span class="nf">main</span><span class="w"> </span><span class="p">()</span><span class="w"> </span><span class="p">{</span>
+<span class="w">    </span><span class="kt">int</span><span class="w"> </span><span class="n">numberOfChickens</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mi">10</span><span class="p">;</span>
+<span class="w">    </span><span class="n">printf</span><span class="p">(</span><span class="s">&quot;I have %d chickens.</span><span class="se">\n</span><span class="s">&quot;</span><span class="p">,</span><span class="w"> </span><span class="n">numberOfChickens</span><span class="p">);</span>
+<span class="w">    </span><span class="k">return</span><span class="w"> </span><span class="mi">0</span><span class="p">;</span>
+<span class="p">}</span>
+</code></pre></div>
+
+<p>What if we wanted the user to input that number instead? We can do exactly that with <code>scanf</code>:</p>
+<div class="highlight"><pre><span></span><code><span class="cp">#include</span><span class="w"> </span><span class="cpf">&lt;stdio.h&gt;</span>
+
+<span class="kt">int</span><span class="w"> </span><span class="nf">main</span><span class="w"> </span><span class="p">()</span><span class="w"> </span><span class="p">{</span>
+<span class="w">    </span><span class="kt">int</span><span class="w"> </span><span class="n">numberOfChickens</span><span class="p">;</span>
+<span class="w">    </span><span class="n">printf</span><span class="p">(</span><span class="s">&quot;Enter the number of chickens: &quot;</span><span class="p">);</span><span class="w"> </span><span class="c1">// ask for the number of chickens</span>
+<span class="w">    </span><span class="n">scanf</span><span class="p">(</span><span class="s">&quot;%d&quot;</span><span class="p">,</span><span class="w"> </span><span class="o">&amp;</span><span class="n">numberOfChickens</span><span class="p">);</span><span class="w"> </span><span class="c1">// record the user&#39;s input into numberOfChickens</span>
+<span class="w">    </span><span class="n">printf</span><span class="p">(</span><span class="s">&quot;I have %d chickens.</span><span class="se">\n</span><span class="s">&quot;</span><span class="p">,</span><span class="w"> </span><span class="n">numberOfChickens</span><span class="p">);</span>
+<span class="w">    </span><span class="k">return</span><span class="w"> </span><span class="mi">0</span><span class="p">;</span>
+<span class="p">}</span>
+</code></pre></div>
+
+<p>Try and run this program. When you run it, it will wait for you to input some text. When you type a number and hit enter, the program will continue. In this case:</p>
+<div class="highlight"><pre><span></span><code>Enter the number of chickens: 6
+I have 6 chickens.
+</code></pre></div>
+
+<h2 id="53-decision-making">5.3 Decision making</h2>
+<p>We use <code>if</code> statements to make decisions. Decisions usually have the following structure:</p>
+<p><img alt="" src="https://www.tutorialspoint.com/cprogramming/images/if_statement.jpg" /></p>
+<p>The best way to illustrate this is by example.</p>
+<div class="highlight"><pre><span></span><code><span class="c1">// Check if a person is 18 and above, or not.</span>
+<span class="cp">#include</span><span class="w"> </span><span class="cpf">&lt;stdio.h&gt;</span>
+
+<span class="kt">int</span><span class="w"> </span><span class="nf">main</span><span class="w"> </span><span class="p">()</span><span class="w"> </span><span class="p">{</span>
+<span class="w">    </span><span class="kt">int</span><span class="w"> </span><span class="n">age</span><span class="p">;</span>
+<span class="w">    </span><span class="n">printf</span><span class="p">(</span><span class="s">&quot;Enter an age: &quot;</span><span class="p">);</span><span class="w"> </span><span class="c1">// ask for the number of chickens</span>
+<span class="w">    </span><span class="n">scanf</span><span class="p">(</span><span class="s">&quot;%d&quot;</span><span class="p">,</span><span class="w"> </span><span class="o">&amp;</span><span class="n">age</span><span class="p">);</span><span class="w"> </span><span class="c1">// record the user&#39;s input into numberOfChickens</span>
+
+<span class="w">    </span><span class="k">if</span><span class="w"> </span><span class="p">(</span><span class="n">age</span><span class="w"> </span><span class="o">&gt;=</span><span class="w"> </span><span class="mi">18</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
+<span class="w">        </span><span class="n">printf</span><span class="p">(</span><span class="s">&quot;The person is 18 and above.</span><span class="se">\n</span><span class="s">&quot;</span><span class="p">);</span>
+<span class="w">    </span><span class="p">}</span>
+
+<span class="w">    </span><span class="k">return</span><span class="w"> </span><span class="mi">0</span><span class="p">;</span>
+<span class="p">}</span>
+</code></pre></div>
+
+<table>
+<thead>
+<tr>
+<th>Code</th>
+<th>Comment</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>if ( condition ) { ... }</code></td>
+<td>The code between the curly brackets will <strong>only run if the condition</strong> is true.</td>
+</tr>
+<tr>
+<td><code>age &gt;= 18</code></td>
+<td>A <strong>condition</strong>. There are many more symbols to compare two numbers.</td>
+</tr>
+</tbody>
+</table>
+<p>We can add more to this by using <code>else</code>.</p>
+<div class="highlight"><pre><span></span><code><span class="k">if</span><span class="w"> </span><span class="p">(</span><span class="n">age</span><span class="w"> </span><span class="o">&gt;=</span><span class="w"> </span><span class="mi">18</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
+<span class="w">    </span><span class="n">printf</span><span class="p">(</span><span class="s">&quot;The person is 18 and above.</span><span class="se">\n</span><span class="s">&quot;</span><span class="p">);</span>
+<span class="p">}</span>
+<span class="k">else</span><span class="w"> </span><span class="p">{</span>
+<span class="w">    </span><span class="n">printf</span><span class="p">(</span><span class="s">&quot;The person is under 18.</span><span class="se">\n</span><span class="s">&quot;</span><span class="p">);</span>
+<span class="p">}</span>
+</code></pre></div>
+
+<p>The program will now choose two paths - the code in the first <code>{ ... }</code> will run <strong>if <code>age &gt;= 18</code></strong>, otherwise it will run the code in the second <code>{ ... }</code>.</p>
+<p>Sometimes we want to add even more conditions. We can do this by using <code>else if</code>.</p>
+<div class="highlight"><pre><span></span><code><span class="k">if</span><span class="w"> </span><span class="p">(</span><span class="n">age</span><span class="w"> </span><span class="o">&gt;=</span><span class="w"> </span><span class="mi">18</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
+<span class="w">    </span><span class="n">printf</span><span class="p">(</span><span class="s">&quot;The person is 18 and above.</span><span class="se">\n</span><span class="s">&quot;</span><span class="p">);</span>
+<span class="p">}</span>
+<span class="k">else</span><span class="w"> </span><span class="k">if</span><span class="w"> </span><span class="p">(</span><span class="n">age</span><span class="w"> </span><span class="o">&lt;</span><span class="w"> </span><span class="mi">7</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
+<span class="w">    </span><span class="n">printf</span><span class="p">(</span><span class="s">&quot;The person is very young.</span><span class="se">\n</span><span class="s">&quot;</span><span class="p">);</span>
+<span class="p">}</span>
+<span class="k">else</span><span class="w"> </span><span class="p">{</span>
+<span class="w">    </span><span class="n">printf</span><span class="p">(</span><span class="s">&quot;The person is under 18.</span><span class="se">\n</span><span class="s">&quot;</span><span class="p">);</span>
+<span class="p">}</span>
+</code></pre></div>
+
+<p>Things to note:</p>
+<ul>
+<li>The code <strong>will only run one of these</strong>, it will immediately 'fall into' the first <code>true</code> statement. So, this code will only print one line.<ul>
+<li>It will check from top to bottom. So, if the age is 12, it will check <code>(age &gt;= 18) == false</code>, then <code>(age &lt; 7) == false</code> before running the <code>else</code> code.</li>
+</ul>
+</li>
+<li>We will need to use <strong>nested if statements</strong> (or another if statement) if we want it to print both lines.</li>
+</ul>
+<h2 id="53-nested-if-statements">5.3 Nested if statements</h2>
+<p>Try and figure out what this will do before running it. Note how the indentation is there to help you!</p>
+<div class="highlight"><pre><span></span><code><span class="k">if</span><span class="w"> </span><span class="p">(</span><span class="n">age</span><span class="w"> </span><span class="o">&gt;=</span><span class="w"> </span><span class="mi">18</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
+<span class="w">    </span><span class="n">printf</span><span class="p">(</span><span class="s">&quot;The person is 18 and above.</span><span class="se">\n</span><span class="s">&quot;</span><span class="p">);</span>
+<span class="p">}</span>
+<span class="k">else</span><span class="w"> </span><span class="p">{</span>
+<span class="w">    </span><span class="k">if</span><span class="w"> </span><span class="p">(</span><span class="n">age</span><span class="w"> </span><span class="o">&lt;</span><span class="w"> </span><span class="mi">7</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
+<span class="w">        </span><span class="n">printf</span><span class="p">(</span><span class="s">&quot;The person is very young.</span><span class="se">\n</span><span class="s">&quot;</span><span class="p">);</span>
+<span class="w">    </span><span class="p">}</span>
+<span class="w">    </span><span class="n">printf</span><span class="p">(</span><span class="s">&quot;The person is under 18.</span><span class="se">\n</span><span class="s">&quot;</span><span class="p">);</span>
+<span class="p">}</span>
+</code></pre></div>
+
+<h2 id="54-more-conditions">5.4 More conditions</h2>
+<p>There are many more conditions we can use. These are called <strong>relational operators</strong>, much like the arithmetic operators we met in the previous topic.</p>
+<table>
+<thead>
+<tr>
+<th>Operator</th>
+<th>Comment</th>
+<th>Example</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>==</code></td>
+<td><strong>Equals</strong>. Very different from <code>=</code>.</td>
+<td><code>5 == 10</code> is false.</td>
+</tr>
+<tr>
+<td><code>!=</code></td>
+<td><strong>Not equals</strong></td>
+<td><code>5 != 10</code> is true.</td>
+</tr>
+<tr>
+<td><code>&lt;</code></td>
+<td><strong>Less than</strong>, checks if left is less than right.</td>
+<td><code>5 &lt; 10</code> is true.</td>
+</tr>
+<tr>
+<td><code>&gt;</code></td>
+<td><strong>Greater than</strong>, checks if left is greater than right.</td>
+<td><code>5 &gt; 10</code> is false.</td>
+</tr>
+<tr>
+<td><code>&lt;=</code></td>
+<td><strong>Less than or equal to</strong>.</td>
+<td><code>5 &lt;= 10</code> is true.</td>
+</tr>
+<tr>
+<td><code>&gt;=</code></td>
+<td><strong>Greater than or equal to</strong>.</td>
+<td><code>5 &gt;= 10</code> is false.</td>
+</tr>
+</tbody>
+</table>
+<h2 id="55-multiple-conditions-at-once">5.5 Multiple conditions at once</h2>
+<p>You can string together multiple conditions in one condition.</p>
+<div class="highlight"><pre><span></span><code><span class="k">if</span><span class="w"> </span><span class="p">(</span><span class="n">age</span><span class="w"> </span><span class="o">&gt;=</span><span class="w"> </span><span class="mi">18</span><span class="w"> </span><span class="o">&amp;&amp;</span><span class="w"> </span><span class="n">age</span><span class="w"> </span><span class="o">&lt;=</span><span class="w"> </span><span class="mi">65</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
+<span class="w">    </span><span class="n">printf</span><span class="p">(</span><span class="s">&quot;The person between 18 and 65</span><span class="se">\n</span><span class="s">&quot;</span><span class="p">);</span>
+<span class="p">}</span>
+<span class="k">else</span><span class="w"> </span><span class="k">if</span><span class="w"> </span><span class="p">(</span><span class="n">age</span><span class="w"> </span><span class="o">==</span><span class="w"> </span><span class="mi">13</span><span class="w"> </span><span class="o">||</span><span class="w"> </span><span class="n">age</span><span class="w"> </span><span class="o">==</span><span class="w"> </span><span class="mi">14</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
+<span class="w">    </span><span class="n">printf</span><span class="p">(</span><span class="s">&quot;The person is 13 or 14</span><span class="se">\n</span><span class="s">&quot;</span><span class="p">);</span>
+<span class="p">}</span>
+<span class="k">else</span><span class="w"> </span><span class="k">if</span><span class="w"> </span><span class="p">(</span><span class="o">!</span><span class="p">(</span><span class="n">age</span><span class="w"> </span><span class="o">==</span><span class="w"> </span><span class="mi">16</span><span class="p">))</span><span class="w"> </span><span class="p">{</span>
+<span class="w">    </span><span class="n">printf</span><span class="p">(</span><span class="s">&quot;The person is not 16</span><span class="se">\n</span><span class="s">&quot;</span><span class="p">);</span>
+<span class="p">}</span>
+<span class="k">else</span><span class="w"> </span><span class="p">{</span>
+<span class="w">    </span><span class="n">printf</span><span class="p">(</span><span class="s">&quot;The person is 16</span><span class="se">\n</span><span class="s">&quot;</span><span class="p">);</span>
+<span class="p">}</span>
+</code></pre></div>
+
+<table>
+<thead>
+<tr>
+<th>Operator</th>
+<th>Comment</th>
+<th>Example</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>&amp;&amp;</code></td>
+<td>AND</td>
+<td>If two conditions are true.</td>
+</tr>
+<tr>
+<td><code>||</code></td>
+<td>OR</td>
+<td>If one of two conditions are true.</td>
+</tr>
+<tr>
+<td><code>!</code></td>
+<td>NOT</td>
+<td>Inverts the condition.</td>
+</tr>
+</tbody>
+</table>
+<p>Be careful about joining too many. You need to place parentheses to avoid confusion.
+* <code>(true || false) &amp;&amp; false</code> is true. Calculate <code>(true || false)</code> first.
+* <code>true || (false &amp;&amp; false)</code> is also true. Calculate <code>(false &amp;&amp; true)</code> first.</p>
+<h2 id="56-exercises">5.6 Exercises</h2>
+<ul>
+<li>There are exercises in the <a href="/c-course/input-output-exercises/">grouped exercises</a>.</li>
+</ul>
+    </div>
+        <div class="learn-contents-navigate full-width">
+            <a class="previous" href="/c-course/arithmetic">Arithmetic</a>
+            <a class="next" href="/c-course/input-output-exercises/#exercises">Input Output Exercises</a>
+            <div class="separator"></div>
+        </div>
+    </div>
+</div>
+<div id="mainFooter">
+<p>&copy; Fort Street High School Robotics</p>
+</div>
+</div>
+</body>
+    <link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/highlight.js/9.9.0/styles/default.min.css">
+    <script src="//cdnjs.cloudflare.com/ajax/libs/highlight.js/9.9.0/highlight.min.js"></script>
+    <script>hljs.initHighlightingOnLoad();</script>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.0.3/jquery.min.js"></script>
+    <!-- Firebase - Equipment System -->
+    <script type="text/javascript" src="https://www.gstatic.com/firebasejs/4.8.0/firebase.js"></script>
+    <script type="text/javascript" src="/file/equipmentsystem.js"></script>
+    <link type="text/css" rel="stylesheet" href="/file/equipmentsystem.css"/>
+</html>

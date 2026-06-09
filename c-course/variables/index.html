@@ -1,0 +1,182 @@
+<!doctype html>
+<html>
+    <head>
+        <title>FSHS Robotics</title>
+        <meta name="google-site-verification" content="4_RMTp03qKZnXNroL0gme91C1A0V24nC9np8xE_GRt4" />
+        <link rel="icon" type="image/png" href="/theme/favicon.png">
+        <meta name="viewport" content="width=device-width, initial-scale=1"/>
+        <meta name="theme-color" content="#4060fa" />
+        <link type="text/css" rel="stylesheet" href="/theme/robobase.css"/>
+        <link type="text/css" rel="stylesheet" href="/theme/2018base.css"/>
+        <link type="text/css" rel="stylesheet" href="/theme/friendly.css"/>
+        <link type="text/css" rel="stylesheet" href="https://fonts.googleapis.com/css?family=Open+Sans:300,400,700|Raleway:400,900|PT+Mono">
+    </head>
+
+<body>
+    <div class="header-2018">
+        <h2><a href="/">FSHS Robotics</a></h2>
+        <div id="nav">
+            <ul class="nav-transparent">
+                <li class="nav-transparent__link"><a href="/about">About</a></li>
+                <li class="nav-transparent__link"><a href="/awards">Awards</a></li>
+                <li class="nav-transparent__link"><a href="/resources">Resources</a></li>
+                <li class="nav-transparent__link"><a href="/equipment">Admin</a></li>
+
+            </ul>
+        </div>
+    </div>
+<div id="wrapper">
+
+    <div class="wiki" id="content_view" style="display: block;">
+    <div class="learn-wrapper">
+    <div class="hero full-width">
+    <a class="hero-back" href="/c-course/">Back to C Course</a>
+    <h3>FSHS Robotics C Course</h3>
+    <h1>3. Variables</h1>
+    </div>
+    
+    <div class="learn-contents-text" style="grid-column: 1/4">
+    <h2 id="31-introduction-to-variables">3.1 Introduction to Variables</h2>
+<p>In maths at school, you learn algebra - substituting numbers for letters. In code, we do the same - we <strong>name our numbers</strong> to make it clearer for everyone to understand.</p>
+<p>There are many types of variables:</p>
+<ul>
+<li><strong>Integers</strong>: these are counting numbers that go into positives and negative.<ul>
+<li>E.g. the number of slices of pizza, the number of seconds past</li>
+</ul>
+</li>
+<li><strong>Characters</strong>: these are ASCII characters that you can type out on a keyboard.<ul>
+<li>'A', 'z', '1'</li>
+</ul>
+</li>
+<li><strong>Floats</strong>: these are 'floating decimal numbers', which represents a number that can have decimal points.<ul>
+<li>E.g. pi (3.141592654...), 12.0</li>
+</ul>
+</li>
+</ul>
+<h2 id="32-creating-a-variable">3.2 Creating a variable</h2>
+<p>Variables always have a type in C. To create one, you put in the <strong>type followed by the name</strong>. The convention for the name is camelCase - words are stringed together and all except the first word start with a capital.</p>
+<div class="highlight"><pre><span></span><code><span class="kt">int</span><span class="w"> </span><span class="n">numberOfChickens</span><span class="p">;</span>
+<span class="kt">char</span><span class="w"> </span><span class="n">myFirstNameInitial</span><span class="p">;</span>
+<span class="kt">float</span><span class="w"> </span><span class="n">pi</span><span class="p">;</span>
+</code></pre></div>
+
+<p>When created, you can assign it numbers. </p>
+<div class="highlight"><pre><span></span><code><span class="kt">int</span><span class="w"> </span><span class="n">numberOfChickens</span><span class="p">;</span>
+<span class="n">numberOfChickens</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mi">10</span><span class="p">;</span>
+</code></pre></div>
+
+<p>You can also string both together - but be careful, as you can only do that once.</p>
+<div class="highlight"><pre><span></span><code><span class="kt">float</span><span class="w"> </span><span class="n">pi</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mf">3.14</span><span class="p">;</span><span class="w"> </span><span class="c1">// Set it to this at the start</span>
+<span class="n">pi</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mf">3.14159</span><span class="p">;</span><span class="w"> </span><span class="c1">// Change it later</span>
+</code></pre></div>
+
+<h2 id="33-printing-variables">3.3 Printing variables</h2>
+<p>To print out variables, we need to add it into the printf statement. Let's modify our Hello World code to print out more than just text.</p>
+<div class="highlight"><pre><span></span><code><span class="cp">#include</span><span class="w"> </span><span class="cpf">&lt;stdio.h&gt;</span>
+
+<span class="kt">int</span><span class="w"> </span><span class="nf">main</span><span class="w"> </span><span class="p">()</span><span class="w"> </span><span class="p">{</span>
+<span class="w">    </span><span class="kt">int</span><span class="w"> </span><span class="n">numberOfChickens</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mi">10</span><span class="p">;</span>
+<span class="w">    </span><span class="n">printf</span><span class="p">(</span><span class="s">&quot;I have %d chickens.</span><span class="se">\n</span><span class="s">&quot;</span><span class="p">,</span><span class="w"> </span><span class="n">numberOfChickens</span><span class="p">);</span>
+<span class="w">    </span><span class="k">return</span><span class="w"> </span><span class="mi">0</span><span class="p">;</span>
+<span class="p">}</span>
+</code></pre></div>
+
+<p>Note the syntax - there are two parts of the <code>printf</code> function:</p>
+<table>
+<thead>
+<tr>
+<th>Code</th>
+<th>Comment</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>printf( ... );</code></td>
+<td>Like before, we surround everything with parentheses.</td>
+</tr>
+<tr>
+<td><code>"I have %d chickens.\n"</code></td>
+<td>Like before, we place what we want printed out in double quotation marks. We have a <code>%d</code>, which is a 'placeholder' - it will be filled in later by the next item you enter in printf.</td>
+</tr>
+<tr>
+<td><code>numberOfChickens</code></td>
+<td>Our variable name. This is what will be immediately inserted into the %d from the string.</td>
+</tr>
+</tbody>
+</table>
+<p>You'll get used to this syntax soon. When you run it, you should get the following output:</p>
+<div class="highlight"><pre><span></span><code>I<span class="w"> </span>have<span class="w"> </span><span class="m">10</span><span class="w"> </span>chickens.
+</code></pre></div>
+
+<h2 id="34-errors">3.4 Errors</h2>
+<blockquote>
+<p>The worst errors are those that don't show up as errors.</p>
+</blockquote>
+<p>When you code, you are bound to get errors. Errors you receive from the compiler are like a seatbelt
+– they help you a lot but the worst errors you get are those that don't show up as errors.</p>
+<p>Let's try and change the code to make it wrong. Here, I have moved the quotation to the end of the <code>printf( ... )</code> statement, and removed the <code>return 0</code>.</p>
+<div class="highlight"><pre><span></span><code><span class="c1">// THIS CODE DOES NOT WORK AND WILL PRODUCE AN ERROR</span>
+<span class="cp">#include</span><span class="w"> </span><span class="cpf">&lt;stdio.h&gt;</span>
+
+<span class="kt">int</span><span class="w"> </span><span class="nf">main</span><span class="w"> </span><span class="p">()</span><span class="w"> </span><span class="p">{</span>
+<span class="w">    </span><span class="kt">int</span><span class="w"> </span><span class="n">numberOfChickens</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mi">10</span><span class="p">;</span>
+<span class="w">    </span><span class="n">printf</span><span class="p">(</span><span class="s">&quot;I have %d chickens.</span><span class="se">\n</span><span class="s">, numberOfChickens&quot;</span><span class="p">);</span>
+<span class="p">}</span>
+</code></pre></div>
+
+<p>When attempting to run this program, you will get the following error:</p>
+<div class="highlight"><pre><span></span><code>chickens.c:<span class="w"> </span>In<span class="w"> </span><span class="k">function</span><span class="w"> </span><span class="s1">&#39;main&#39;</span>:
+chickens.c:5:2:<span class="w"> </span>warning:<span class="w"> </span>format<span class="w"> </span><span class="s1">&#39;%d&#39;</span><span class="w"> </span>expects<span class="w"> </span>a<span class="w"> </span>matching<span class="w"> </span><span class="s1">&#39;int&#39;</span><span class="w"> </span>argument<span class="w"> </span><span class="o">[</span>-Wformat<span class="o">=]</span>
+printf<span class="o">(</span><span class="s2">&quot;I have %d chickens.\n, numberOfChickens&quot;</span><span class="o">)</span><span class="p">;</span>
+^
+...
+</code></pre></div>
+
+<p>This error is very cryptic! The first thing you want to look at is <code>chickens.c:5:2:</code>: this means the error occurred on the 5th line.</p>
+<p>It says that it's <strong>expecting a matching 'int' argument</strong>. This means that you have used a <code>%d</code> placeholder, but it cannot find the variable you want to put into that slot. That's because <code>numberOfChickens</code> is part of the string and not an argument (not on its own, after a comma).</p>
+<h2 id="35-numbers-and-rounding">3.5 Numbers and Rounding</h2>
+<p>Integers cannot have decimal points. If you do, the compiler will always round down for you.</p>
+<div class="highlight"><pre><span></span><code><span class="cp">#include</span><span class="w"> </span><span class="cpf">&lt;stdio.h&gt;</span>
+
+<span class="kt">int</span><span class="w"> </span><span class="nf">main</span><span class="w"> </span><span class="p">()</span><span class="w"> </span><span class="p">{</span>
+<span class="w">    </span><span class="kt">int</span><span class="w"> </span><span class="n">numberOfChickens</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mf">3.5</span><span class="p">;</span>
+<span class="w">    </span><span class="n">printf</span><span class="p">(</span><span class="s">&quot;I got %d chickens.</span><span class="se">\n</span><span class="s">&quot;</span><span class="p">,</span><span class="w"> </span><span class="n">numberOfChickens</span><span class="p">);</span>
+
+<span class="w">    </span><span class="k">return</span><span class="w"> </span><span class="mi">0</span><span class="p">;</span>
+<span class="p">}</span>
+</code></pre></div>
+
+<p>Running the program:</p>
+<div class="highlight"><pre><span></span><code>I<span class="w"> </span>have<span class="w"> </span><span class="m">3</span><span class="w"> </span>chickens.
+</code></pre></div>
+
+<p>Remember we talked about floats above, which could be used to represent a number like PI? Try and make it print 3.5.</p>
+<h2 id="36-exercises">3.6 Exercises</h2>
+<ol>
+<li><strong>Building</strong>: Write a program that prints out the following. It should use two variables, <code>height</code> (a float) and <code>year</code> (an integer).</li>
+</ol>
+<div class="highlight"><pre><span></span><code>The<span class="w"> </span>building<span class="w"> </span>is<span class="w"> </span><span class="m">3</span>.513<span class="w"> </span>metres<span class="w"> </span>high.
+The<span class="w"> </span>year<span class="w"> </span>is<span class="w"> </span><span class="m">2018</span>!
+</code></pre></div>
+    </div>
+        <div class="learn-contents-navigate full-width">
+            <a class="previous" href="/c-course/basics-of-robotc">Basics of RobotC</a>
+            <a class="next" href="/c-course/arithmetic">Arithmetic</a>
+            <div class="separator"></div>
+        </div>
+    </div>
+</div>
+<div id="mainFooter">
+<p>&copy; Fort Street High School Robotics</p>
+</div>
+</div>
+</body>
+    <link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/highlight.js/9.9.0/styles/default.min.css">
+    <script src="//cdnjs.cloudflare.com/ajax/libs/highlight.js/9.9.0/highlight.min.js"></script>
+    <script>hljs.initHighlightingOnLoad();</script>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.0.3/jquery.min.js"></script>
+    <!-- Firebase - Equipment System -->
+    <script type="text/javascript" src="https://www.gstatic.com/firebasejs/4.8.0/firebase.js"></script>
+    <script type="text/javascript" src="/file/equipmentsystem.js"></script>
+    <link type="text/css" rel="stylesheet" href="/file/equipmentsystem.css"/>
+</html>

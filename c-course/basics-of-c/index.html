@@ -1,0 +1,137 @@
+<!doctype html>
+<html>
+    <head>
+        <title>FSHS Robotics</title>
+        <meta name="google-site-verification" content="4_RMTp03qKZnXNroL0gme91C1A0V24nC9np8xE_GRt4" />
+        <link rel="icon" type="image/png" href="/theme/favicon.png">
+        <meta name="viewport" content="width=device-width, initial-scale=1"/>
+        <meta name="theme-color" content="#4060fa" />
+        <link type="text/css" rel="stylesheet" href="/theme/robobase.css"/>
+        <link type="text/css" rel="stylesheet" href="/theme/2018base.css"/>
+        <link type="text/css" rel="stylesheet" href="/theme/friendly.css"/>
+        <link type="text/css" rel="stylesheet" href="https://fonts.googleapis.com/css?family=Open+Sans:300,400,700|Raleway:400,900|PT+Mono">
+    </head>
+
+<body>
+    <div class="header-2018">
+        <h2><a href="/">FSHS Robotics</a></h2>
+        <div id="nav">
+            <ul class="nav-transparent">
+                <li class="nav-transparent__link"><a href="/about">About</a></li>
+                <li class="nav-transparent__link"><a href="/awards">Awards</a></li>
+                <li class="nav-transparent__link"><a href="/resources">Resources</a></li>
+                <li class="nav-transparent__link"><a href="/equipment">Admin</a></li>
+
+            </ul>
+        </div>
+    </div>
+<div id="wrapper">
+
+    <div class="wiki" id="content_view" style="display: block;">
+    <div class="learn-wrapper">
+    <div class="hero full-width">
+    <a class="hero-back" href="/c-course/">Back to C Course</a>
+    <h3>FSHS Robotics C Course</h3>
+    <h1>1. Basics of C</h1>
+    </div>
+    
+    <div class="learn-contents-text" style="grid-column: 1/4">
+    <h2 id="11-a-brief-introduction-to-c-and-robotc">1.1 A brief introduction to C and RobotC</h2>
+<p>C is a programming language. We learn it because:</p>
+<ul>
+<li>Most of you have played around with Python or Scratch - this isn't much of a jump up.</li>
+<li>It's sorta "low level", which means you can pretty directly talk to a robot's attachments (sensors, motors), as well as interface well with custom sensors.</li>
+<li>It's pretty straight forward - code reads from top to bottom.</li>
+</ul>
+<p>RobotC is a C-based editor and compiler. You'll be able to use most of what you learn in C in RobotC, and there are only some small differences.</p>
+<p><strong>Note</strong>: We're going to be going to and from C and RobotC. This is mainly so that you learn all the sorts of things standard to coding, that isn't possible with just RobotC. (Also, because we don't have enough licenses for RobotC, as it's not free).</p>
+<h2 id="12-hello-world-in-c">1.2 Hello World in C</h2>
+<p>'Hello, World' is the standard way of starting any programming language. Let's see what it is:</p>
+<div class="highlight"><pre><span></span><code><span class="c1">// A simple C program!</span>
+<span class="cp">#include</span><span class="w"> </span><span class="cpf">&lt;stdio.h&gt;</span>
+
+<span class="kt">int</span><span class="w"> </span><span class="nf">main</span><span class="p">()</span><span class="w"> </span><span class="p">{</span>
+<span class="w">    </span><span class="n">printf</span><span class="p">(</span><span class="s">&quot;Hello, World!</span><span class="se">\n</span><span class="s">&quot;</span><span class="p">);</span>
+<span class="w">    </span><span class="k">return</span><span class="w"> </span><span class="mi">0</span><span class="p">;</span>
+<span class="p">}</span>
+</code></pre></div>
+
+<p>This program is complete - you probably can guess what it does! The key thing is to always read from top to bottom. It has a few things:</p>
+<table>
+<thead>
+<tr>
+<th>Code</th>
+<th>Comment</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>//</code></td>
+<td>A single line comment. Anything after it on the same line will not be part of your code.</td>
+</tr>
+<tr>
+<td><code>#include &lt;stdio.h&gt;</code></td>
+<td>Import the 'standard input/output' library. It supports functions (commands) like 'printf'.</td>
+</tr>
+<tr>
+<td><code>int main() { ... }</code></td>
+<td>The main function must appear in every C program. It is the first thing the computer looks for when you run the code.</td>
+</tr>
+<tr>
+<td><code>printf( ... )</code></td>
+<td>A function that lets you print something out to the screen. The 'f' stands for 'formatted'.</td>
+</tr>
+<tr>
+<td><code>Hello, World!\n</code></td>
+<td>A string that we want to print out. Anything within double quotes is considered a string.</td>
+</tr>
+<tr>
+<td><code>\n</code></td>
+<td>Inserts a new line - makes it pretty.</td>
+</tr>
+<tr>
+<td><code>return 0</code></td>
+<td>0 tells the computer that the program finished without an error.</td>
+</tr>
+</tbody>
+</table>
+<h2 id="13-running-your-c-program">1.3 Running your C program</h2>
+<p>We're going to be using an online C compiler - there's many out there but you can use <a href="https://repl.it/languages/c">Repl.it</a>. Copy the code above into the left panel of Repl.it. </p>
+<p>It should come up with:</p>
+<div class="highlight"><pre><span></span><code>Hello,<span class="w"> </span>World!
+</code></pre></div>
+
+<p>Congratulations, you've written and run your first program!</p>
+<h2 id="14-exercises">1.4 Exercises</h2>
+<ol>
+<li><strong>Monkey</strong>: Print out the following ASCII art:</li>
+</ol>
+<div class="highlight"><pre><span></span><code>     __
+ )  ( &#39;)
+(  /  )
+ \(__)|
+</code></pre></div>
+
+<p>Make sure the spacing is correct! To print a new line, you need to use the <code>\n</code> symbol. <code>\</code> is a special character, so you need to use <code>\\</code> (e.g. <code>printf("\\");</code>).</p>
+    </div>
+        <div class="learn-contents-navigate full-width">
+            <a class="previous" href="/c-course/welcome-to-robotics">Welcome to Robotics!</a>
+            <a class="next" href="/c-course/basics-of-robotc">Basics of RobotC</a>
+            <div class="separator"></div>
+        </div>
+    </div>
+</div>
+<div id="mainFooter">
+<p>&copy; Fort Street High School Robotics</p>
+</div>
+</div>
+</body>
+    <link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/highlight.js/9.9.0/styles/default.min.css">
+    <script src="//cdnjs.cloudflare.com/ajax/libs/highlight.js/9.9.0/highlight.min.js"></script>
+    <script>hljs.initHighlightingOnLoad();</script>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.0.3/jquery.min.js"></script>
+    <!-- Firebase - Equipment System -->
+    <script type="text/javascript" src="https://www.gstatic.com/firebasejs/4.8.0/firebase.js"></script>
+    <script type="text/javascript" src="/file/equipmentsystem.js"></script>
+    <link type="text/css" rel="stylesheet" href="/file/equipmentsystem.css"/>
+</html>

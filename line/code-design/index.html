@@ -1,0 +1,109 @@
+<!doctype html>
+<html>
+    <head>
+        <title>FSHS Robotics</title>
+        <meta name="google-site-verification" content="4_RMTp03qKZnXNroL0gme91C1A0V24nC9np8xE_GRt4" />
+        <link rel="icon" type="image/png" href="/theme/favicon.png">
+        <meta name="viewport" content="width=device-width, initial-scale=1"/>
+        <meta name="theme-color" content="#4060fa" />
+        <link type="text/css" rel="stylesheet" href="/theme/robobase.css"/>
+        <link type="text/css" rel="stylesheet" href="/theme/2018base.css"/>
+        <link type="text/css" rel="stylesheet" href="/theme/friendly.css"/>
+        <link type="text/css" rel="stylesheet" href="https://fonts.googleapis.com/css?family=Open+Sans:300,400,700|Raleway:400,900|PT+Mono">
+    </head>
+
+<body>
+    <div class="header-2018">
+        <h2><a href="/">FSHS Robotics</a></h2>
+        <div id="nav">
+            <ul class="nav-transparent">
+                <li class="nav-transparent__link"><a href="/about">About</a></li>
+                <li class="nav-transparent__link"><a href="/awards">Awards</a></li>
+                <li class="nav-transparent__link"><a href="/resources">Resources</a></li>
+                <li class="nav-transparent__link"><a href="/equipment">Admin</a></li>
+
+            </ul>
+        </div>
+    </div>
+<div id="wrapper">
+
+    <div class="wiki" id="content_view" style="display: block;">
+    <div class="learn-wrapper">
+    <div class="hero full-width">
+    <a class="hero-back" href="/line/">Back to Rescue Line</a>
+    <h3>FSHS Robotics C Course</h3>
+    <h1>Code Design</h1>
+    </div>
+    
+        <div class="learn-contents-nav">
+                <a href="/line/" class="completed">Rescue Line</a>
+                <a href="/line/tiles" class="completed">Tiles and Turns</a>
+                <a href="/line/obstacles" class="completed">Obstacles</a>
+                <a href="/line/spill" class="completed">Chemical Spill</a>
+                <a href="/line/logbooks" class="completed">Sample Logbooks</a>
+                <a href="/line/robot-design" class="completed">Robot Design</a>
+                <a href="/line/code-design" class="selected">Code Design</a>
+        </div>
+    <div class="learn-contents-text" >
+    <h2 id="general-tips">General tips</h2>
+<ul>
+<li>Print things to the screen, make sounds to know which part of the code you are up to.</li>
+<li>Structure your code and add comments (<code>// this is a comment</code>). Make sure that you indent correctly, it saves me time and saves you time.</li>
+</ul>
+<h2 id="tips-for-line-follow">Tips for Line Follow</h2>
+<ul>
+<li>Use <code>#define</code> to define any thresholds you want. This makes it easier to adjust when you are recalibrating for different lighting conditions. For example, if you want to store the RGB values for green turns, do the following:</li>
+</ul>
+<div class="highlight"><pre><span></span><code><span class="cp">#define GTURN_LEFT_RED_LOWER 100</span>
+<span class="cp">#define GTURN_LEFT_RED_UPPER 150</span>
+
+<span class="p">...</span>
+
+<span class="n">task</span><span class="w"> </span><span class="n">main</span><span class="p">()</span><span class="w"> </span><span class="p">{</span>
+<span class="w">    </span><span class="kt">int</span><span class="w"> </span><span class="n">lr</span><span class="p">,</span><span class="w"> </span><span class="n">lg</span><span class="p">,</span><span class="w"> </span><span class="n">lb</span><span class="p">;</span>
+<span class="w">    </span><span class="k">while</span><span class="w"> </span><span class="p">(</span><span class="mi">1</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
+<span class="w">        </span><span class="k">if</span><span class="w"> </span><span class="p">(</span><span class="n">lr</span><span class="w"> </span><span class="o">&gt;</span><span class="w"> </span><span class="n">GTURN_LEFT_RED_LOWER</span><span class="w"> </span><span class="o">&amp;&amp;</span><span class="w"> </span><span class="n">lr</span><span class="w"> </span><span class="o">&lt;</span><span class="w"> </span><span class="n">GTURN_LEFT_RED_UPPER</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
+<span class="w">            </span><span class="c1">// left red value is between low and high</span>
+<span class="w">        </span><span class="p">}</span>
+<span class="w">    </span><span class="p">}</span>
+<span class="p">}</span>
+</code></pre></div>
+
+<ul>
+<li>Instead of using thresholds (lower and upper bounds), try and use proportional line follow or PID. More information coming soon.<ul>
+<li>Don't use proportional line follow for green turns or silver detection.</li>
+<li>Ask Kris for resources</li>
+</ul>
+</li>
+</ul>
+<h2 id="tips-for-obstacles">Tips for Obstacles</h2>
+<ul>
+<li>For the water tower, use <strong>motor encoders</strong> to measure the distance you have travelled, instead of time. There is information on motor encoders <a href="/robotc/nxt-motor-encoder/">here</a> (for NXT, find the correct functions for EV3).</li>
+<li>Touch sensor values are simple - use <code>SensorValue[sensorTouch]</code> (sensorTouch is the name you set in the setup). The number you get out of it is 0 or 1.</li>
+<li>Make sure your speed is high enough for it to drive up ramps, but slow enough to be accurate.</li>
+</ul>
+<h2 id="tips-for-spill">Tips for Spill</h2>
+<ul>
+<li>Don't worry about black cans first - start by finding a can, picking it up and then finding the block and placing it down.<ul>
+<li>The most points is in control (50 points) and placing it down (50 points). Master this and don't worry about other cans.</li>
+</ul>
+</li>
+<li>Work fast and test frequently. You don't need a tile to test - you just need a can and a way to trigger the chemical spill code.</li>
+</ul>
+    </div>
+    </div>
+</div>
+<div id="mainFooter">
+<p>&copy; Fort Street High School Robotics</p>
+</div>
+</div>
+</body>
+    <link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/highlight.js/9.9.0/styles/default.min.css">
+    <script src="//cdnjs.cloudflare.com/ajax/libs/highlight.js/9.9.0/highlight.min.js"></script>
+    <script>hljs.initHighlightingOnLoad();</script>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.0.3/jquery.min.js"></script>
+    <!-- Firebase - Equipment System -->
+    <script type="text/javascript" src="https://www.gstatic.com/firebasejs/4.8.0/firebase.js"></script>
+    <script type="text/javascript" src="/file/equipmentsystem.js"></script>
+    <link type="text/css" rel="stylesheet" href="/file/equipmentsystem.css"/>
+</html>

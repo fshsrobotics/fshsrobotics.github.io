@@ -1,0 +1,135 @@
+<!doctype html>
+<html>
+    <head>
+        <title>FSHS Robotics</title>
+        <meta name="google-site-verification" content="4_RMTp03qKZnXNroL0gme91C1A0V24nC9np8xE_GRt4" />
+        <link rel="icon" type="image/png" href="/theme/favicon.png">
+        <meta name="viewport" content="width=device-width, initial-scale=1"/>
+        <meta name="theme-color" content="#4060fa" />
+        <link type="text/css" rel="stylesheet" href="/theme/robobase.css"/>
+        <link type="text/css" rel="stylesheet" href="/theme/2018base.css"/>
+        <link type="text/css" rel="stylesheet" href="/theme/friendly.css"/>
+        <link type="text/css" rel="stylesheet" href="https://fonts.googleapis.com/css?family=Open+Sans:300,400,700|Raleway:400,900|PT+Mono">
+    </head>
+
+<body>
+    <div class="header-2018">
+        <h2><a href="/">FSHS Robotics</a></h2>
+        <div id="nav">
+            <ul class="nav-transparent">
+                <li class="nav-transparent__link"><a href="/about">About</a></li>
+                <li class="nav-transparent__link"><a href="/awards">Awards</a></li>
+                <li class="nav-transparent__link"><a href="/resources">Resources</a></li>
+                <li class="nav-transparent__link"><a href="/equipment">Admin</a></li>
+
+            </ul>
+        </div>
+    </div>
+<div id="wrapper">
+    
+    <div class="wiki" id="content_view" style="display: block;">
+<div id="robosystem">
+<div id="login-loading">Loading...</div>
+<div id="loginsystem">
+<form action="" method="get" class="formblock">
+<div class="label">Student login</div>
+<div class="es-sublabel">What room is Robotics in? Put it in the format <code>wilkins5</code>.</div>
+<input type="password" id="ls-student" /> <button type="submit" id="ls-student-login">Login</button>
+<div id="ls-student-login-status" class="error-message"></div>
+</form>
+<form action="" method="get" class="formblock">
+<div class="label">Staff login</div>
+<input type="password" id="ls-admin" /> <button type="submit" id="ls-admin-login">Login</button>
+<div id="ls-admin-login-status" class="error-message"></div>
+</form>
+</div>
+<div id="adminsystem">Admins only! <button class="ls-logout">Log out</button>
+<h3>Mark attendance</h2>
+<form action="" method="get" class="formblock">
+<div class="label">Term/Week</div>
+<input id="attendance-week" />
+<div class="label">Student ID</div>
+<input id="attendance-student" />
+<div id="createaccount">
+  <div class="label">Student Full Name</div>
+  <input id="createaccount-fullname" />
+  <div class="label">Student Year</div>
+  <input id="createaccount-year" />
+</div>
+<button type="submit" id="attendance-check">I'm here</button>
+<div id="attendance-submit-status" class="error-message"></div>
+<h3 id="attendance-header"></h2>
+<div id="attendance-list"></div>
+</form>
+</div>
+<div id="equipmentsystem">
+<h3 class="es-heading">FSHS Robotics Equipment System</h2>
+<button class="ls-logout">Log out</button>
+<div class="es-subheading">
+<div>
+<h3>Groups</h3>
+<div id="es-allgroups"></div>
+<br /></div>
+</div>
+<div class="es-form">
+<div class="formblock">
+<div class="label">Group ID</div>
+<input type="text" id="es-groupid" placeholder="OS00" /></div>
+<div class="formblock">
+<div class="label">Group information</div>
+<br />
+<div id="es-group-info"></div>
+</div>
+<div class="formblock">
+<div class="label">Equipment</div>
+<select class="form-control" id="es-equipment">
+<option disabled="disabled">Motors</option>
+<option data-eid="nm">NXT Motor</option>
+<option data-eid="eml">EV3 Large Motor</option>
+<option data-eid="emm">EV3 Medium Motor</option>
+<option disabled="disabled">Sensors</option>
+<option data-eid="nsl">NXT Light Sensor</option>
+<option data-eid="nsc">NXT Colour Sensor (Mindstorms)</option>
+<option data-eid="nst">NXT Touch Sensor</option>
+<option data-eid="nss">NXT Sonar Sensor</option>
+<option data-eid="esl">EV3 Light Sensor</option>
+<option data-eid="esc">EV3 Colour Sensor</option>
+<option data-eid="est">EV3 Touch Sensor</option>
+<option data-eid="ess">EV3 Sonar Sensor</option>
+<option data-eid="dist">Distance Sensor</option>
+<option disabled="disabled">Bricks</option>
+<option data-eid="rcx">RCX Brick</option>
+<option data-eid="nxt">NXT Brick</option>
+<option data-eid="ev3">EV3 Brick</option>
+<option disabled="disabled">Other</option>
+<option data-eid="tool">Toolkit</option>
+<option data-eid="ncam">NXTCam</option>
+<option data-eid="pixy">Pixy Camera</option>
+</select></div>
+<div class="formblock">
+<div class="label">Sticker ID</div>
+<div class="es-sublabel">Some don't have stickers</div>
+<input id="es-stickerid" /></div>
+<div class="formblock-end"><button id="es-submit">Submit</button>
+<div id="es-submit-status" class="error-message"></div>
+</div>
+</div>
+</div>
+</div>
+    </div>
+  
+</div>
+<div id="mainFooter">
+<p>&copy; Fort Street High School Robotics</p>
+</div>
+</div>
+</body>
+    <link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/highlight.js/9.9.0/styles/default.min.css">
+    <script src="//cdnjs.cloudflare.com/ajax/libs/highlight.js/9.9.0/highlight.min.js"></script>
+    <script>hljs.initHighlightingOnLoad();</script>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.0.3/jquery.min.js"></script>
+    <!-- Firebase - Equipment System -->
+    <script type="text/javascript" src="https://www.gstatic.com/firebasejs/4.8.0/firebase.js"></script>
+    <script type="text/javascript" src="/file/equipmentsystem.js"></script>
+    <link type="text/css" rel="stylesheet" href="/file/equipmentsystem.css"/>
+</html>
